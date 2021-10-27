@@ -33,6 +33,7 @@
                     <li class="header__nav-news"><a href="#news">Tin tức</a></li>
                     <li class="header__nav-contact"><a href="#contact">Liên hệ</a></li>
                 </ul>
+                {% if not user.username %}
                 <div class="header__btn">
                     <a href="/login" class="header__btn-login btn__open-login-form btn--white ">
                         ĐĂNG NHẬP
@@ -41,14 +42,16 @@
                         ĐĂNG KÝ
                     </a>
                 </div>
-<!--                <div class="header__user">-->
-<!--                    <img class="header__user-img" src="{% static './assets/image/meo.jpeg' %}" alt="" >-->
-<!--                    <div class="header__user-name">Hà Minh Hùng</div>-->
-<!--                    <ul class="header__user-subnav">-->
-<!--                        <li><a href="">Thông tin tài khoản</a></li>-->
-<!--                        <li><a href="">Đăng xuất</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
+                {% else %}
+                <div class="header__user">
+                    <img class="header__user-img" src="{% static './assets/image/meo.jpeg' %}" alt="" >
+                    <div class="header__user-name">Hà Minh Hùng</div>
+                    <ul class="header__user-subnav">
+                        <li><a href="">Thông tin tài khoản</a></li>
+                        <li><a href="/logout">Đăng xuất</a></li>
+                    </ul>
+                </div>
+                {%endif%}
 
 
             </div>
