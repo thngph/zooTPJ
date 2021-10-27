@@ -1,0 +1,41 @@
+{%extends "home/base.html"%}
+        {%block content%}
+    <!--        Đăng kí-->
+        <div style="display: block; position:relative; margin:80px auto 20px;" class="auth-form auth-form__register">
+            <div class="auth-form__container">
+                <i class="auth-form__icon-close fas fa-times"></i>
+                <div class="auth-form__heading">
+                    ĐĂNG KÝ
+                </div>
+                <div class="auth-form__body">
+                    <form class="login_form" action="." method="POST">
+                        {% csrf_token %}
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" name="username" maxlength="30" required="" id="id_username" placeholder="Tài khoản">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" name="password1" required="" id="id_password1" placeholder="Mật khẩu">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="auth-form__control">
+                            <input type="submit" value="Đăng ký" class="auth-form__btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="auth-form__footer">
+                    <span>Đã có tài khoản ?</span>
+                    <button class="auth-form__footer-btn-control btn__open-login-form">
+                        Đăng nhập
+                    </button>
+                </div>
+            </div>
+        </div>
+        {%endblock%}
+

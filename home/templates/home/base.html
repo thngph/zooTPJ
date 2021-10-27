@@ -1,0 +1,120 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static './assets/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './assets/font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static './package.json' %}">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <div id="main">
+        <!-- Header -->
+        <div class="header">
+            <div class="header__wrap">
+                <a href="#" class="header__logo-link">
+
+                    <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img">
+                </a>
+                <ul class="header__nav">
+                    <li class="header__nav-introduce"><a href="#introduce">Giới thiệu</a></li>
+                    <li class="header__nav-animal"><a href="#animal">Muôn loài</a>
+                        <!-- <ul class="header__subnav-animal">
+                            <li><a href="#image">Hình ảnh</a></li>
+                            <li><a href="#video">Video</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="header__nav-news"><a href="#news">Tin tức</a></li>
+                    <li class="header__nav-contact"><a href="#contact">Liên hệ</a></li>
+                </ul>
+                <div class="header__btn">
+                    <a href="" class="header__btn-buy-ticket btn--white ">
+                        MUA VÉ
+                    </a>
+                    <a href="" class="header__btn-donate btn--green">
+                        TÀI TRỢ
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {%block content%}
+
+        {%endblock%}
+        <!-- Footer -->
+        <div class="footer">
+            <div class="grid">
+                <div class="row footer__list">
+                    <div class="col l-2-4 m-4">
+                        <div class="footer__item">
+                            <div class="footer__item-heading">Giờ hoạt động</div>
+                            <div class="footer__item-desc">
+                                9:00AM - 7:00PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4">
+                        <div class="footer__item">
+                            <div class="footer__item-heading">Tài khoản</div>
+                            <div class="footer__item-desc">
+                                <a href="">Thông tin</a>
+                                <a href="">Quyên góp</a>
+                                <a href="">Mua vé</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4">
+                        <div class="footer__item">
+                            <div class="footer__item-heading">Động vật</div>
+                            <div class="footer__item-desc">
+                                <a href="#image">Hình ảnh</a>
+                                <a href="#video">Video</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4">
+                        <div class="footer__item">
+                            <div class="footer__item-heading">Liên hệ</div>
+                            <div class="footer__item-desc">
+                                <p>Email: zoozalabim123@gmail.com</p>
+                                <p>Sđt: 000000000</p>
+                                <p>Địa chỉ: Ktx khu B</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4">
+                        <div class="footer__item">
+                            <div class="footer__item-heading">Theo dõi</div>
+                            <div class="footer__item-icon">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UCYuKdJxV9HXNklgU5OX0rBw"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/image/ZOOZALABIM-07.png" alt="" class="footer__logo">
+            <div class="footer__copyright">
+                © 2021 All Rights Reserved Terms of Use and Privacy Policy
+            </div>
+        </div>
+        {%block modal%}
+
+        {%endblock%}
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static './main.js' %}"></script>
+    <script src="{% static './swipper.js' %}"></script>
+</body>
+</html>

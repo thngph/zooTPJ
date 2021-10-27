@@ -1,0 +1,41 @@
+{%extends "home/base.html"%}
+        {%block content%}
+
+
+
+ <div style="display: block; position:relative; margin:80px auto 20px;" class="auth-form auth-form__login">
+    <div class="auth-form__container">
+        <i class="auth-form__icon-close fas fa-times"></i>
+        <div class="auth-form__heading">
+            ĐĂNG NHẬP
+        </div>
+        <div class="auth-form__body">
+            <form action="." method="POST">
+                 {% csrf_token %}
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" name="username" autofocus="" required="" id="id_username" placeholder="Tài khoản">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" name="password" required="" id="id_password" placeholder="Mật khẩu">
+                    </div>
+                </div>
+                <div class="auth-form__control">
+		            <input type="hidden" name="next" value="/">
+                    <input type="submit" value="Đăng nhập" class="auth-form__btn">
+                    <a href=""class="auth-form__btn-forget-password">
+                        Quên mật khẩu
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="auth-form__footer">
+            <span>Chưa có tài khoản ?</span>
+            <button href="" class="auth-form__footer-btn-control btn__open-register-form">
+                Đăng ký
+            </button>
+        </div>
+    </div>
+ </div>
+
+        {%endblock%}

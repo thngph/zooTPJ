@@ -1,0 +1,430 @@
+{%extends "home/base.html"%}
+{%load static%}
+{%block title%} Zoozalabim {%endblock%}
+
+
+        {%block content%}
+        <!-- Slider -->
+        <div class="slider">
+            <div class="slides">
+                 <!-- Radio button  -->
+                <input type="radio" name="radio-btn" id="radio1" checked>
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+
+                <!-- img -->
+                <div class="slide slide-first">
+                    <div class="slide__img-first">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide__img-second">             
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide__img-third">      
+                    </div>
+                </div>  
+                 <!-- automatic navigation -->
+                <div class="navigation-auto">
+                    <div class="auto-btn auto-btn1"></div>
+                    <div class="auto-btn auto-btn2"></div>
+                    <div class="auto-btn auto-btn3"></div>
+                </div>         
+            </div>
+            <!-- Manual navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>        
+            </div>
+           <div class="slider__content">
+               <h3 class="slider__content-title">
+                    HÒA MÌNH VỚI THIÊN NHIÊN
+               </h3>
+               <div class="slider__content-desc">
+                Khi con người ta đã quá quen thuộc với bộn bề cao ốc, khói bụi xe cộ... thì trong sâu thẳm trong thâm tâm đều mong muốn được về với thiên nhiên. Hãy cùng nhau giúp đỡ muôn loài, góp phần bảo vệ thiên nhiên tươi đẹp
+               </div>
+               {%if not user.username %}
+               <div class="slider__content-btn">
+                   <a href="/register"><button class="slider__btn-register btn__open-register-form btn--green">Đăng ký</button></a>
+                   <a href="/login"><button class="slider__btn-login btn__open-login-form btn--white">Đăng nhập</button></a>
+               </div>
+               {%endif%}
+           </div>
+        </div>
+        <!-- Content -->
+        <div class="content">
+            <!-- Thông tin -->
+            <div id="introduce" class="grid info">
+                <div class="row">
+                    <div class="col l-3 m-6 info__item">
+                        <div class="info__item-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div class="info__item-content">
+                            <p class="info__item-content-title">Giờ hoạt động</p>
+                            <p class="info__item-content-desc">09:00AM-07:00AM</p>
+                        </div>                    
+                    </div>
+                    <div class="col l-3 m-6 info__item">
+                        <div class="info__item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info__item-content">
+                            <p class="info__item-content-title">Vị trí</p>
+                            <p class="info__item-content-desc">Quận Thủ Đức, TPHCM</p>
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 info__item">
+                        <div class="info__item-icon">
+                            <i class="far fa-map"></i>
+                        </div>
+                        <div class="info__item-content">
+                            <p class="info__item-content-title">Bản đồ sở thú</p>
+                            <p class="info__item-content-desc">Diện tích: 10000ha</p>
+                        </div>
+                    </div><div class="col l-3 m-6 info__item">
+                        <div class="info__item-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div class="info__item-content">
+                            <p class="info__item-content-title">Giá vé</p>
+                            <p class="info__item-content-desc">Người lớn: 70000 VND
+                                <br>
+                                Trẻ em: 50000 VND 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Giới thiệu -->
+            <div class="content__introduce">
+                <div class="grid wide">
+                    <div class="row introduce">
+                        <div class="col l-6 introduce__img">
+                            <img src="./assets/image/introduce.jpeg"></img>
+                        </div>
+                        <div class="col l-6 ">
+                            <div class="introduce__content">
+                                <div class="introduce-title">
+                                    <h2 class="section-heading--yellow">
+                                        GIỚI THIỆU
+                                    </h2>
+                                </div>
+                                <div class="section-desc">
+                                    Sở thú Zoozalabim là một trong những công trình mang tính lịch sử và lâu đời nhất TP HCM. Được xây dựng cùng lúc với Bưu điện TP HCM, Nhà thờ Đức Bà và chợ Bến Thành, Zoozalabim được xem như một chứng nhân của lịch sử, đi qua những thăng trầm của con người và vùng đất này.
+                                    <br>
+                                    Đến nay, Zoozalabim có tuổi đời 156 năm, hiện đang chăm sóc hơn 1.500 cá thể động vật và 900 loài thực vật.
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bán vé -->
+            <div class="content__ticket">
+                <div class="ticket">
+                    <img class="ticket__img" src="./assets/image/bird-ticket-notext.png" alt="">
+                    <div class="ticket__group">
+                        <div class="ticket__text">
+                            <p>WELCOME TO</p>
+                            <h1>ZOOZALABIM</h1>
+                        </div>
+                        <a href="" class="ticket__btn">MUA VÉ NGAY</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Donate -->
+            <div id="donate" class="content__donate">
+               <div class="grid wide">
+                <div class="row donate">
+                    <div class="col l-6 m-12">
+                        <div class="donate__wrap">
+                            <h2 class="section-heading--yellow">LỜI KÊU GỌI</h2>
+                            <div class="section-desc">
+                                Mỗi khi bạn tham gia đóng góp cho Quỹ tài trợ của chúng tôi, trở thành đối tác bảo tồn, để lại một món quà trong di sản của bạn hoặc gây quỹ với cộng đồng của bạn, mọi thứ đều hữu ích. Những số tiền mà bạn quyên góp sẽ góp phần xây dưng nơi ở, thức ăn cho vật nuôi tại sở thú Zoozalabim
+                            </div>
+                            <a href="" class="donate__btn">Hỗ trợ</a>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-12">
+                        <img class="donate__img" src="./assets/image/pexels-photo-1870301.jpeg"></img>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <!-- Hình ảnh và video -->
+            <div id="animal" class="content__animal">
+                <!-- Video thú -->
+                <div id="video" class="video-animal">
+                    <div class="grid">
+                         <h2 class="section-heading--green">VIDEO</h2>
+                         <div class="video__category">
+                             <div class="video__category-place">
+                                 <iframe class="video__category-place-display" src="https://www.youtube.com/embed/kFNJTAaAYnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                             </div>
+                             <div class="video__category-option-list">
+                                 <div class="swiper mySwiper">
+                                     <div class="swiper-wrapper">
+ 
+                                     </div>
+                                     <div class="swiper-pagination"></div>
+                                     <div class="swiper-button-next"></div>
+                                     <div class="swiper-button-prev"></div>
+                                 </div>
+                             </div>
+                         </div>    
+                    </div>
+                 </div>
+                <!-- Hình ảnh thú  -->
+                <div id="image" class="image-animal">
+                    <div class="image-animal__heading">
+                        <h2 class="section-heading--green">HÌNH ẢNH</h2>
+                    </div>
+                    <div class="grid wide">
+                        <div class="row image-animal__list">
+                            <div class="col l-3 m-6 ">
+                                <a href="" class="image-animal__item">
+                                    <div class="image-animal__item-img">
+                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                    </div>
+                                    <div class="image-animal__item-name">Thỏ</div>
+                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
+                                </a>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <a href="" class="image-animal__item">
+                                    <div class="image-animal__item-img">
+                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                    </div>
+                                    <div class="image-animal__item-name">Thỏ</div>
+                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
+                                </a>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <a href="" class="image-animal__item">
+                                    <div class="image-animal__item-img">
+                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                    </div>
+                                    <div class="image-animal__item-name">Thỏ</div>
+                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha </div>
+                                </a>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <a href="" class="image-animal__item">
+                                    <div class="image-animal__item-img">
+                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                    </div>
+                                    <div class="image-animal__item-name">Thỏ</div>
+                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
+                                </a>
+                            </div>
+                            <a  href="" class="image-animal__more-text">
+                                Xem thêm...
+                            </a>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            
+            <!-- Tin tức -->
+            <div  id="news"  class="content__news">
+                <div class="news">
+                    <div class="news__heading">
+                        <div class="news-title">
+                            <h2 class="section-heading--yellow">
+                                TIN TỨC MỚI NHẤT
+                            </h2>
+                        </div>
+                        <!-- <div class="section-desc">
+                            Khi con người ta đã quá quen thuộc với bộn bề cao ốc, khói bụi xe cộ... thì trong sâu thẳm trong thâm tâm đều mong muốn được về với thiên nhiên. Hãy cùng nhau giúp đỡ muôn loài, góp phần bảo vệ thiên nhiên tươi đẹp
+                        </div>   -->
+                    </div>
+                    <div class="grid wide">
+                        <div class="row news__list">
+                            <div class="col l-3 m-6">
+                                <div class="news__item">
+                                    <div class="news__item-img">
+                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                    </div>
+                                    <div class="news__item-content">
+                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
+                                        <div class="news__item-content-date">20:00 20/10/2021</div>
+                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
+                                    </div>
+                                    <a href="" class="news__item-see-more">
+                                        Xem thêm...
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <div class="news__item">
+                                    <div class="news__item-img">
+                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                    </div>
+                                    <div class="news__item-content">
+                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
+                                        <div class="news__item-content-date">20:00 20/10/2021</div>
+                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
+                                    </div>
+                                    <a href="" class="news__item-see-more">
+                                        Xem thêm...
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <div class="news__item">
+                                    <div class="news__item-img">
+                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                    </div>
+                                     <div class="news__item-content">
+                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
+                                        <div class="news__item-content-date">20:00 20/10/2021</div>
+                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
+                                    </div>
+                                    <a href="" class="news__item-see-more">
+                                        Xem thêm...
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-6">
+                                <div class="news__item">
+                                    <div class="news__item-img">
+                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                    </div>
+                                     <div class="news__item-content">
+                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
+                                        <div class="news__item-content-date">20:00 20/10/2021</div>
+                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
+                                    </div>
+                                    <a href="" class="news__item-see-more">
+                                        Xem thêm...
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>               
+                </div>
+            </div>
+            
+            <!-- Liên hệ -->
+            <div id="contact" class="content__contact">
+                <div class="contact">
+                    <div class="grid wide">
+                        <div class="row">
+                            <div class="col l-6 m-12">
+                                <div class="contact__content">
+                                    <div class="contact-title">
+                                        <h2 class="section-heading--green">
+                                            LIÊN HỆ VỚI CHÚNG TÔI
+                                        </h2>
+                                    </div>
+                                    <div class="contact-list">
+                                        <div class="contact-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <p>Quận Thủ Đức, TPHCM</p>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-phone-alt"></i>
+                                            <p>Phone:
+                                                <a href="tel:+000000000">+000000000</a>
+                                            </p>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-envelope-open"></i>
+                                            <p>Email: 
+                                                <a href="mailto:Zoozalabim123@gmail.com">Zoozalabim123@gmail.com </a>
+                                            </p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col l-6 m-12 pt-20">
+                                <img class="contact__img" src="./assets/image/contact-img.jpeg"></img>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {%endblock%}
+
+{%block modal%}
+<!--    <div class="modal">-->
+<!--        &lt;!&ndash; login form&ndash;&gt;-->
+<!--        <div class="auth-form auth-form__login">-->
+<!--            <div class="auth-form__container">-->
+<!--                <i class="auth-form__icon-close fas fa-times"></i>-->
+<!--                <div class="auth-form__heading">-->
+<!--                    ĐĂNG NHẬP-->
+<!--                </div>-->
+<!--                <div class="auth-form__body">-->
+<!--                    <form action="">-->
+<!--                        <div class="auth-form__form">-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="text" required class="auth-form__input" placeholder="Tài khoản">-->
+<!--                            </div>-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="password" required class="auth-form__input" placeholder="Mật khẩu">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="auth-form__control">-->
+<!--                            <input type="submit" value="Đăng nhập" class="auth-form__btn">-->
+<!--                            <a href=""class="auth-form__btn-forget-password">-->
+<!--                                Quên mật khẩu-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                <div class="auth-form__footer">-->
+<!--                    <span>Chưa có tài khoản ?</span>-->
+<!--                    <button href="" class="auth-form__footer-btn-control btn__open-register-form">-->
+<!--                        Đăng ký-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        Đăng kí&ndash;&gt;-->
+<!--        <div class="auth-form auth-form__register">-->
+<!--            <div class="auth-form__container">-->
+<!--                <i class="auth-form__icon-close fas fa-times"></i>-->
+<!--                <div class="auth-form__heading">-->
+<!--                    ĐĂNG KÝ-->
+<!--                </div>-->
+<!--                <div class="auth-form__body">-->
+<!--                    <form class="login_form" action="." method="POST">-->
+<!--                        {% csrf_token %}-->
+<!--                        <div class="auth-form__form">-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="text" class="auth-form__input" name="username" maxlength="30" required="" id="id_username" placeholder="Tài khoản">-->
+<!--                            </div>-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="password" class="auth-form__input" name="password1" required="" id="id_password1" placeholder="Mật khẩu">-->
+<!--                            </div>-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">-->
+<!--                            </div>-->
+<!--                            <div class="auth-form__group">-->
+<!--                                <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="auth-form__control">-->
+<!--                            <input type="submit" value="Đăng ký" class="auth-form__btn">-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                <div class="auth-form__footer">-->
+<!--                    <span>Đã có tài khoản ?</span>-->
+<!--                    <button class="auth-form__footer-btn-control btn__open-login-form">-->
+<!--                        Đăng nhập-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+{%endblock%}
