@@ -69,6 +69,88 @@ html
     font-size: 18px;
     padding: 10px 20px; 
 }
+.header__user
+{
+    margin-right: 50px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.header__user-img
+{
+     max-width: 50px;
+    border-radius:50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+.header__user-subnav
+{
+    position: absolute;
+    top: calc( 100% + 15px );
+    left: 0;
+    list-style-type: none;
+    display: block;
+    min-width: 180px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    background-color: var(--white-color);
+    animation: userMenuGrowth ease 0.3s;
+    display: none;
+}
+.header__user:hover .header__user-subnav
+{
+    display: block;
+}
+.header__user-subnav li a {
+    padding: 12px 12px;
+    display: block;
+    text-decoration: none;
+    color: var(--green-color);
+}
+.header__user-subnav li:hover a
+{
+    background-color: var(--green-color);
+    color:var(--white-color);
+}
+.header__user-subnav li:last-child a
+{
+    border-top: 1px solid #eeeeee;
+}
+.header__user-subnav::after
+{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+    left: 0;
+    top: -16px;
+}
+.header__user-subnav::before
+{
+    content: "";
+    border-style: solid;
+    border-width: 20px 27px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    top: -28px;
+    right: 20px;
+    z-index: -1;
+}
+@keyframes userMenuGrowth
+{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* .header__nav-animal{
+    position: relative;
+}
 /* .header__nav-animal{
     position: relative;
 }
