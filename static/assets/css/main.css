@@ -97,6 +97,11 @@ html
     animation: userMenuGrowth ease 0.3s;
     display: none;
 }
+.header__user-name
+{
+    color:var(--green-color);
+    font-weight: 500;
+}
 .header__user:hover .header__user-subnav
 {
     display: block;
@@ -184,17 +189,17 @@ html
 {
     margin: 0 30px 0 0;
 }
-.header__btn-buy-ticket
+.header__btn-login
 {
     margin-right: 10px;
     padding: 10px 25px;
 }
-.header__btn-donate
+.header__btn-register
 {
     padding: 10px 25px;
 }
-.header__btn-buy-ticket:hover,
-.header__btn-donate:hover
+.header__btn-buy-register:hover,
+.header__btn-login:hover
 {
     opacity:0.9
 }
@@ -340,8 +345,8 @@ html
     text-align: justify;
     text-shadow:  0 0 1px #000;
 }
-.slider__btn-login,
-.slider__btn-register
+.slider__btn-buy-ticket,
+.slider__btn-donate
 {
     padding: 20px 35px;
     font-size: 21px;
@@ -350,8 +355,8 @@ html
     margin-right: 24px;
     cursor: pointer;   
 }
-.slider__btn-login:hover,
-.slider__btn-register:hover
+.slider__btn-buy-ticket:hover,
+.slider__btn-donate:hover
 {
     opacity: 0.8
 }
