@@ -1,0 +1,25 @@
+@media (min-width: 740px) and (max-width: 1023px) 
+{
+    .header
+    {
+        padding: 0 15px;
+    }
+    .header__logo img {
+        max-width: 200px;
+    }
+    .header__nav>li>a
+    {
+        padding: 5px 10px;
+    }
+    .header__btn-buy-ticket
+    {
+        padding: 5px 10px;
+    }
+    .slider{
+        padding:0;
+    }
+    .donate__img
+    {
+        display: none;
+    }
+}
