@@ -1,5 +1,5 @@
 {%extends "home/base.html"%}
-
+{%load static%}
 {%block title%} Zoozalabim {%endblock%}
 
 
@@ -101,7 +101,7 @@
                 <div class="grid wide">
                     <div class="row introduce">
                         <div class="col l-6 introduce__img">
-                            <img src="./assets/image/introduce.jpeg"></img>
+                            <img src="{% static './assets/image/introduce.jpeg'%}"></img>
                         </div>
                         <div class="col l-6 ">
                             <div class="introduce__content">
@@ -123,7 +123,7 @@
             <!-- Bán vé -->
             <div class="content__ticket">
                 <div class="ticket">
-                    <img class="ticket__img" src="./assets/image/bird-ticket-notext.png" alt="">
+                    <img class="ticket__img" src="{% static './assets/image/bird-ticket-notext.png'%}" alt="">
                     <div class="ticket__group">
                         <div class="ticket__text">
                             <p>WELCOME TO</p>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <div class="col l-6 m-12">
-                        <img class="donate__img" src="./assets/image/pexels-photo-1870301.jpeg"></img>
+                        <img class="donate__img" src="{% static './assets/image/pexels-photo-1870301.jpeg'%}"></img>
                     </div>
                 </div>
                </div>
@@ -185,7 +185,7 @@
                             <div class="col l-3 m-6 ">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
-                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                        <img src="{% static './assets/image/rabbit.jpeg'%}" alt="">
                                     </div>
                                     <div class="image-animal__item-name">Thỏ</div>
                                     <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
@@ -194,7 +194,7 @@
                             <div class="col l-3 m-6">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
-                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                        <img src="{% static './assets/image/rabbit.jpeg'%}" alt="">
                                     </div>
                                     <div class="image-animal__item-name">Thỏ</div>
                                     <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
@@ -203,7 +203,7 @@
                             <div class="col l-3 m-6">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
-                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                        <img src="{% static './assets/image/rabbit.jpeg'%}" alt="">
                                     </div>
                                     <div class="image-animal__item-name">Thỏ</div>
                                     <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha </div>
@@ -212,7 +212,7 @@
                             <div class="col l-3 m-6">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
-                                        <img src="./assets/image/rabbit.jpeg" alt="">
+                                        <img src="{% static './assets/image/rabbit.jpeg'%}" alt="">
                                     </div>
                                     <div class="image-animal__item-name">Thỏ</div>
                                     <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
@@ -244,7 +244,7 @@
                             <div class="col l-3 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
-                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                        <img src="{% static './assets/image/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
                                     </div>
                                     <div class="news__item-content">
                                         <div class="news__item-content-title">Tình người lúc khó khăn</div>
@@ -259,7 +259,7 @@
                             <div class="col l-3 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
-                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                        <img src="{% static './assets/image/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
                                     </div>
                                     <div class="news__item-content">
                                         <div class="news__item-content-title">Tình người lúc khó khăn</div>
@@ -274,7 +274,7 @@
                             <div class="col l-3 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
-                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                        <img src="{% static './assets/image/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
                                     </div>
                                      <div class="news__item-content">
                                         <div class="news__item-content-title">Tình người lúc khó khăn</div>
@@ -289,7 +289,7 @@
                             <div class="col l-3 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
-                                        <img src="./assets/image/116203402_156286772758587_1828794733514680117_n.jpg" alt="">
+                                        <img src="{% static './assets/image/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
                                     </div>
                                      <div class="news__item-content">
                                         <div class="news__item-content-title">Tình người lúc khó khăn</div>
@@ -341,7 +341,7 @@
                                 </div>
                             </div>
                             <div class="col l-6 m-12 pt-20">
-                                <img class="contact__img" src="./assets/image/contact-img.jpeg"></img>
+                                <img class="contact__img" src="{%static './assets/image/contact-img.jpeg'%}"></img>
                             </div>
                             
                         </div>
