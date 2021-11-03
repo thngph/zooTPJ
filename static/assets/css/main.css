@@ -8,6 +8,8 @@ html
 {
     font-family: 'Gilroy-Bold','Open Sans', sans-serif;
     scroll-behavior: smooth;
+    max-width:100%;
+    overflow-x: hidden;
 }
 #main{
     background-color: var(--background-color);
