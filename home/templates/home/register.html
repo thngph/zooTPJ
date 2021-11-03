@@ -1,41 +1,60 @@
-{%extends "home/base.html"%}
-        {%block content%}
-    <!--        Đăng kí-->
-        <div style="display: block; position:relative; margin:80px auto 20px;" class="auth-form auth-form__register">
-            <div class="auth-form__container">
-                <i class="auth-form__icon-close fas fa-times"></i>
-                <div class="auth-form__heading">
-                    ĐĂNG KÝ
-                </div>
-                <div class="auth-form__body">
-                    <form class="login_form" action="." method="POST">
-                        {% csrf_token %}
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" name="username" maxlength="30" required="" id="id_username" placeholder="Tài khoản">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" name="password1" required="" id="id_password1" placeholder="Mật khẩu">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
-                            </div>
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static './assets/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static './js/homepage-js/package.json' %}">
+    <title>Register</title>
+</head>
+
+<body>
+<!--        Đăng kí-->
+    <div style="display: block; position:relative; margin:80px auto 20px;" class="auth-form auth-form__register">
+        <div class="auth-form__container">
+            <i class="auth-form__icon-close fas fa-times"></i>
+            <div class="auth-form__heading">
+                ĐĂNG KÝ
+            </div>
+            <div class="auth-form__body">
+                <form class="login_form" action="." method="POST">
+                    {% csrf_token %}
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" name="username" maxlength="30" required="" id="id_username" placeholder="Tài khoản">
                         </div>
-                        <div class="auth-form__control">
-                            <input type="submit" value="Đăng ký" class="auth-form__btn">
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" name="password1" required="" id="id_password1" placeholder="Mật khẩu">
                         </div>
-                    </form>
-                </div>
-                <div class="auth-form__footer">
-                    <span>Đã có tài khoản ?</span>
-                    <button class="auth-form__footer-btn-control btn__open-login-form">
-                        Đăng nhập
-                    </button>
-                </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="auth-form__control">
+                        <input type="submit" value="Đăng ký" class="auth-form__btn">
+                    </div>
+                </form>
+            </div>
+            <div class="auth-form__footer">
+                <span>Đã có tài khoản ?</span>
+                <button class="auth-form__footer-btn-control btn__open-login-form">
+                    Đăng nhập
+                </button>
             </div>
         </div>
-        {%endblock%}
-
+    </div>
+</body>

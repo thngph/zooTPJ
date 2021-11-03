@@ -1,9 +1,25 @@
-{%extends "home/base.html"%}
-        {%block content%}
+{%load static%}
 
-
-
- <div style="display: block; position:relative; margin:80px auto 20px;" class="auth-form auth-form__login">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static './assets/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static './js/homepage-js/package.json' %}">
+    <title>Login</title>
+</head>
+<body>
+<div style="display: block; position:relative; margin: 100px auto;" class="auth-form auth-form__login">
     <div class="auth-form__container">
         <i class="auth-form__icon-close fas fa-times"></i>
         <div class="auth-form__heading">
@@ -38,4 +54,4 @@
     </div>
  </div>
 
-        {%endblock%}
+</body>
