@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{% static './assets/css/grid.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/base.css' %}">
     <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/main.css' %}">
     <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
     <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,10 +45,10 @@
                 </div>
                 {% else %}
                 <div class="header__user">
-                    <img class="header__user-img" src="{% static './assets/image/meo.jpeg' %}" alt="" >
-                    <div class="header__user-name">Hà Minh Hùng</div>
+                    <img class="header__user-img" src="./assets/homepage-assets/image/meo.jpeg" alt="" >
+                    <div class="">Hà Minh Hùng</div>
                     <ul class="header__user-subnav">
-                        <li><a href="">Thông tin tài khoản</a></li>
+                        <li><a class="header__user-subnav-info">Thông tin tài khoản</a></li>
                         <li><a href="/logout">Đăng xuất</a></li>
                     </ul>
                 </div>
