@@ -1,0 +1,133 @@
+{%extends "donate/base.html"%}
+
+{%block content%}
+    <div class="main">
+        <div class="header">
+            <a href="http://127.0.0.1:5500/homepage.html" class="header__logo">
+                <img src="./assets/donate-assets/image/ZOOZALABIM-07.png" alt="">
+            </a>
+            <ul class="header__nav">
+                <li class="header__nav-introduce"><a href="http://127.0.0.1:5500/homepage.html">Giới thiệu</a></li>
+                <li class="header__nav-animal"><a href="http://127.0.0.1:5500/animal.html">Muôn loài</a></li>
+                <li class="header__nav-news"><a href="#news">Tin tức</a></li>
+                <li class="header__nav-contact"><a href="http://127.0.0.1:5500/homepage.html">Liên hệ</a></li>
+            </ul>
+            <div class="header__btn">
+                <a href="http://127.0.0.1:5500/ticket.html" class="header__btn-buy-ticket">
+                    MUA VÉ
+                </a>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider-img"></div>
+            <div class="slider-text">
+                HÃY CHUNG TAY 
+                <br>BẢO VỆ
+            </div>
+        </div>
+        <div class="content">
+            <div class="donate__wrap">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-7 m-12">
+                            <h2 class="donate-heading">
+                               Đóng góp của bạn, nghĩa vụ của chúng tôi 
+                            </h2>
+                            <div class="donate__type">
+                                <div class="donate__type-now active">
+                                    Tài trợ ngay
+                                </div>
+                                <div class="donate__type-month">
+                                    Tài trợ hàng tháng
+                                </div>
+                            </div>
+                            <div class="donate__price-list">
+                                <h2>Chọn số tiền tài trợ</h2>
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">10$</div>
+                                        </div>
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">50$</div>
+                                        </div>
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">100$</div>
+                                        </div>
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">200$</div>
+                                        </div>
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">500$</div>
+                                        </div>
+                                        <div class="col c-4">
+                                            <div class="donate__price-item">1000$</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="donate__input-wrap">
+                                <h2 class="donate__input-heading">Số tiền tài trợ</h2>
+                                <div class="donate__input">
+                                    <input class="donate__input-fill" type="number" placeholder="Nhập số tiền">
+                                </div>
+                            </div>
+                            <a href="" class="donate__btn">
+                                <p>THANH TOÁN VỚI</p>
+                                <img src="./assets/donate-assets/image/paypal-logo.png" alt="" class="donate__btn-logo-paypal">
+                            </a>
+                        </div>
+                        <div class="col l-5 m-12">
+                            <div class="donate__img"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="donate-other">
+                <div class="grid wide">
+                    <h2 class="donate-other-heading">CÁC HÌNH THỨC HỖ TRỢ KHÁC</h2>
+                    <div class="row donate-other__list">
+                        <div class="col l-4 m-6">
+                            <div class="donate-other__item">
+                                <div class="donate-other__item-img-wrap">
+                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                </div>
+                                <div class="donate-other__item-content">
+                                    <div class="donate-other__item-title">Hỗ trợ theo tháng</div>
+                                    <div class="donate-other__item-desc">Trở thành thanh viên của ZOOZALABIM với số tiền mỗi tháng</div>
+                                </div>
+                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+                            </div>
+                        </div>
+                        <div class="col l-4 m-6">
+                            <div class="donate-other__item">
+                                <div class="donate-other__item-img-wrap">
+                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                </div>
+                                <div class="donate-other__item-content">
+                                    <div class="donate-other__item-title">Mua vé đến ZOOZALABIM</div>
+                                    <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú</div>
+                                </div>
+                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+                            </div>
+                        </div>
+                        <div class="col l-4  m-6">
+                            <div class="donate-other__item">
+                                <div class="donate-other__item-img-wrap">
+                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                </div>
+                                <div class="donate-other__item-content">
+                                    <div class="donate-other__item-title">Chia sẻ website</div>
+                                    <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú</div>
+                                </div>
+                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endblock%}
+    <script src="./js/donate-js/main.js"></script>
+</body>
+</html>
