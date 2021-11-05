@@ -1,0 +1,274 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html
+{
+    font-family: 'Open Sans', sans-serif;
+}
+.ml-0-5{
+    margin-left: calc( 100% / 24 );
+}
+/* Header */
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    height: 60px;
+    padding:0 80px ;
+}
+.header__logo
+{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    flex: 1;
+}
+.header__logo img
+{
+    max-width: 200px;
+}
+.header__nav
+{
+    display: flex;
+    list-style-type: none; 
+    justify-content: space-around; 
+    margin-right: 20px;
+}
+.header__nav li
+{
+   display: inline-block
+}
+.header__subnav-animal li:hover a,
+.header__nav>li:hover>a
+{
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+.header__nav>li>a
+{
+    text-decoration: none;
+    color: var(--green-color);
+    font-size: 18px;
+    padding: 10px 20px; 
+}
+.header__btn-buy-ticket
+{
+    padding: 5px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.header__btn-buy-ticket
+{
+    border: 2px solid var(--green-color);
+    color: var(--green-color);
+    background-color: var(--white-color);
+}
+
+.header__btn-buy-ticket:hover
+{
+    opacity: 0.8;
+}
+/* Slider */
+.slider
+{
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+}
+.slider-img
+{
+    padding-top: 50%;
+    background: url(../image/donate-slider.jpeg) top center / cover no-repeat;
+    margin-top: 46px;
+    color: white;
+    filter: brightness(80%);
+}
+.slider-text
+{
+    position:absolute;
+    top: 50%;
+    left:calc(5% + 80px);
+    text-shadow: 0 0 1px var(--black-color);
+    color: var(--white-color);
+    transform: translateY(-50%);
+    font-size: 70px;
+    font-weight: 600;
+    text-align: center;
+}
+/* CONTENT */
+.content
+{
+    margin-top:50px;
+    padding: 0 80px;
+}
+.ticket__form-heading
+{
+    font-size: 50px;
+    color: var(--yellow-color);
+    font-weight: 600;
+}
+/* TICKET FORM DATE */
+.ticket__form-date
+{
+    margin-top: 30px;
+}
+.ticket__form-date-heading
+{
+    color: var(--black-color);
+    font-size: 25px;
+    font-weight:700;
+}
+.ticket__form-date-input
+{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+/* TICKET FORM quantity */
+.ticket__form-quantity-heading
+{
+    color: var(--black-color);
+    font-size: 25px;
+    font-weight:700;
+    margin-top:40px;
+}
+.ticket__form-quantity
+{
+    width: 100%;
+    text-align: left;
+}
+.ticket__form-quantity tr
+{
+    margin-top:20px;
+    height:50px;
+}
+.ticket__form-quantity-label 
+{
+    font-size: 25px;
+}
+.ticket__form-quantity-type
+{
+    font-size: 25px;
+    font-weight: 500;
+}
+.ticket__form-quantity-type-price
+{
+    font-size: 25px;
+    font-weight:600;   
+}
+.ticket__form-quantity-input-kid,
+.ticket__form-quantity-input-adult
+{
+    min-width: 40px;
+    padding: 2px 0px;
+    font-size:25px;
+    font-weight:500;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--black-color);
+}
+.ticket__form-info-customer
+{
+    margin-top:20px;
+}
+.ticket__form-info-customer-heading
+{
+    color: var(--black-color);
+    font-size: 20px;
+    font-weight:700;
+}
+.ticket__form-info-customer-input
+{
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+    margin-top: 40px;
+}
+.ticket__form-buy-btn-logo-paypal
+{
+    max-width: 100px;
+    margin-left: 10px;
+}
+.ticket__form-buy-btn
+{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    background-color: var(--yellow-color);
+    color: var(--white-color);
+    justify-content: center;
+    border-radius: 5px;
+    text-decoration: none; 
+}
+/* TICKET TOTAL */
+.ticket-total__part-date
+{
+    background-color:var(--green-color);
+    border-radius: 10px;
+    border-bottom: 3px dashed var(--white-color);
+}
+.ticket-total__part-date-desc
+{
+    color: var(--white-color);
+    font-size:30px;
+    padding: 20px 30px;
+}
+.ticket-total__img
+{
+    max-width: 100%;
+    display:block;
+}
+.ticket-total__info
+{
+    background-color: var(--green-color);
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.ticket-total__info p
+{
+    padding: 20px 0;
+    color: var(--yellow-color);
+    font-size: 30px;
+    font-weight:700;
+}
+.ticket-total-number
+{
+    padding: 20px 0;
+    color: var(--white-color);
+    font-size: 30px;
+}
+.total__price
+{
+    padding: 20px 0;
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight:600px;
+    font-size: 30px;
+}
+/* footer */
+.footer
+{
+    text-align: center;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    padding: 10px 0; 
+    margin-top: 50px;  
+}

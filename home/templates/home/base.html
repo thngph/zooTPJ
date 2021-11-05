@@ -2,42 +2,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/grid.css' %}">
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/base.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/main.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
-    <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static './js/homepage-js/package.json' %}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/grid.css' %}" />
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="{% static './js/homepage-js/package.json' %}" />
     <title>{%block title%}{%endblock%}</title>
 </head>
+
 <body>
     <div id="main">
         <!-- Header -->
         <div class="header">
             <div class="header__wrap">
                 <a href="/" class="header__logo-link">
-
-                    <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img">
+                    <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img" />
                 </a>
                 <ul class="header__nav">
-                    <li class="header__nav-introduce"><a href="#introduce">Giới thiệu</a></li>
-                    <li class="header__nav-animal"><a href="#animal">Muôn loài</a>
+                    <li class="header__nav-introduce">
+                        <a href="#introduce">Giới thiệu</a>
                     </li>
+                    <li class="header__nav-animal"><a href="#animal">Muôn loài</a></li>
                     <li class="header__nav-news"><a href="#news">Tin tức</a></li>
                     <li class="header__nav-contact"><a href="#contact">Liên hệ</a></li>
                 </ul>
                 {% if not user.username %}
                 <div class="header__btn">
-                    <a href="/login" class="header__btn-login btn__open-login-form btn--white ">
+                    <a href="/login" class="header__btn-login btn__open-login-form btn--white">
                         ĐĂNG NHẬP
                     </a>
                     <a href="/register" class="header__btn-register btn__open-register-form btn--green">
@@ -46,22 +49,20 @@
                 </div>
                 {% else %}
                 <div class="header__user">
-                    <img class="header__user-img" src="./assets/homepage-assets/image/meo.jpeg" alt="" >
+                    <img class="header__user-img" src="./assets/homepage-assets/image/meo.jpeg" alt="" />
                     <div class="header__nav">Xin chào, {{user.username}}</div>
                     <ul class="header__user-subnav">
-                        <li><a class="header__user-subnav-info">Thông tin tài khoản</a></li>
+                        <li>
+                            <a class="header__user-subnav-info">Thông tin tài khoản</a>
+                        </li>
                         <li><a href="/logout">Đăng xuất</a></li>
                     </ul>
                 </div>
                 {%endif%}
-
-
             </div>
         </div>
 
-        {%block content%}
-
-        {%endblock%}
+        {%block content%} {%endblock%}
         <!-- Footer -->
         <div class="footer">
             <div class="grid">
@@ -69,9 +70,7 @@
                     <div class="col l-2-4 m-4">
                         <div class="footer__item">
                             <div class="footer__item-heading">Giờ hoạt động</div>
-                            <div class="footer__item-desc">
-                                9:00AM - 7:00PM
-                            </div>
+                            <div class="footer__item-desc">9:00AM - 7:00PM</div>
                         </div>
                     </div>
                     <div class="col l-2-4 m-4">
@@ -109,23 +108,23 @@
                             <div class="footer__item-icon">
                                 <a href=""><i class="fab fa-facebook"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/channel/UCYuKdJxV9HXNklgU5OX0rBw"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/channel/UCYuKdJxV9HXNklgU5OX0rBw"><i
+                                        class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="footer__logo">
+            <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="footer__logo" />
             <div class="footer__copyright">
                 © 2021 All Rights Reserved Terms of Use and Privacy Policy
             </div>
         </div>
-        {%block modal%}
-
-        {%endblock%}
     </div>
+    {%block modal%} {%endblock%}
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{% static './js/homepage-js/main.js' %}"></script>
     <script src="{% static './js/homepage-js/swipper.js' %}"></script>
 </body>
+
 </html>
