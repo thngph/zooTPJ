@@ -1,5 +1,5 @@
 from django.db import models
-from home.models import User
+from home.models import Profile
 
 
 # Create your models here.
@@ -7,10 +7,10 @@ from home.models import User
 class Ticket(models.Model):
     ticketID = models.AutoField(unique=True, primary_key=True)
     date_purchased = models.DateTimeField(auto_now_add=True)
-    ticket_type = models.CharField(max_length=1000)
+    ticket_type = models.CharField(max_length=100)
     # need modify here
     price = models.IntegerField(blank=False)
     user_ID = models.ForeignKey(
-        User,
+        Profile,
         on_delete=models.CASCADE,
     )

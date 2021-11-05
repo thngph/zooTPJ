@@ -1,5 +1,6 @@
 from django.db import models
-from home.models import User
+from home.models import Profile
+
 
 # Create your models here.
 
@@ -8,6 +9,6 @@ class Donate(models.Model):
     date_donated = models.DateTimeField(auto_now_add=True)
     amount = models.IntegerField(blank=False)
     user_ID = models.ForeignKey(
-            User,
-            on_delete=models.CASCADE,
+        Profile,
+        on_delete=models.CASCADE,
     )
