@@ -17,7 +17,6 @@
     border-radius: 3px;
     padding: 10px 15px;
     display: inline-block;
-    outline:none;
 }
 .btn--white
 {
@@ -25,10 +24,9 @@
     text-decoration: none;
     color: var(--green-color) ;
     background-color: var(--white-color);
-    border: solid 2px var(--white-color);
+    border: solid 2px var(--green-color);
     border-radius: 3px;
     padding: 10px 15px;
-    outline:none;
 }
 .section-heading--green
 {

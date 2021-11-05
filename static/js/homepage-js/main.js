@@ -118,12 +118,14 @@ videos.start()
 const closeModalBtns=$$('.auth-form__icon-close');
 const modal=$('.modal')
 const authForm=$('.auth-form')
+const userForm=$('.user')
 const registerAuthForm=$('.auth-form__register')
 const loginAuthForm=$('.auth-form__login')
-
+const closeUserFormBtn=$('.user-close-btn')
 const openRegisterBtns=$$('.btn__open-register-form')
 const openLoginBtns=$$('.btn__open-login-form')
 
+const openUserInfo=$('.header__user-subnav-info')
 
 for(const closeModalBtn of closeModalBtns) 
 {
@@ -152,13 +154,47 @@ for(const openRegisterBtn of openRegisterBtns)
         registerAuthForm.classList.add('open');
     }
 }
-modal.onclick=function()
+openUserInfo.onclick=function()
+{
+    modal.classList.add('open');
+    userForm.classList.add('open');
+}
+function closeModal()
 {
     modal.classList.remove('open');
     loginAuthForm.classList.remove('open');
     registerAuthForm.classList.remove('open');
+    userForm.classList.remove('open');
 }
+closeUserFormBtn.addEventListener('click',closeModal)
+modal.addEventListener('click',closeModal)
+
 authForm.addEventListener('click',function(event)
-    {
+{
       event.stopPropagation()
-    })
+})
+userForm.addEventListener('click',function(event)
+{
+      event.stopPropagation()
+})
+
+
+// TAB USER FORM
+const userOptionItems=$$('.user__option-item');
+const userTabWrapItems=$$('.user__tab-wrap-item')
+
+userOptionItems.forEach(function(userOptionItem,index) 
+{
+  const userTabWrapItem=userTabWrapItems[index];
+  userOptionItem.onclick=function()
+  {
+    var userTabWrapItemActive=document.querySelector('.user__tab-wrap-item.active');
+    var userOptionItemActive=document.querySelector('.user__option-item.active');
+
+    userTabWrapItemActive.classList.remove('active');
+    userOptionItemActive.classList.remove('active');
+
+    userTabWrapItem.classList.add('active')
+    this.classList.add('active')
+  }
+})
