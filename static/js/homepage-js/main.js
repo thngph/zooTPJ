@@ -169,10 +169,10 @@ function closeModal()
 closeUserFormBtn.addEventListener('click',closeModal)
 modal.addEventListener('click',closeModal)
 
-authForm.addEventListener('click',function(event)
-{
-      event.stopPropagation()
-})
+// authForm.addEventListener('click',function(event)
+// {
+//       event.stopPropagation()
+// })
 userForm.addEventListener('click',function(event)
 {
       event.stopPropagation()

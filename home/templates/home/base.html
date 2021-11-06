@@ -8,11 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/grid.css' %}" />
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/base.css' %}" />
-    <link rel="stylesheet" href="{% static './assets/css/main.css' %}" />
-    <link rel="stylesheet" href="{% static './assets/homepage-assets/css/main.css' %}" />
-    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-homepage/grid.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-homepage/base.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-homepage/main.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-homepage/responsive.css' %}" />
     <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +27,7 @@
         <div class="header">
             <div class="header__wrap">
                 <a href="/" class="header__logo-link">
-                    <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img" />
+                    <img src="{% static './image/image-homepage/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img" />
                 </a>
                 <ul class="header__nav">
                     <li class="header__nav-introduce">
@@ -49,7 +48,7 @@
                 </div>
                 {% else %}
                 <div class="header__user">
-                    <img class="header__user-img" src="./assets/homepage-assets/image/meo.jpeg" alt="" />
+                    <img class="header__user-img" src="./image/image-homepage/meo.jpeg" alt="" />
                     <div class="header__nav">Xin chào, {{user.username}}</div>
                     <ul class="header__user-subnav">
                         <li>
@@ -115,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <img src="{% static './assets/image/ZOOZALABIM-07.png' %}" alt="" class="footer__logo" />
+            <img src="{% static './image/image-homepage/ZOOZALABIM-07.png' %}" alt="" class="footer__logo" />
             <div class="footer__copyright">
                 © 2021 All Rights Reserved Terms of Use and Privacy Policy
             </div>

@@ -8,6 +8,8 @@ html
 {
     font-family: 'Noto Sans', sans-serif;
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 #main{
     background-color: var(--background-color);
@@ -212,7 +214,7 @@ html
 }
 .slide__img-first
 {
-    background: url(../image/Slide1.png) top center / cover no-repeat;
+    background: url(../image-homepage/Slide1.png) top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
@@ -220,7 +222,7 @@ html
 }
 .slide__img-second
 {
-    background: url(../image/Slide2.jpeg) top center / cover no-repeat;
+    background: url(../image-homepage/Slide2.jpeg) top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
@@ -228,7 +230,7 @@ html
 }
 .slide__img-third
 {
-    background: url(../image/Slide3.jpeg) top center / cover no-repeat;
+    background: url(../image-homepage/Slide3.jpeg) top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
