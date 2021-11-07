@@ -353,156 +353,230 @@
 
         {%block modal%}
         <div class="modal">
-        <div class="user">
-            <i class="user-close-btn fas fa-times"></i>
-            <div class="grid">
-                <div class="row no-gutters">
-                    <div class="col c-4">
-                        <div class="user__nav">
-                            <div class="user__avatar-wrap">
-                                <div style="background-image: url(/static/image/image-homepage/bird-ticket.jpg.png);" class="user__avatar-img"></div>
-                                <a href="" class="user__avatar-change-btn">Đổi ảnh</a>
+            <!-- FORM HIỆN THÔNG TIN NGƯỜI DÙNG -->
+            <div class="user">
+                <i class="user-close-btn fas fa-times"></i>
+                <div class="grid">
+                    <div class="row no-gutters">
+                        <div class="col c-4">
+                            <div class="user__nav">
+                                <div class="user__avatar-wrap">
+                                    <div style="background-image: url(/static/image/image-homepage/bird-ticket.jpg.png);" class="user__avatar-img"></div>
+                                    <a href="" class="user__avatar-change-btn">Đổi ảnh</a>
+                                </div>
+                                <div class="user__option-list">
+                                    <div class="user__option-info user__option-item active">Thông tin cá nhân</div>
+                                    <div class="user__option-ticket user__option-item">Vé đã mua</div>
+                                    <div class="user__optipn-donate user__option-item ">Lịch sử hỗ trợ</div>
+                                </div>
+                                <div class="user__control">
+                                    <div class="user__control-change-pwd">
+                                        Đổi mật khẩu
+                                    </div>
+                                </div>
                             </div>
-                            <div class="user__option-list">
-                                <div class="user__option-info user__option-item active">Thông tin cá nhân</div>
-                                <div class="user__option-ticket user__option-item">Vé đã mua</div>
-                                <div class="user__optipn-donate user__option-item ">Lịch sử hỗ trợ</div>
+                        </div>
+                        <div class="col c-8">
+                            <div class="user__tab-info-wrap user__tab-wrap-item active">
+                                <div class="user__tab-info">
+                                    <div class="user__info-item">
+                                        <div class="user__info-item-label">Tài khoản</div>
+                                        <input type="text" disabled value="hmh2906" class="user__info-change-input">
+                                    </div>
+                                    <div class="user__info-item">
+                                        <div class="user__info-item-label">Họ và tên</div>
+                                        <input type="text" value="Hà Minh Hùng" class="user__info-change-input">
+                                    </div>
+                                    <div class="user__info-item">
+                                        <div class="user__info-item-label">Số điện thoại</div>
+                                        <input type="tel" value="0363783603" class="user__info-change-input">
+                                    </div>
+                                    <div class="user__info-item">
+                                        <div class="user__info-item-label">Email</div>
+                                        <input type="gmail" value="minhhung@gmail.com" class="user__info-change-input">
+                                    </div>
+                                    <button class="user__info-save">Lưu</button>
+                                </div>
                             </div>
-                            <div class="user__control">
-                                <div class="user__control-change-pwd">
-                                    Đổi mật khẩu
+                            <div class="user__tab-ticket-wrap user__tab-wrap-item">
+                                <div class="user__tab-ticket">
+                                    <table class="user__tab-table">
+                                        <tr>
+                                        <th>ID</th>
+                                        <th>Ngày vé</th>
+                                        <th>Loại vé</th>
+                                        <th>Giá vé</th>
+                                        </tr>
+                                        <tr>
+                                        <td>244</td>
+                                        <td>22/11/2021</td>
+                                        <td>Người lớn</td>
+                                        <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>245</td>
+                                            <td>22/11/2021</td>
+                                            <td>Người lớn</td>
+                                            <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>246</td>
+                                            <td>22/11/2021</td>
+                                            <td>Người lớn</td>
+                                            <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>247</td>
+                                            <td>22/11/2021</td>
+                                            <td>Trẻ em</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>248</td>
+                                            <td>22/11/2021</td>
+                                            <td>Trẻ em</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>249</td>
+                                            <td>22/11/2021</td>
+                                            <td>Trẻ em</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>250</td>
+                                            <td>23/11/2021</td>
+                                            <td>Người lớn</td>
+                                            <td>10$</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="user__tab-donate-wrap user__tab-wrap-item">
+                                <div class="user__tab-donate">
+                                    <table class="user__tab-table">
+                                        <tr>
+                                        <th>ID</th>
+                                        <th>Ngày donate</th>
+                                        <th>Số tiền</th>
+                                        </tr>
+                                        <tr>
+                                        <td>244</td>
+                                        <td>22/11/2021</td>
+                                        <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>245</td>
+                                            <td>22/11/2021</td>
+                                            <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>246</td>
+                                            <td>22/11/2021</td>
+                                            <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>247</td>
+                                            <td>22/11/2021</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>248</td>
+                                            <td>22/11/2021</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>249</td>
+                                            <td>22/11/2021</td>
+                                            <td>5$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>250</td>
+                                            <td>23/11/2021</td>
+                                            <td>10$</td>
+                                        </tr>
+
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col c-8">
-                        <div class="user__tab-info-wrap user__tab-wrap-item active">
-                            <div class="user__tab-info">
-                                <div class="user__info-item">
-                                    <div class="user__info-item-label">Tài khoản</div>
-                                    <input type="text" disabled value="hmh2906" class="user__info-change-input">
-                                </div>
-                                <div class="user__info-item">
-                                    <div class="user__info-item-label">Họ và tên</div>
-                                    <input type="text" value="Hà Minh Hùng" class="user__info-change-input">
-                                </div>
-                                <div class="user__info-item">
-                                    <div class="user__info-item-label">Số điện thoại</div>
-                                    <input type="tel" value="0363783603" class="user__info-change-input">
-                                </div>
-                                <div class="user__info-item">
-                                    <div class="user__info-item-label">Email</div>
-                                    <input type="gmail" value="minhhung@gmail.com" class="user__info-change-input">
-                                </div>
-                                <button class="user__info-save">Lưu</button>
-                            </div>
-                        </div>
-                        <div class="user__tab-ticket-wrap user__tab-wrap-item">
-                            <div class="user__tab-ticket">
-                                <table class="user__tab-table">
-                                    <tr>
-                                    <th>ID</th>
-                                    <th>Ngày vé</th>
-                                    <th>Loại vé</th>
-                                    <th>Giá vé</th>
-                                    </tr>
-                                    <tr>
-                                    <td>244</td>
-                                    <td>22/11/2021</td>
-                                    <td>Người lớn</td>
-                                    <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>245</td>
-                                        <td>22/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>246</td>
-                                        <td>22/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>247</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>248</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>249</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>250</td>
-                                        <td>23/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
 
-                                </table>
+                </div>
+            </div>
+            <!-- FORM ĐĂNG NHẬP -->
+            <div class="auth-form auth-form__login">
+                <div class="auth-form__container">
+                    <i class="auth-form__icon-close fas fa-times"></i>
+                    <div class="auth-form__heading">
+                        ĐĂNG NHẬP
+                    </div>
+                    <div class="auth-form__body">
+                        <form action="." method="POST">
+                             {% csrf_token %}
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" name="username" autofocus="" required="" id="id_username" placeholder="Tài khoản">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" name="password" required="" id="id_password" placeholder="Mật khẩu">
+                                </div>
                             </div>
-                        </div>
-                        <div class="user__tab-donate-wrap user__tab-wrap-item">
-                            <div class="user__tab-donate">
-                                <table class="user__tab-table">
-                                    <tr>
-                                    <th>ID</th>
-                                    <th>Ngày donate</th>
-                                    <th>Số tiền</th>
-                                    </tr>
-                                    <tr>
-                                    <td>244</td>
-                                    <td>22/11/2021</td>
-                                    <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>245</td>
-                                        <td>22/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>246</td>
-                                        <td>22/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>247</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>248</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>249</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>250</td>
-                                        <td>23/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
-
-                                </table>
+                            <div class="auth-form__control">
+                                <input type="hidden" name="next" value="/">
+                                <input type="submit" value="Đăng nhập" class="auth-form__btn">
+                                <a href=""class="auth-form__btn-forget-password">
+                                    Quên mật khẩu
+                                </a>
                             </div>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="auth-form__footer">
+                        <span>Chưa có tài khoản ?</span>
+                        <button href="" class="auth-form__footer-btn-control btn__open-register-form">
+                            Đăng ký
+                        </button>
                     </div>
                 </div>
-
             </div>
-        </div>
+
+            <!-- FORM ĐĂNG KÍ -->
+            <div class="auth-form auth-form__register">
+                <div class="auth-form__container">
+                    <i class="auth-form__icon-close fas fa-times"></i>
+                    <div class="auth-form__heading">
+                        ĐĂNG KÝ
+                    </div>
+                    <div class="auth-form__body">
+                        <form class="login_form" action="." method="POST">
+                            {% csrf_token %}
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" name="username" maxlength="30" required="" id="id_username" placeholder="Tài khoản">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" name="password1" required="" id="id_password1" placeholder="Mật khẩu">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="auth-form__control">
+                                <input type="submit" value="Đăng ký" class="auth-form__btn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="auth-form__footer">
+                        <span>Đã có tài khoản ?</span>
+                        <button class="auth-form__footer-btn-control btn__open-login-form">
+                            Đăng nhập
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         {%endblock%}
