@@ -1,21 +1,24 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 # API- Rest Framework
 from django.http import HttpResponseRedirect
-from rest_framework.status import HTTP_200_OK
-from .serializers import ProfileSerializer, RegisterSerializer
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .models import Profile
-from django.contrib.auth.models import User
-from .forms import RegistrationForm
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
+from rest_framework.status import HTTP_200_OK
+from rest_framework.views import APIView
 
+from .forms import RegistrationForm
+from .models import Profile
+from .serializers import ProfileSerializer, RegisterSerializer
+
+from animals.models import Animal
 
 # Create your views here.
 def index(request):
-    return render(request, 'home/index.html')
+    data = {'Animals': Animal.objects.all()[:4]}
+    return render(request, 'home/index.html', data)
 
 
 def register(request):

@@ -181,42 +181,47 @@
                     </div>
                     <div class="grid wide">
                         <div class="row image-animal__list">
-                            <div class="col l-3 m-6 ">
+                            {% for item in Animals %}
+                                {% if item %}
+                                   <div class="col l-3 m-6 ">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
-                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">
+                                        <img src="{{item.img.url}}" alt="">
                                     </div>
-                                    <div class="image-animal__item-name">Thỏ</div>
-                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
+                                    <div class="image-animal__item-name">{{item.animal_name}}</div>
+                                    <div class="image-animal__item-desc">{{item.description}}</div>
                                 </a>
                             </div>
-                            <div class="col l-3 m-6">
-                                <a href="" class="image-animal__item">
-                                    <div class="image-animal__item-img">
-                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">
-                                    </div>
-                                    <div class="image-animal__item-name">Thỏ</div>
-                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
-                                </a>
-                            </div>
-                            <div class="col l-3 m-6">
-                                <a href="" class="image-animal__item">
-                                    <div class="image-animal__item-img">
-                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">
-                                    </div>
-                                    <div class="image-animal__item-name">Thỏ</div>
-                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha </div>
-                                </a>
-                            </div>
-                            <div class="col l-3 m-6">
-                                <a href="" class="image-animal__item">
-                                    <div class="image-animal__item-img">
-                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">
-                                    </div>
-                                    <div class="image-animal__item-name">Thỏ</div>
-                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>
-                                </a>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
+
+<!--                            <div class="col l-3 m-6">-->
+<!--                                <a href="" class="image-animal__item">-->
+<!--                                    <div class="image-animal__item-img">-->
+<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
+<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="col l-3 m-6">-->
+<!--                                <a href="" class="image-animal__item">-->
+<!--                                    <div class="image-animal__item-img">-->
+<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
+<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="col l-3 m-6">-->
+<!--                                <a href="" class="image-animal__item">-->
+<!--                                    <div class="image-animal__item-img">-->
+<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
+<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>-->
+<!--                                </a>-->
+<!--                            </div>-->
                             <a  href="animals/" class="image-animal__more-text">
                                 Xem thêm...
                             </a>

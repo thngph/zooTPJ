@@ -15,7 +15,7 @@ class Profile(models.Model):
     name = models.CharField(default='new user', max_length=50)
     email = models.EmailField(max_length=50)
     contact = models.CharField(max_length=15)
-    img = models.FileField(default='')
+    img = models.ImageField(default='')
     objects = models.Manager()
 
 

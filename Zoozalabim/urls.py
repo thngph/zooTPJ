@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from donate.views import DonateAPI
@@ -26,4 +28,5 @@ urlpatterns = [
     path('animals/', include('animals.urls')),
     path('api/', include('rest_framework.urls')),
     path('api/donate/', DonateAPI.as_view(), name='donate_api_view')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
