@@ -112,7 +112,7 @@ videos.start();
 // FORM ĐĂNG KÝ-ĐĂNG NHẬP
 const closeModalBtns = $$(".auth-form__icon-close");
 const modal = $(".modal");
-const authForm = $(".auth-form");
+const authForms = $$(".auth-form");
 const userForm = $(".user");
 const registerAuthForm = $(".auth-form__register");
 const loginAuthForm = $(".auth-form__login");
@@ -134,37 +134,44 @@ for (const closeModalBtn of closeModalBtns) {
       closeModal();
   };
 }
-
-for (const openLoginBtn of openLoginBtns) {
+// Mở form đăng nhập
+openLoginBtns.forEach(function (openLoginBtn) {
   openLoginBtn.onclick = function () {
     modal.classList.add("open");
     loginAuthForm.classList.add("open");
     registerAuthForm.classList.remove("open");
   };
-}
-for (const openRegisterBtn of openRegisterBtns) {
+})
+// Mở form đăng kí
+openRegisterBtns.forEach(function (openRegisterBtn) {
   openRegisterBtn.onclick = function () 
   {
     modal.classList.add("open");
     loginAuthForm.classList.remove("open");
     registerAuthForm.classList.add("open");
   };
-}
-
-closeUserFormBtn.addEventListener("click", closeModal);
+})
 
 modal.addEventListener("click", closeModal);
 
-authForm.addEventListener('click',function(event)
+authForms.forEach(function(authForm) 
 {
+    authForm.onclick = function(event)
+    {
       event.stopPropagation()
-})
-
+    }
+}
+)
 // TAB USER FORM
-openUserInfo.onclick = function () {
+var openUserForm=function()
+{
   modal.classList.add("open");
   userForm.classList.add("open");
-};
+}
+if(openUserInfo)
+{
+    openUserInfo.addEventListener("click", openUserForm);
+}
 
 const userOptionItems = $$(".user__option-item");
 const userTabWrapItems = $$(".user__tab-wrap-item");
@@ -186,7 +193,9 @@ userOptionItems.forEach(function (userOptionItem, index) {
     this.classList.add("active");
   };
 });
-
+// Đóng form user
+closeUserFormBtn.addEventListener("click", closeModal);
+// Chống nổi bọt
 userForm.addEventListener("click", function (event) {
   event.stopPropagation();
 });
