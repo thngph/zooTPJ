@@ -39,10 +39,12 @@ class RegisterAPI(APIView):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             user = serializer.save()
-            return Response({
-                "user": RegisterSerializer(serializer.data),
-                # "token": AuthToken.objects.create(user)[1]
-            })
+            return Response(serializer.data, status=201)
+            return Response(serializer.errors, status=400)
+            # return Response({
+            #     # "user": RegisterSerializer(serializer.data),
+            #     # "token": AuthToken.objects.create(user)[1],
+            # })
 
 
 # Profile API
@@ -60,26 +62,26 @@ class ProfileAPI(APIView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
-    @csrf_exempt
-    def Profile_detail(self, request, pk):
-        try:
-            snippet = Profile.objects.get(pk=pk)
-        except Profile.DoesNotExist():
-            return HttpResponse(status=404)
-        Pofile_Detail = Profile.objects.get(pk=pk)
-        if request.method == 'GET':
-            serializer = ProfileSerializer(Pofile_Detail)
-            return Response(serializer.data)
-
-        elif request.method == 'PUT':
-            data = JSONParser().parse(request)
-            serializer = ProfileSerializer(Pofile_Detail, data=data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=400)
-
-        elif request.method == 'DELETE':
-            Profile.delete()
-            return HttpResponse(status=204)
+    # @csrf_exempt
+    # def Profile_detail(self, request, pk):
+    #     try:
+    #         snippet = Profile.objects.get(pk=pk)
+    #     except Profile.DoesNotExist():
+    #         return HttpResponse(status=404)
+    #     Pofile_Detail = Profile.objects.get(pk=pk)
+    #     if request.method == 'GET':
+    #         serializer = ProfileSerializer(Pofile_Detail)
+    #         return Response(serializer.data)
+    #
+    #     elif request.method == 'PUT':
+    #         data = JSONParser().parse(request)
+    #         serializer = ProfileSerializer(Pofile_Detail, data=data)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             return Response(serializer.data)
+    #         return Response(serializer.errors, status=400)
+    #
+    #     elif request.method == 'DELETE':
+    #         Profile.delete()
+    #         return HttpResponse(status=204)
 
