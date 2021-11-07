@@ -214,7 +214,7 @@ html
 }
 .slide__img-first
 {
-    background: url(../image-homepage/Slide1.png) top center / cover no-repeat;
+    background: url('/static/image/image-homepage/Slide1.png') top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
@@ -222,7 +222,7 @@ html
 }
 .slide__img-second
 {
-    background: url(../image-homepage/Slide2.jpeg) top center / cover no-repeat;
+    background: url('/static/image/image-homepage/Slide2.jpeg') top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
@@ -230,7 +230,7 @@ html
 }
 .slide__img-third
 {
-    background: url(../image-homepage/Slide3.jpeg) top center / cover no-repeat;
+    background: url('/static/image/image-homepage/Slide3.jpeg') top center / cover no-repeat;
     padding-top: 47%;
     background-color: #cccccc;
     position: relative;
