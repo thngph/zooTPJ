@@ -16,15 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from donate.views import DonateAPI
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('donate/', include('donate.urls')),
     path('ticket/', include('ticket.urls')),
-<<<<<<< HEAD
     path('animals/', include('animals.urls')),
-=======
     path('api/', include('rest_framework.urls')),
     path('api/donate/', DonateAPI.as_view(), name='donate_api_view')
->>>>>>> efc9da784246427e75eb4dea7789f0f582a0ec10
 ]
