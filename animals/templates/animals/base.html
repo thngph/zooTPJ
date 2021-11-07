@@ -8,9 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="{% static './css/css-homepage/grid.css' %}" />
     <link rel="stylesheet" href="{% static './css/css-homepage/base.css' %}" />
     <link rel="stylesheet" href="{% static './css/css-homepage/main.css' %}" />
+
+    <link rel="stylesheet" href="{% static './css/css-animal/base.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-animal/grid.css' %}" />
+    <link rel="stylesheet" href="{% static './css/css-animal/main.css' %}" />
     <link rel="stylesheet" href="{% static './css/css-homepage/responsive.css' %}" />
     <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +36,7 @@
                 </a>
                 <ul class="header__nav">
                     <li class="header__nav-introduce">
-                        <a href="">Trang chủ</a>
+                        <a href="/">Trang chủ</a>
                     </li>
                     <li class=""><a href="animals/">Phân loài</a></li>
                     <li class=""><a href="news/">Tin tức</a></li>
@@ -64,6 +69,8 @@
 
         {%block content%} {%endblock%}
         <!-- Footer -->
+
+
         <div class="footer">
             <div class="grid">
                 <div class="row footer__list">
@@ -122,9 +129,7 @@
         </div>
     </div>
     {%block modal%} {%endblock%}
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static './js/homepage-js/main.js' %}"></script>
-    <script src="{% static './js/homepage-js/swipper.js' %}"></script>
+    <script src="{% static './js/animal-js/main.js' %}"></script>
 </body>
 
 </html>

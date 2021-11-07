@@ -14,51 +14,51 @@ const animal={
     animalList: [
         {
             name:'Nai',
-            link:'./assets/animal-assets/image/nai.jpeg'
+            link:'/static/image/image-animal/nai.jpeg'
         },
         {
             name:'Cáo',
-            link:'./assets/animal-assets/image/cao.jpeg'
+            link:'/static/image/image-animal/cao.jpeg'
         },
         {
             name:'Gấu',
-            link:'./assets/animal-assets/image/gau.jpeg'
+            link:'/static/image/image-animal/gau.jpeg'
         },
         {
             name:'Công',
-            link:'./assets/animal-assets/image/cong.jpeg'
+            link:'/static/image/image-animal/cong.jpeg'
         },
         {
             name:'Hươu Sao',
-            link:'./assets/animal-assets/image/huousao.jpg'
+            link:'/static/image/image-animal/huousao.jpg'
         },
         {
             name:'Khỉ Đột',
-            link:'./assets/animal-assets/image/khidot.jpg'
+            link:'/static/image/image-animal/khidot.jpg'
         },
         {
             name:'Rùa',
-            link:'./assets/animal-assets/image/rua.jpeg'
+            link:'/static/image/image-animal/rua.jpeg'
         },
         {
             name:'Vẹt',
-            link:'./assets/animal-assets/image/vet.jpeg'
+            link:'/static/image/image-animal/vet.jpeg'
         },
         {
             name:'Nhím',
-            link:'./assets/animal-assets/image/nhim.jpeg'
+            link:'/static/image/image-animal/nhim.jpeg'
         },
         {
             name:'Voi',
-            link:'./assets/animal-assets/image/voi.jpeg'
+            link:'/static/image/image-animal/voi.jpeg'
         },
         {
             name:'Sóc',
-            link:'./assets/animal-assets/image/soc.jpeg'
+            link:'/static/image/image-animal/soc.jpeg'
         },
         {
             name:'Sư tử',
-            link:'./assets/animal-assets/image/sutu.jpeg'
+            link:'/static/image/image-animal/sutu.jpeg'
         },
     ],
     render: function() {
