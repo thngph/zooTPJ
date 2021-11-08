@@ -12,7 +12,7 @@ html
     margin-left: calc( 100% / 24 );
 }
 /* Header */
-.header
+/* .header
 {
     display: flex;
     justify-content: space-between;
@@ -84,7 +84,7 @@ html
 .header__btn-buy-ticket:hover
 {
     opacity: 0.8;
-}
+} */
 /* Slider */
 .slider
 {
@@ -95,8 +95,7 @@ html
 .slider-img
 {
     padding-top: 50%;
-    background: url(../image/donate-slider.jpeg) top center / cover no-repeat;
-    margin-top: 46px;
+    background: url(/static/image/image-ticket/donate-slider.jpeg) top center / cover no-repeat;
     color: white;
     filter: brightness(80%);
 }
@@ -264,11 +263,11 @@ html
     font-size: 30px;
 }
 /* footer */
-.footer
+/* .footer
 {
     text-align: center;
     background-color: var(--green-color);
     color: var(--white-color);
     padding: 10px 0; 
     margin-top: 50px;  
-}
+} */

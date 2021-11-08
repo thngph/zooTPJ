@@ -14,7 +14,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }   
 /* Header */
-.header
+/* .header
 {
     display: flex;
     justify-content: space-between;
@@ -86,7 +86,7 @@ input[type=number]::-webkit-outer-spin-button {
 .header__btn-buy-ticket:hover
 {
     opacity: 0.8;
-}
+} */
 /* Slider */
 .slider
 {
@@ -97,8 +97,7 @@ input[type=number]::-webkit-outer-spin-button {
 .slider-img
 {
     padding-top: 50%;
-    background: url(../image/donate-slider.jpeg) top center / cover no-repeat;
-    margin-top: 46px;
+    background: url(/static/image/image-donate/donate-slider.jpeg) top center / cover no-repeat;
     color: white;
     filter: brightness(80%);
 }
@@ -128,7 +127,7 @@ input[type=number]::-webkit-outer-spin-button {
 .donate__img
 {
     padding-top: 120%;
-    background: url(../image/content-img.jpeg) top center / cover no-repeat;
+    background: url(/static/image/image-donate/content-img.jpeg) top center / cover no-repeat;
     color: white;
     filter: brightness(80%);
 }

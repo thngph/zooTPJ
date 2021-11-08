@@ -3,22 +3,6 @@
 
 {%block content%}
     <div class="main">
-        <div class="header">
-            <a href="/" class="header__logo">
-                <img src="./assets/donate-assets/image/ZOOZALABIM-07.png" alt="">
-            </a>
-            <ul class="header__nav">
-                <li class="header__nav-introduce"><a href="http://127.0.0.1:5500/homepage.html">Giới thiệu</a></li>
-                <li class="header__nav-animal"><a href="http://127.0.0.1:5500/animal.html">Muôn loài</a></li>
-                <li class="header__nav-news"><a href="#news">Tin tức</a></li>
-                <li class="header__nav-contact"><a href="http://127.0.0.1:5500/homepage.html">Liên hệ</a></li>
-            </ul>
-            <div class="header__btn">
-                <a href="{% url 'ticket'%}" class="header__btn-buy-ticket">
-                    MUA VÉ
-                </a>
-            </div>
-        </div>
         <div class="slider">
             <div class="slider-img"></div>
             <div class="slider-text">
@@ -75,7 +59,7 @@
                             </div>
                             <a href="" class="donate__btn">
                                 <p>THANH TOÁN VỚI</p>
-                                <img src="./assets/donate-assets/image/paypal-logo.png" alt="" class="donate__btn-logo-paypal">
+                                <img src="{%static './image/image-donate/paypal-logo.png' %}" alt="" class="donate__btn-logo-paypal">
                             </a>
                         </div>
                         <div class="col l-5 m-12">
@@ -91,7 +75,7 @@
                         <div class="col l-4 m-6">
                             <div class="donate-other__item">
                                 <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
                                 </div>
                                 <div class="donate-other__item-content">
                                     <div class="donate-other__item-title">Hỗ trợ theo tháng</div>
@@ -103,7 +87,7 @@
                         <div class="col l-4 m-6">
                             <div class="donate-other__item">
                                 <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
                                 </div>
                                 <div class="donate-other__item-content">
                                     <div class="donate-other__item-title">Mua vé đến ZOOZALABIM</div>
@@ -115,7 +99,7 @@
                         <div class="col l-4  m-6">
                             <div class="donate-other__item">
                                 <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(./assets/donate-assets/image/bao.jpeg)"></div>
+                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
                                 </div>
                                 <div class="donate-other__item-content">
                                     <div class="donate-other__item-title">Chia sẻ website</div>
