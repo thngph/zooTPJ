@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from home.models import Profile
 
@@ -9,6 +10,7 @@ class Donate(models.Model):
     date_donated = models.DateTimeField(auto_now_add=True)
     amount = models.IntegerField(blank=False)
     user_ID = models.ForeignKey(
-        Profile,
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+        default=1
     )
