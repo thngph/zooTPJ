@@ -18,7 +18,9 @@ from animals.models import Animal
 # Create your views here.
 def index(request):
     data = {'Animals': Animal.objects.all()[:4]}
-    user = User.objects.get(id=request.user.id)
+    user = None
+    if request.user.id:
+        user = User.objects.get(id=request.user.id)
     return render(request, 'home/index.html', data, user)
 
 
