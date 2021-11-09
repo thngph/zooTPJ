@@ -21,14 +21,18 @@
             </div>
             <div class="grid wide">
                 <div class="row category__wrap" >
-                    <!-- <div class="col l-4 m-6 category__item">
-                        <a href="" class="category__item-wrap">
-                            <div class="category__item-img" style="background-image: url(./assets/animal-assets/image/nai.jpeg);"></div>
+                    {% for item in Animals %}
+                    {%if item%}
+                    <div class="col l-4 m-6 category__item">
+                        <div href="" class="category__item-wrap">
+                            <div class="category__item-img" style="background-image: url({{item.img.url}});"></div>
                             <div class="category__item-name">
-                                NAI
+                                {{item.animal_name}}
                             </div>
-                        </a>
-                    </div> -->
+                        </div>
+                    </div>
+                    {%endif%}
+                    {%endfor%}
                 </div>
                 <div class="category__more">
                     XEM THÊM
@@ -40,6 +44,23 @@
 {% endblock %}
 {%block modal %}
 <div class="modal">
-
+    {% for item in Animals %}
+    {%if item%}
+    <div class="animal-main">
+        <i class="fas fa-times close-modal-btn"></i>
+        <div class="animal-main__img-wrap">
+            <div class="animal-main__img" style="background-image: url({{item.img.url}});"> </div>
+        </div>
+        <div class="animal-main__wrap-text">
+            <div class="animal-main__name">
+                {{item.animal_name}}
+            </div>
+            <div class="animal-main__desc">
+                {{item.description}}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
 </div>
 {% endblock %}
