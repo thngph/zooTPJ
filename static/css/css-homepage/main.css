@@ -562,10 +562,10 @@ html
 {
     color: var(--black-color);
     font-size: 18px;
-    padding: 0 20px 30px;
+    margin: 0 20px 30px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     overflow: hidden;
 }
 .image-animal__item:hover
