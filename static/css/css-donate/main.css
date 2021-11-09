@@ -7,86 +7,14 @@
 html
 {
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
     margin: 0; 
 }   
-/* Header */
-/* .header
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--header-height);
-    width: 100%;
-    background-color: var(--white-color);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-    z-index: 10;
-    height: 60px;
-    padding:0 80px ;
-}
-.header__logo
-{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    display: inline-block;
-    flex: 1;
-}
-.header__logo img
-{
-    max-width: 200px;
-}
-.header__nav
-{
-    display: flex;
-    list-style-type: none; 
-    justify-content: space-around; 
-    margin-right: 20px;
-}
-.header__nav li
-{
-   display: inline-block
-}
-.header__subnav-animal li:hover a,
-.header__nav>li:hover>a
-{
-    background-color: var(--green-color);
-    color: var(--white-color);
-}
-.header__nav>li>a
-{
-    text-decoration: none;
-    color: var(--green-color);
-    font-size: 18px;
-    padding: 10px 20px; 
-}
-.header__btn-buy-ticket
-{
-    padding: 5px 20px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 500;
-    position: relative;
-}
-.header__btn-buy-ticket
-{
-    border: 2px solid var(--green-color);
-    color: var(--green-color);
-    background-color: var(--white-color);
-}
-
-.header__btn-buy-ticket:hover
-{
-    opacity: 0.8;
-} */
 /* Slider */
 .slider
 {
@@ -126,47 +54,26 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .donate__img
 {
+    margin: 10px;
     padding-top: 120%;
     background: url(/static/image/image-donate/content-img.jpeg) top center / cover no-repeat;
     color: white;
     filter: brightness(80%);
 }
-.donate__type
-{
-    display: flex;
-    font-size:20px;
-    margin-top: 40px;
-    font-weight: 500;
-}
-.donate__type-now
-{
-    color: var(--green-color);
-    cursor: pointer;
-}
-.donate__type-now.active
-{
-    border-bottom: 3px solid var(--green-color);
-}
-.donate__type-month
-{
-    margin-left: 20px;
-    color: var(--green-color);
-    cursor: pointer;
-}
 .donate__price-list
 {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .donate__price-item
 {
     color: var(--black-color);
-    width: 90%;
-    padding: 20px 0;
+    width: 80%;
+    padding: 15px 0;
     background-color: var(--white-color);
     border: 3px solid var(--yellow-color);
     text-align: center;
-    font-size:30px;
-    margin-top: 20px;
+    font-size:25px;
+    margin-top: 15px;
     cursor: pointer;
     display:inline-block;
     font-weight: 500;
@@ -183,14 +90,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .donate__input
 {
-    margin-top: 20px;
+    margin-top: 15px;
     position: relative;
 }
 .donate__input-fill
 {
     width: 100%;
-    padding: 10px 20px;
-    font-size: 25px;
+    padding: 10px 50px;
+    font-size: 20px;
     font-weight: 500;
     border: 2px solid #ccc;
 }
@@ -198,21 +105,33 @@ input[type=number]::-webkit-outer-spin-button {
 {
     content:'$';
     position: absolute;
-    right: 20px;
-    font-size: 30px;
+    left: 20px;
+    font-size: 25px;
     font-weight: 500;
     color:var(--black-color);
-    top:50%;
+    top:47%;
     transform: translateY(-50%);
 }
-.donate__btn-logo-paypal
+.donate__fill input
 {
-    max-width: 100px;
-    margin-left: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    font-size:20px;
+    margin: 15px 0 0;
+    border: 2px solid #ccc;
+}
+#card-element
+{
+    margin-top: 15px;
+}
+.donate__btn-wrap
+{
+    display: flex;
+    justify-content: center;
 }
 .donate__btn
 {
-    margin-top: 20px;
+    margin-top: 20px ;
     display: flex;
     align-items: center;
     background-color: var(--yellow-color);
@@ -220,7 +139,20 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: center;
     border-radius: 5px;
     text-decoration: none;
-    
+    cursor: pointer;
+    padding: 15px 50px;
+}
+.donate__btn:hover
+{
+    opacity: 0.8
+}
+.title-content
+{
+    margin-top: 10px;
+    display: block;
+    font-size: 24px;
+    color: var(--black-color);
+    font-weight: 700;
 }
 /* Donate other */
 .donate-other{
@@ -310,32 +242,22 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Footer */
-.footer
-{
-    text-align: center;
-    background-color: var(--green-color);
-    color: var(--white-color);
-    padding: 10px 0; 
-    margin-top: 50px;  
-}
-
 
 /* Stripe element */
-.StripeElement {
-		  box-sizing: border-box;
+.StripeElement 
+{
+    box-sizing: border-box;
 
-		  height: 40px;
+    padding: 10px 12px;
 
-		  padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
 
-		  border: 1px solid transparent;
-		  border-radius: 4px;
-		  background-color: white;
-
-		  box-shadow: 0 1px 3px 0 #e6ebf1;
-		  -webkit-transition: box-shadow 150ms ease;
-		  transition: box-shadow 150ms ease;
-		}
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
 
 .StripeElement--focus {
   box-shadow: 0 1px 3px 0 #cfd7df;
@@ -347,4 +269,56 @@ input[type=number]::-webkit-outer-spin-button {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+
+/* SUCCESS */
+#box
+{
+    min-height:800px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    text-align: center;
+}
+.success-icon {
+    font-size: 60px;
+    border: 5px solid var(--green-color);
+    border-radius:50%;
+    padding:40px;
+    color: var(--green-color);
+}
+.success-title{
+    margin-top: 20px ;
+    font-size:30px;
+    color: var(--green-color);
+}
+.success-content
+{
+    margin-top:30px;
+    font-size: 25px;
+    color: var(--black-color)
+}
+.success-btn-back
+{
+    margin-top: 90px;
+    text-decoration: none;
+    color: var(--green-color);
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 10px 24px;
+    border: 2px solid var(--green-color);
+    font-size: 25px;
+}
+.success-btn-back:hover
+{
+    opacity: 0.8;
 }

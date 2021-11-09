@@ -2,232 +2,226 @@
 {%load static%}
 
 {%block content%}
+<div class="slider">
+  <div class="slider-img"></div>
+  <div class="slider-text">
+    HÃY CHUNG TAY
+    <br>BẢO VỆ
+  </div>
+</div>
+<div class="content">
+  <div class="donate__wrap">
+    <div class="grid wide">
+      <div class="row">
+        <div class="col l-7 m-12">
+          <h2 class="donate-heading">
+            Đóng góp của bạn, nghĩa vụ của chúng tôi
+          </h2>
+          <script src="https://js.stripe.com/v3/"></script>
+          <div class="">
+            <form action="{% url 'charge' %}" method="post" id="payment-form">
+              {% csrf_token %}
 
-
-
-    <div class="main">
-        <div class="slider">
-            <div class="slider-img"></div>
-            <div class="slider-text">
-                HÃY CHUNG TAY 
-                <br>BẢO VỆ
-            </div>
-        </div>
-        <div class="content">
-            <div class="donate__wrap">
-                <div class="grid wide">
+              <div class="form-field-12">
+                <label for="amount">
+                  <h2 class="title-content">Chọn khoản tiền bạn muốn hỗ trợ:</h2>
+                </label>
+                <div class="donate__price-list">
+                  <!-- <h2>Chọn số tiền tài trợ</h2> -->
+                  <div class="grid">
                     <div class="row">
-                        <div class="col l-7 m-12">
-                            <h2 class="donate-heading">
-                               Đóng góp của bạn, nghĩa vụ của chúng tôi 
-                            </h2>
-                            <script src="https://js.stripe.com/v3/"></script>
-                            <div class="">
-                                <form action="{% url 'charge' %}" method="post" id="payment-form">
-                                    {% csrf_token %}
-                                    <div class="form-field-12">
-                                        <label for="amount"><h2>Chọn khoản tiền bạn muốn hỗ trợ:</h2></label>
-                                        <select class="donate__price-list" required name="amount" id="amount">
+                      <div class="col c-4">
+                        <div class="donate__price-item">$10</div>
+                      </div>
+                      <div class="col c-4">
+                        <div class="donate__price-item">$50</div>
+                      </div>
+                      <div class="col c-4">
+                        <div class="donate__price-item">$100</div>
+                      </div>
+                      <div class="col c-4">
+                        <div class="donate__price-item">$200</div>
+                      </div>
+                      <div class="col c-4">
+                        <div class="donate__price-item">$500</div>
+                      </div>
+                      <div class="col c-4">
+                        <div class="donate__price-item">$1000</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="donate__input-wrap">
+                  <h2 class="donate__input-heading">Số tiền tài trợ</h2>
+                  <div class="donate__input">
+                    <input required name="amount" id="amount" class="donate__input-fill" type="number"
+                      placeholder="Nhập số tiền">
+                  </div>
+                </div>
+                <!-- <select class="donate__price-list" required name="amount" id="amount">
                                           <option selected value="5">$5</option>
                                           <option value="10">$10</option>
                                           <option value="25">$25</option>
-                                        </select>
-                                    </div>
+                                        </select> -->
+              </div>
+              <label class="title-content" for="" class="label">Điền thông tin: </label>
+              <div class="donate__fill">
+                <input required type="text" name="email" placeholder="Nhập Email">
+              </div>
 
-                                    <div class="donate__type">
-                                        <input  required type="text" name="email" placeholder="email...">
-                                    </div>
+              <div class="donate__fill">
+                <input required type="text" name="nickname" placeholder="Nhập Nickname">
+              </div>
 
-                                    <div class="donate__type">
-                                        <input required type="text" name="nickname" placeholder="Nickname...">
-                                    </div>
-
-                                  <div class="form-row">
-                                    <label for="card-element">
-                                        <h2>Nhập thẻ tín dụng hoặc thẻ ghi nợ:</h2>
-                                    </label>
-                                    <div id="card-element">
-                                      <!-- A Stripe Element will be inserted here. -->
-                                    </div>
-
-                                    <!-- Used to display form errors. -->
-                                    <div id="card-errors" role="alert"></div>
-                                  </div>
-
-                                  <div style="clear:left"></div>
-                                  <hr>
-
-                                    <input  class="donate__btn" type="submit" value="Hỗ trợ" name="">
-
-                                </form>
-                            </div>
-
-<!--                            <div class="donate__type">-->
-<!--                                <div class="donate__type-now active">-->
-<!--                                    Tài trợ ngay-->
-<!--                                </div>-->
-<!--                                <div class="donate__type-month">-->
-<!--                                    Tài trợ hàng tháng-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="donate__price-list">-->
-<!--                                <h2>Chọn số tiền tài trợ</h2>-->
-<!--                                <div class="grid">-->
-<!--                                    <div class="row">-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">10$</div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">50$</div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">100$</div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">200$</div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">500$</div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col c-4">-->
-<!--                                            <div class="donate__price-item">1000$</div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="donate__input-wrap">-->
-<!--                                <h2 class="donate__input-heading">Số tiền tài trợ</h2>-->
-<!--                                <div class="donate__input">-->
-<!--                                    <input class="donate__input-fill" type="number" placeholder="Nhập số tiền">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="" class="donate__btn">-->
-<!--                                <p>THANH TOÁN VỚI</p>-->
-<!--                                <img src="{%static './image/image-donate/paypal-logo.png' %}" alt="" class="donate__btn-logo-paypal">-->
-<!--                            </a>-->
-<!--                        </div>-->
-                        <div class="col l-5 m-12">
-                            <div class="donate__img"></div>
-                        </div>
-                    </div>
+              <div class="form-row">
+                <label for="card-element">
+                  <h2 class="title-content">Nhập thẻ tín dụng hoặc thẻ ghi nợ:</h2>
+                </label>
+                <div id="card-element">
+                  <!-- A Stripe Element will be inserted here. -->
                 </div>
-            </div>
-            <div class="donate-other">
-                <div class="grid wide">
-                    <h2 class="donate-other-heading">CÁC HÌNH THỨC HỖ TRỢ KHÁC</h2>
-                    <div class="row donate-other__list">
-                        <div class="col l-4 m-6">
-                            <div class="donate-other__item">
-                                <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
-                                </div>
-                                <div class="donate-other__item-content">
-                                    <div class="donate-other__item-title">Hỗ trợ theo tháng</div>
-                                    <div class="donate-other__item-desc">Trở thành thanh viên của ZOOZALABIM với số tiền mỗi tháng</div>
-                                </div>
-                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
-                            </div>
-                        </div>
-                        <div class="col l-4 m-6">
-                            <div class="donate-other__item">
-                                <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
-                                </div>
-                                <div class="donate-other__item-content">
-                                    <div class="donate-other__item-title">Mua vé đến ZOOZALABIM</div>
-                                    <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú</div>
-                                </div>
-                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
-                            </div>
-                        </div>
-                        <div class="col l-4  m-6">
-                            <div class="donate-other__item">
-                                <div class="donate-other__item-img-wrap">
-                                    <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)"></div>
-                                </div>
-                                <div class="donate-other__item-content">
-                                    <div class="donate-other__item-title">Chia sẻ website</div>
-                                    <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú</div>
-                                </div>
-                                <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+              </div>
+
+              <div style="clear:left"></div>
+              <hr>
+              <div class="donate__btn-wrap">
+                <input class="donate__btn" type="submit" value="Hỗ trợ" name="">
+              </div>
+
+            </form>
+          </div>
         </div>
+        <div class="col l-5 m-12">
+          <div class="donate__img"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="donate-other">
+    <div class="grid wide">
+      <h2 class="donate-other-heading">CÁC HÌNH THỨC HỖ TRỢ KHÁC</h2>
+      <div class="row donate-other__list">
+        <div class="col l-4 m-6">
+          <div class="donate-other__item">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
+              <div class="donate-other__item-title">Hỗ trợ theo tháng</div>
+              <div class="donate-other__item-desc">Trở thành thanh viên của ZOOZALABIM với số tiền mỗi tháng</div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
+        </div>
+        <div class="col l-4 m-6">
+          <div class="donate-other__item">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
+              <div class="donate-other__item-title">Mua vé đến ZOOZALABIM</div>
+              <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú
+              </div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
+        </div>
+        <div class="col l-4  m-6">
+          <div class="donate-other__item">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
+              <div class="donate-other__item-title">Chia sẻ website</div>
+              <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú
+              </div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
-            <script>
-		// Create a Stripe client.
-		var stripe = Stripe('pk_test_51Jtlh9EiJAngkF1RtoIaT1pVGFioMwAj0LOMGcLGPkPrfUcmVMpCwnBTM8oQRUzAXjk5MsYGTjQC8vTR3b0ESvm700Vmg3OT0w');
+<script>
+  // Create a Stripe client.
+  var stripe = Stripe('pk_test_51Jtlh9EiJAngkF1RtoIaT1pVGFioMwAj0LOMGcLGPkPrfUcmVMpCwnBTM8oQRUzAXjk5MsYGTjQC8vTR3b0ESvm700Vmg3OT0w');
 
-		// Create an instance of Elements.
-		var elements = stripe.elements();
+  // Create an instance of Elements.
+  var elements = stripe.elements();
 
-		// Custom styling can be passed to options when creating an Element.
-		// (Note that this demo uses a wider set of styles than the guide below.)
-		var style = {
-		  base: {
-		    color: '#32325d',
-		    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-		    fontSmoothing: 'antialiased',
-		    fontSize: '16px',
-		    '::placeholder': {
-		      color: '#aab7c4'
-		    }
-		  },
-		  invalid: {
-		    color: '#fa755a',
-		    iconColor: '#fa755a'
-		  }
-		};
+  // Custom styling can be passed to options when creating an Element.
+  // (Note that this demo uses a wider set of styles than the guide below.)
+  var style = {
+    base: {
+      color: '#32325d',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '20px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
 
-		// Create an instance of the card Element.
-		var card = elements.create('card', {style: style});
+  // Create an instance of the card Element.
+  var card = elements.create('card', { style: style });
 
-		// Add an instance of the card Element into the `card-element` <div>.
-		card.mount('#card-element');
+  // Add an instance of the card Element into the `card-element` <div>.
+  card.mount('#card-element');
 
-		// Handle real-time validation errors from the card Element.
-		card.addEventListener('change', function(event) {
-		  var displayError = document.getElementById('card-errors');
-		  if (event.error) {
-		    displayError.textContent = event.error.message;
-		  } else {
-		    displayError.textContent = '';
-		  }
-		});
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener('change', function (event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
 
-		// Handle form submission.
-		var form = document.getElementById('payment-form');
-		form.addEventListener('submit', function(event) {
-		  event.preventDefault();
+  // Handle form submission.
+  var form = document.getElementById('payment-form');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-		  stripe.createToken(card).then(function(result) {
-		    if (result.error) {
-		      // Inform the user if there was an error.
-		      var errorElement = document.getElementById('card-errors');
-		      errorElement.textContent = result.error.message;
-		    } else {
-		      // Send the token to your server.
-		      stripeTokenHandler(result.token);
-		    }
-		  });
-		});
+    stripe.createToken(card).then(function (result) {
+      if (result.error) {
+        // Inform the user if there was an error.
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server.
+        stripeTokenHandler(result.token);
+      }
+    });
+  });
 
-		// Submit the form with the token ID.
-		function stripeTokenHandler(token) {
-		  // Insert the token ID into the form so it gets submitted to the server
-		  var form = document.getElementById('payment-form');
-		  var hiddenInput = document.createElement('input');
-		  hiddenInput.setAttribute('type', 'hidden');
-		  hiddenInput.setAttribute('name', 'stripeToken');
-		  hiddenInput.setAttribute('value', token.id);
-		  form.appendChild(hiddenInput);
+  // Submit the form with the token ID.
+  function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
 
-		  // Submit the form
-		  form.submit();
-		}
-	</script>
+    // Submit the form
+    form.submit();
+  }
+</script>
 
-        {%endblock%}
+{%endblock%}

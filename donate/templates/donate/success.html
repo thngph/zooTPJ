@@ -1,11 +1,13 @@
 {% extends 'donate/base.html' %}
 {% load static %}
 {% block content %}
-	<div id="box" style="display:block; position:relative; top:300px; min-height:800px;">
-		<h4>Thank you for your contribution of ${{amount}}!</h4>
-		<p>You did save a lot of animals lives!</p>
-		<hr>
-		<a class="myButton" href="{% url 'index' %}" Back to donation page></a>
+	<div id="box" >
+		<div class="success">
+			<i class="success-icon fas fa-check"></i>
+			<h4 class="success-title">Cám ơn vì đã quyên góp ${{amount}} cho sở thú!</h4>
+			<p class="success-content">Thay mặt Ban giám đốc và toàn thể CBCNV Zoozalabim, tôi chân thành cám ơn sự đóng góp quý bấu của bạn - Đã góp phẩn vào việc duy trì và phát triển Zoozalabim!</p>
+			<a class="success-btn-back myButton" href="{% url 'index' %}">Back to donation page</a>
+		</div>
 	</div>
 
 {% endblock content %}

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{% static './css/css-donate/grid.css' %}">
     <link rel="stylesheet" href="{% static './css/css-donate/main.css' %}">
     <link rel="stylesheet" href="{% static './css/css-donate/base.css' %}">
-    <link rel="stylesheet" href="{% static './css/css-donate/responsive.css' %}">
+    <!-- <link rel="stylesheet" href="{% static './css/css-donate/responsive.css' %}"> -->
     <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,10 +74,9 @@
             </div>
         </div>
 
-        {%block content%} {%endblock%}
+        {%block content%} 
+        {%endblock%}
         <!-- Footer -->
-
-
         <div class="footer">
             <div class="grid">
                 <div class="row footer__list">
@@ -135,7 +134,6 @@
             </div>
         </div>
     </div>
-    {%block modal%} {%endblock%}
     <script src="{% static './js/donate-js/main.js' %}"></script>
 </body>
 </html>

@@ -383,25 +383,25 @@
                         </div>
                         <div class="col c-8">
                             <div class="user__tab-info-wrap user__tab-wrap-item active">
-                                <div class="user__tab-info">
+                                <form class="user__tab-info">
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Tài khoản</div>
                                         <input type="text" disabled value="{{user.username}}" class="user__info-change-input">
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Họ và tên</div>
-                                        <input type="text" value="Hà Minh Hùng" class="user__info-change-input">
+                                        <input required type="text" value="Hà Minh Hùng" class="user__info-change-input">
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Số điện thoại</div>
-                                        <input type="tel" value="0363783603" class="user__info-change-input">
+                                        <input required type="tel" value="0363783603" class="user__info-change-input">
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Email</div>
-                                        <input type="gmail" value="minhhung@gmail.com" class="user__info-change-input">
+                                        <input required type="gmail" value="minhhung@gmail.com" class="user__info-change-input">
                                     </div>
-                                    <button class="user__info-save">Lưu</button>
-                                </div>
+                                    <input type="submit" class="user__info-save" value="Lưu">
+                                </form>
                             </div>
                             <div class="user__tab-ticket-wrap user__tab-wrap-item">
                                 <div class="user__tab-ticket">
