@@ -22,45 +22,46 @@
                                Đóng góp của bạn, nghĩa vụ của chúng tôi 
                             </h2>
                             <script src="https://js.stripe.com/v3/"></script>
-                            <form action="{% url 'charge' %}" method="post" id="payment-form">
-					{% csrf_token %}
-					<div class="form-field-12">
-						<label for="amount">Choose Amount:</label>
-						<br>
-						<br>
-						<select required name="amount" id="amount">
-						  <option selected value="5">$5 --- Here's a coffee, on me :)</option>
-						  <option value="10">$10 --- You helped me, so I am going to help you</option>
-						  <option value="25">$25 --- I love your channel!</option>
-						</select>
-					</div>
+                            <div class="">
+                                <form action="{% url 'charge' %}" method="post" id="payment-form">
+                                    {% csrf_token %}
+                                    <div class="form-field-12">
+                                        <label for="amount"><h2>Chọn khoản tiền bạn muốn hỗ trợ:</h2></label>
+                                        <select class="donate__price-list" required name="amount" id="amount">
+                                          <option selected value="5">$5</option>
+                                          <option value="10">$10</option>
+                                          <option value="25">$25</option>
+                                        </select>
+                                    </div>
 
-					<div class="form-field-6">
-						<input required type="text" name="email" placeholder="email...">
-					</div>
+                                    <div class="donate__type">
+                                        <input  required type="text" name="email" placeholder="email...">
+                                    </div>
 
-					<div class="form-field-6">
-						<input required type="text" name="nickname" placeholder="Nickname...">
-					</div>
+                                    <div class="donate__type">
+                                        <input required type="text" name="nickname" placeholder="Nickname...">
+                                    </div>
 
-				  <div class="form-row">
-				    <label for="card-element">
-				      Credit or debit card
-				    </label>
-				    <div id="card-element">
-				      <!-- A Stripe Element will be inserted here. -->
-				    </div>
+                                  <div class="form-row">
+                                    <label for="card-element">
+                                        <h2>Nhập thẻ tín dụng hoặc thẻ ghi nợ:</h2>
+                                    </label>
+                                    <div id="card-element">
+                                      <!-- A Stripe Element will be inserted here. -->
+                                    </div>
 
-				    <!-- Used to display form errors. -->
-				    <div id="card-errors" role="alert"></div>
-				  </div>
+                                    <!-- Used to display form errors. -->
+                                    <div id="card-errors" role="alert"></div>
+                                  </div>
 
-				  <div style="clear:left"></div>
-				  <hr>
+                                  <div style="clear:left"></div>
+                                  <hr>
 
-				 	<input  class="myButton" style="background-color:#10a195" type="submit" value="Submit Payment" name="">
+                                    <input  class="donate__btn" type="submit" value="Hỗ trợ" name="">
 
-				</form>
+                                </form>
+                            </div>
+
 <!--                            <div class="donate__type">-->
 <!--                                <div class="donate__type-now active">-->
 <!--                                    Tài trợ ngay-->
