@@ -38,17 +38,17 @@
                     <li class="header__nav-introduce">
                         <a href="/">Trang chủ</a>
                     </li>
-                    <li class=""><a href="/animals">Phân loài</a></li>
-                    <li class=""><a href="/news">Tin tức</a></li>
-                    <li class=""><a href="/donate">Hỗ trợ</a></li>
-                    <li class=""><a href="/ticket">Mua vé</a></li>
+                    <li class=""><a href="/animals/">Phân loài</a></li>
+                    <li class=""><a href="/news/">Tin tức</a></li>
+                    <li class=""><a href="/donate/">Hỗ trợ</a></li>
+                    <li class=""><a href="/ticket/">Mua vé</a></li>
                 </ul>
                 {% if not user.username %}
                 <div class="header__btn">
-                    <a href="/login" class="header__btn-login btn__open-login-form btn--white">
+                    <a href="/login/" class="header__btn-login btn__open-login-form btn--white">
                         ĐĂNG NHẬP
                     </a>
-                    <a href="/register" class="header__btn-register btn__open-register-form btn--green">
+                    <a href="/register/" class="header__btn-register btn__open-register-form btn--green">
                         ĐĂNG KÝ
                     </a>
                 </div>
@@ -60,7 +60,7 @@
                         <li>
                             <a class="header__user-subnav-info">Thông tin tài khoản</a>
                         </li>
-                        <li><a href="/logout">Đăng xuất</a></li>
+                        <li><a href="/logout/">Đăng xuất</a></li>
                     </ul>
                 </div>
                 {%endif%}

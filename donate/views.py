@@ -20,7 +20,10 @@ stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0i
 
 
 def index(request):
-    return render(request, 'donate/donate.html')
+    if request.user.id:
+        return render(request, 'donate/donate.html')
+    else:
+        return redirect('/login/')
 
 
 def charge(request):
@@ -31,7 +34,7 @@ def charge(request):
 
         customer = stripe.Customer.create(
             email=request.POST['email'],
-            name=request.POST['nickname'],
+            name=request.user.username,
             source=request.POST['stripeToken']
         )
 

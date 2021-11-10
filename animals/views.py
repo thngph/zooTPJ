@@ -13,7 +13,7 @@ from home.forms import RegistrationForm
 
 def index(request):
     data = {'Animals': Animal.objects.all()}
-    return render(request, 'animals/animal.html',data)
+    return render(request, 'animals/animal.html', data)
 
 
 # Animal API

@@ -142,7 +142,7 @@
                             <div class="section-desc">
                                 Mỗi khi bạn tham gia đóng góp cho Quỹ tài trợ của chúng tôi, trở thành đối tác bảo tồn, để lại một món quà trong di sản của bạn hoặc gây quỹ với cộng đồng của bạn, mọi thứ đều hữu ích. Những số tiền mà bạn quyên góp sẽ góp phần xây dưng nơi ở, thức ăn cho vật nuôi tại sở thú Zoozalabim
                             </div>
-                            <a href="" class="donate__btn">Hỗ trợ</a>
+                            <a href="/donate/" class="donate__btn">Hỗ trợ</a>
                         </div>
                     </div>
                     <div class="col l-6 m-12">
@@ -390,15 +390,15 @@
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Họ và tên</div>
-                                        <input required type="text" value="Hà Minh Hùng" class="user__info-change-input">
+                                        <input required type="text" value="{{profile.name}}" class="user__info-change-input">
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Số điện thoại</div>
-                                        <input required type="tel" value="0363783603" class="user__info-change-input">
+                                        <input required type="tel" value="{{profile.contact}}" class="user__info-change-input">
                                     </div>
                                     <div class="user__info-item">
                                         <div class="user__info-item-label">Email</div>
-                                        <input required type="gmail" value="minhhung@gmail.com" class="user__info-change-input">
+                                        <input required type="gmail" value="{{profile.email}}" class="user__info-change-input">
                                     </div>
                                     <input type="submit" class="user__info-save" value="Lưu">
                                 </form>

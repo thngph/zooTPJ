@@ -18,6 +18,8 @@ class Profile(models.Model):
     img = models.ImageField(default='')
     objects = models.Manager()
 
+    def __str__(self):
+        return self.name
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

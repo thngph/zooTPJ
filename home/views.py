@@ -15,13 +15,15 @@ from .serializers import ProfileSerializer, RegisterSerializer
 
 from animals.models import Animal
 
+
 # Create your views here.
 def index(request):
     data = {'Animals': Animal.objects.all()[:4]}
-    user = None
+    profile = None
     if request.user.id:
-        user = User.objects.get(id=request.user.id)
-    return render(request, 'home/index.html', data, user)
+        profile = {'Profile': Profile.objects.get(user_ID=request.user.id)}
+
+    return render(request, 'home/index.html', data, profile)
 
 
 def register(request):
@@ -90,4 +92,3 @@ class ProfileAPI(APIView):
     #     elif request.method == 'DELETE':
     #         Profile.delete()
     #         return HttpResponse(status=204)
-
