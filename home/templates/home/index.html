@@ -37,7 +37,7 @@
                 <label for="radio2" class="manual-btn"></label>
                 <label for="radio3" class="manual-btn"></label>        
             </div>
-           <div class="slider__content">
+           <div class="slider__content hide-on-mobile">
                <h3 class="slider__content-title">
                     HÒA MÌNH VỚI THIÊN NHIÊN
                </h3>
@@ -55,7 +55,7 @@
             <!-- Thông tin -->
             <div id="introduce" class="grid info">
                 <div class="row">
-                    <div class="col l-3 m-6 info__item">
+                    <div class="col l-3 m-6 c-6 info__item">
                         <div class="info__item-icon">
                             <i class="far fa-clock"></i>
                         </div>
@@ -64,7 +64,16 @@
                             <p class="info__item-content-desc">09:00AM - 07:00AM</p>
                         </div>                    
                     </div>
-                    <div class="col l-3 m-6 info__item">
+                    <div class="col l-3 m-6 c-6 info__item">
+                        <div class="info__item-icon">
+                            <i class="far fa-map"></i>
+                        </div>
+                        <div class="info__item-content">
+                            <p class="info__item-content-title">Bản đồ sở thú</p>
+                            <p class="info__item-content-desc">Diện tích: 10000ha</p>
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-6 info__item">
                         <div class="info__item-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -73,15 +82,7 @@
                             <p class="info__item-content-desc">Quận Thủ Đức, TPHCM</p>
                         </div>
                     </div>
-                    <div class="col l-3 m-6 info__item">
-                        <div class="info__item-icon">
-                            <i class="far fa-map"></i>
-                        </div>
-                        <div class="info__item-content">
-                            <p class="info__item-content-title">Bản đồ sở thú</p>
-                            <p class="info__item-content-desc">Diện tích: 10000ha</p>
-                        </div>
-                    </div><div class="col l-3 m-6 info__item">
+                    <div class="col l-3 m-6 c-6 info__item">
                         <div class="info__item-icon">
                             <i class="fas fa-ticket-alt"></i>
                         </div>
@@ -96,13 +97,13 @@
                 </div>
             </div>
             <!-- Giới thiệu -->
-            <div class="content__introduce">
+            <div class="content__introduce content-section">
                 <div class="grid wide">
                     <div class="row introduce">
-                        <div class="col l-6 introduce__img">
+                        <div class="col l-6 c-12 introduce__img">
                             <img src="{% static './image/image-homepage/introduce.jpeg'%}"></img>
                         </div>
-                        <div class="col l-6 ">
+                        <div class="col l-6 c-12 ">
                             <div class="introduce__content">
                                 <div class="introduce-title">
                                     <h2 class="section-heading--yellow">
@@ -120,7 +121,7 @@
                 </div>
             </div>
             <!-- Bán vé -->
-            <div class="content__ticket">
+            <div class="content__ticket ">
                 <div class="ticket">
                     <img class="ticket__img" src="{% static './image/image-homepage/bird-ticket-notext.png'%}" alt="">
                     <div class="ticket__group">
@@ -133,10 +134,10 @@
                 </div>
             </div>
             <!-- Donate -->
-            <div id="donate" class="content__donate">
+            <div id="donate" class="content__donate content-section">
                <div class="grid wide">
                 <div class="row donate">
-                    <div class="col l-6 m-12">
+                    <div class="col l-6 c-12 m-12">
                         <div class="donate__wrap">
                             <h2 class="section-heading--yellow">LỜI KÊU GỌI</h2>
                             <div class="section-desc">
@@ -145,16 +146,16 @@
                             <a href="/donate/" class="donate__btn">Hỗ trợ</a>
                         </div>
                     </div>
-                    <div class="col l-6 m-12">
+                    <div class="col l-6 c-12 m-12">
                         <img class="donate__img" src="{% static './image/image-homepage/pexels-photo-1870301.jpeg'%}"></img>
                     </div>
                 </div>
                </div>
             </div>
             <!-- Hình ảnh và video -->
-            <div id="animal" class="content__animal">
+            <div id="animal" class="content__animal content-section">
                 <!-- Video thú -->
-                <div id="video" class="video-animal">
+                <div id="video" class="video-animal hide-on-mobile">
                     <div class="grid">
                          <h2 class="section-heading--green">VIDEO</h2>
                          <div class="video__category">
@@ -183,7 +184,7 @@
                         <div class="row image-animal__list">
                             {% for item in Animals %}
                                 {% if item %}
-                                   <div class="col l-3 m-6 ">
+                                   <div class="col l-3 c-6 m-6 ">
                                 <a href="" class="image-animal__item">
                                     <div class="image-animal__item-img">
                                         <img src="{{item.img.url}}" alt="">
@@ -231,7 +232,7 @@
             </div>
             
             <!-- Tin tức -->
-            <div  id="news"  class="content__news">
+            <div  id="news"  class="content__news content-section">
                 <div class="news">
                     <div class="news__heading">
                         <div class="news-title">
@@ -245,7 +246,7 @@
                     </div>
                     <div class="grid wide">
                         <div class="row news__list">
-                            <div class="col l-3 m-6">
+                            <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
                                         <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
@@ -260,7 +261,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col l-3 m-6">
+                            <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
                                         <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
@@ -275,7 +276,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col l-3 m-6">
+                            <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
                                         <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
@@ -290,7 +291,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col l-3 m-6">
+                            <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
                                         <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
@@ -313,11 +314,11 @@
             </div>
             
             <!-- Liên hệ -->
-            <div id="contact" class="content__contact">
+            <div id="contact" class="content__contact content-section">
                 <div class="contact">
                     <div class="grid wide">
                         <div class="row">
-                            <div class="col l-6 m-12">
+                            <div class="col l-6 c-12 m-12">
                                 <div class="contact__content">
                                     <div class="contact-title">
                                         <h2 class="section-heading--green">
@@ -344,7 +345,7 @@
                                     </div> 
                                 </div>
                             </div>
-                            <div class="col l-6 m-12 pt-20">
+                            <div class="col l-6 c-12 m-12 pt-20">
                                 <img class="contact__img" src="{%static './image/image-homepage/contact-img.jpeg'%}"></img>
                             </div>
                             

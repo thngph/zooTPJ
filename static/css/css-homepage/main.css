@@ -197,6 +197,10 @@ html
 {
     opacity:0.9
 }
+.header__mobile-menu-btn
+{
+    display:none;
+}
 /* Slider */
 .slider
 {

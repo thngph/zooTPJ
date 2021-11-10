@@ -30,7 +30,10 @@
                 <a href="/" class="header__logo-link">
                     <img src="{% static './image/image-homepage/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img" />
                 </a>
-                <ul class="header__nav">
+                <div class="header__mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="header__nav hide-on-mobile">
                     <li class="header__nav-introduce">
                         <a href="/">Trang chủ</a>
                     </li>
@@ -40,7 +43,7 @@
                     <li class=""><a href="/ticket/">Mua vé</a></li>
                 </ul>
                 {% if not user.username %}
-                <div class="header__btn">
+                <div class="header__btn hide-on-mobile">
                     <a href="/login/" class="header__btn-login btn__open-login-form btn--white">
                         ĐĂNG NHẬP
                     </a>
@@ -49,7 +52,7 @@
                     </a>
                 </div>
                 {% else %}
-                <div class="header__user">
+                <div class="header__user hide-on-mobile">
                     <img class="header__user-img" src="{%static './image/image-homepage/meo.jpeg'%}" alt="" />
                     <div class="header__nav">Xin chào, {{user.username}}</div>
                     <ul class="header__user-subnav">
@@ -68,13 +71,13 @@
         <div class="footer">
             <div class="grid">
                 <div class="row footer__list">
-                    <div class="col l-2-4 m-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <div class="footer__item">
                             <div class="footer__item-heading">Giờ hoạt động</div>
                             <div class="footer__item-desc">9:00AM - 7:00PM</div>
                         </div>
                     </div>
-                    <div class="col l-2-4 m-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <div class="footer__item">
                             <div class="footer__item-heading">Tài khoản</div>
                             <div class="footer__item-desc">
@@ -84,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l-2-4 m-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <div class="footer__item">
                             <div class="footer__item-heading">Động vật</div>
                             <div class="footer__item-desc">
@@ -93,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l-2-4 m-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <div class="footer__item">
                             <div class="footer__item-heading">Liên hệ</div>
                             <div class="footer__item-desc">
@@ -103,7 +106,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l-2-4 m-4">
+                    <div class="col l-2-4 c-6 m-4">
                         <div class="footer__item">
                             <div class="footer__item-heading">Theo dõi</div>
                             <div class="footer__item-icon">

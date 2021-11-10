@@ -1,3 +1,244 @@
+/* Mobile */
+@media (max-width:739px)
+{   
+    :root{
+        --navbar-height:0px;
+        --header-height:54px;
+    }
+    .hide-on-mobile
+    {
+        display: none;
+    }
+    .row{
+        margin: 0;
+    }
+    /* HEADER */
+    .header__logo-img
+    {
+        max-width:150px;
+    }
+    .header__logo-link
+    {
+        margin-left: 10px;
+    }
+    .header__mobile-menu-btn
+    {
+        display:block;
+        padding: 0 15px;
+    }
+    .header__mobile-menu-btn i
+    {
+        font-size: 25px;
+    }
+    .section-heading--yellow,
+    .section-heading--green
+    {
+        font-size: 25px;
+        min-width: 150px;
+    }
+    .section-desc
+    {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    /* SLIDER */
+    .slide-item
+    {
+        padding-top: 60%;
+        filter: brightness(80%);
+    }
+    .navigation-auto,
+    .navigation-manual
+    {
+        bottom: 10px;
+    }
+    .manual-btn,
+    .auto-btn
+    {
+        padding: 5px;
+    }
+    .auto-btn:not(:last-child),
+    .manual-btn:not(:last-child)
+    {
+        margin-right: 25px;
+    }
+    /* CONTENT */
+    .content-section
+    {
+        padding: 0 5px;
+    }
+    /* INFO */
+    .info
+    {
+        padding: 20px
+    }
+    .info__item
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+    .info__item-content
+    {
+        flex:1;
+        margin-top: 5px;
+    }
+    .info__item-icon
+    {
+        min-width:60px;
+        min-height: 60px;
+    }
+    .info__item-icon i
+    {
+        font-size: 30px
+    }
+    .info__item-content-title
+    {
+        font-size:18px;
+    }
+    .info__item-content-desc
+    {
+        font-size: 16px
+    }
+    /* INTRODUCE */
+    .content__introduce
+    {
+        padding-top: 20px;
+    }
+    /* TICKET */
+    .ticket
+    {
+        margin-top: 50px;
+    }
+    .ticket__group
+    {
+        left: 3%;
+        bottom: 10%;
+    }
+    .ticket__text p
+    {
+        font-size:12px;
+    }
+    .ticket__text h1
+    {
+        font-size:20px;
+        margin: 5px 0 10px;
+    }
+    .ticket__btn
+    {
+        padding: 6px 10px;
+        font-size:15px;
+    }
+    /* DONATE */
+    .donate{
+        padding-top: 30px;
+    }
+    .donate__btn
+    {
+        padding: 6px 20px;
+        font-size:25px;
+        margin-top: 10px;
+    }
+    /* IMAGE ANIMAL */
+    .image-animal
+    {
+        padding: 30px 0 40px;
+    }
+    .image-animal__item-name
+    {
+        font-size: 25px;
+        margin: 5px 0;
+        padding:0;
+    }
+    .image-animal__item-desc
+    {
+        font-size:15px;
+        margin: 0 10px 15px;
+    }
+    .image-animal__more-text
+    {
+        bottom: -30px;
+        font-size:20px;
+        font-weight:400
+    }
+    /* TIN TỨC */
+    .content__news
+    {
+        padding-top: 30px;
+    }
+    .news__item-content
+    {
+        padding: 5px 10px;
+    }
+    .news__item-content-title
+    {
+        font-size: 18px;
+        margin:8px 0;
+    }
+    .news__item-content-date
+    {
+        font-size: 15px;
+        padding: 0;
+        margin: 8px 0;
+    }
+    .news__item-content-desc
+    {
+        font-size: 15px;
+        margin: 8px 0;
+    }
+    /* CONTACT */
+    .content__contact
+    {
+        padding: 0;
+    }
+    .contact__content
+    {
+        margin: 50px auto 20px;
+    }
+    .contact-list
+    {
+        margin-top:20px;
+        padding-left: 20px;
+        text-align: left;
+    }
+    .contact-item p
+    {
+        margin-left: 10px;
+        font-size:18px;
+    }
+    .contact-item i
+    {
+        font-size:25px;
+    }
+    /* Footer heading */
+    .footer__list
+    {
+        padding:0 10px ;
+    }
+    .footer__item-heading
+    {
+        font-size:18px;
+    }
+    .footer__item-desc,
+    .footer__item-desc p,
+    .footer__item-desc a
+    {
+        font-size:15px;
+        margin: 0 0 15px;
+    }
+    .footer__logo
+    {
+        max-width:200px;
+        margin: 30px 0 10px;
+    }
+    .footer__copyright
+    {
+        padding:10px 0;
+        font-size:12px;
+    }
+}
+
+
+/* TABLET */
 @media (min-width: 740px) and (max-width:1025px)
 {
     .header__logo-img
