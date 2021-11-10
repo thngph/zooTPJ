@@ -19,11 +19,14 @@ from animals.models import Animal
 # Create your views here.
 def index(request):
     data = {'Animals': Animal.objects.all()[:4]}
+    return render(request, 'home/index.html', data)
+
+
+def user_info(request):
     profile = None
     if request.user.id:
         profile = {'Profile': Profile.objects.get(user_ID=request.user.id)}
-
-    return render(request, 'home/index.html', data)
+    return render(request, 'home/infoUser.html', profile)
 
 
 def register(request):
