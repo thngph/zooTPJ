@@ -23,7 +23,7 @@ def index(request):
     if request.user.id:
         profile = {'Profile': Profile.objects.get(user_ID=request.user.id)}
 
-    return render(request, 'home/index.html', {data, profile})
+    return render(request, 'home/index.html', data)
 
 
 def register(request):
