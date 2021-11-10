@@ -14,3 +14,6 @@ class Donate(models.Model):
         on_delete=models.CASCADE,
         default=1
     )
+
+    def __str__(self):
+        return self.date_donated
