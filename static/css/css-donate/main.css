@@ -19,7 +19,7 @@ input[type=number]::-webkit-outer-spin-button {
 .slider
 {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 54px;
     position: relative;
 }
 .slider-img

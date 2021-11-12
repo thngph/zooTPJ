@@ -34,7 +34,7 @@
                 <a href="/" class="header__logo-link">
                     <img src="{% static './image/image-homepage/ZOOZALABIM-07.png' %}" alt="" class="header__logo-img" />
                 </a>
-                <ul class="header__nav">
+                <ul class="header__nav hide-on-mobile">
                     <li class="header__nav-introduce">
                         <a href="/">Trang chủ</a>
                     </li>
@@ -44,7 +44,7 @@
                     <li class=""><a href="/ticket/">Mua vé</a></li>
                 </ul>
                 {% if not user.username %}
-                <div class="header__btn">
+                <div class="header__btn hide-on-mobile">
                     <a href="/login/" class="header__btn-login btn__open-login-form btn--white">
                         ĐĂNG NHẬP
                     </a>
@@ -53,7 +53,7 @@
                     </a>
                 </div>
                 {% else %}
-                <div class="header__user">
+                <div class="header__user hide-on-mobile">
                     <img class="header__user-img" src="{%static './image/image-homepage/meo.jpeg'%}" alt="" />
                     <div class="header__nav">Xin chào, {{user.username}}</div>
                     <ul class="header__user-subnav">
@@ -64,6 +64,51 @@
                     </ul>
                 </div>
                 {%endif%}
+                <!--NAV MOBILE -->
+                <label for="nav-mobile-input" class="header__nav-mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <input type="checkbox" hidden class="nav__bars-check"id="nav-mobile-input">
+                <div class="header__nav-mobile-overlay"></div>
+                <div class="header__nav-mobile">
+                    <label  for="nav-mobile-input"class="header__nav-mobile-close-btn">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <div class="header__nav-mobile-user">
+                        {% if not user.username %}
+                        <ul class="header__nav-mobile-user-control">
+                            <li><i class="fas fa-sign-in-alt"></i><a href="/login/">Đăng nhập</a></li>
+                            <li><i class="fas fa-user-edit"></i><a href="/register/">Đăng kí</a></li>
+                        </ul>
+
+                        {% else %}
+                        <div class="header__nav-mobile-user-info">
+                            <div class="header__nav-mobile-user-image">
+                                <img class="" src="{%static './image/image-homepage/meo.jpeg' %}" alt="">
+                            </div>
+                            <p class="header__nav-mobile-user-name">Xin chào, <span>{{user.username}}</span> !</p>
+                        </div>
+                        {%endif%}
+                    </div>
+                    <ul class="header__nav-mobile-btn-page">
+                        <!-- NẾU ĐÃ LOGIN -->
+                        {% if user.username %}
+                        <li><i class="fas fa-user-alt"></i><a href="">Thông tin tài khoản</a></li>
+                        {%endif%}
+                        <li><i class="fas fa-home"></i><a href="">Trang chủ</a></li>
+                        <li><i class="fas fa-paw"></i><a href="/animals/">Phân loài</a></li>
+                        <li><i class="fas fa-newspaper"></i><a href="/news/">Tin tức</a></li>
+                        <li><i class="fas fa-donate"></i><a href="/donate/">Hỗ trợ</a></li>
+                        <li><i class="fas fa-ticket-alt"></i><a href="/ticket/">Mua vé</a></li>
+                    </ul>
+                    {% if user.username %}
+                    <div class="header__nav-mobile-btn-logout">
+                        <i class="header__nav-mobile-btn-logout-icon fas fa-sign-out-alt"></i>
+                        <a href="/logout/">Đăng xuất</a>
+                    </div>
+                    {%endif%}
+                </div>
+                <!-- END NAV MOBILE -->
             </div>
         </div>
 

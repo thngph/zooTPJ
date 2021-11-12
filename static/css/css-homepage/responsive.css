@@ -12,6 +12,14 @@
     .row{
         margin: 0;
     }
+    ul
+    {
+        list-style-type: none;
+    }  
+    a
+    {
+        text-decoration: none;
+    }
     /* HEADER */
     .header__logo-img
     {
@@ -21,15 +29,193 @@
     {
         margin-left: 10px;
     }
-    .header__mobile-menu-btn
+    .header__nav-mobile-menu-btn
     {
         display:block;
         padding: 0 15px;
+        font-size: 25px;
     }
     .header__mobile-menu-btn i
     {
         font-size: 25px;
     }
+    .header__nav-mobile-overlay
+    {
+        position: fixed;
+        top: 0;
+        right:0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.4);
+        display: none;
+        animation: SlideInDown ease 0.2s;
+    }
+    @keyframes SlideInDown{
+        from { 
+            opacity:0;
+        }
+        to{
+            opacity: 1;
+        } 
+    }
+    .header__nav-mobile-close-btn
+    {
+        position:absolute;
+        right:0;
+        top:0;
+        padding:10px 15px;
+        font-size:30px;
+        color: var(--black-color)
+    }
+    
+    .header__nav-mobile
+    {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index: 1111;
+        background-color: var(--white-color);
+        height:100%;
+        width: 80%;
+        display:flex;
+        flex-direction: column;
+        transition:  all linear 0.2s;
+        transform:translateX(-100%);
+    }
+    .nav__bars-check:checked~.header__nav-mobile-overlay
+    {
+        display: block;
+    }
+    .nav__bars-check:checked~.header__nav-mobile
+    {
+        transform: translateX(0%);
+    }
+    /* PHẦN USER TRONG NAV */
+    .header__nav-mobile-user
+    {
+        border-bottom: 1px solid #ccc;
+    }
+    .header__nav-mobile-user-info
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:var(--white-color);
+        padding: 50px 0 20px;
+    }
+    .header__nav-mobile-user-image
+    {
+        overflow: hidden;
+        min-width: 110px;
+        min-height: 110px;
+        border-radius: 50%;
+    }
+    .header__nav-mobile-user-image img
+    {
+        max-width: 110px;
+        display:block
+    }
+    .header__nav-mobile-user-name
+    {
+        margin-top: 15px;
+        font-size:20px;
+        color: var(--black-color);
+    }
+    .header__nav-mobile-user-name span
+    {
+        font-weight: 600;
+    }
+    .header__nav-mobile-user-control
+    {
+        margin: 50px 0 0px;
+    }
+    .header__nav-mobile-user-profile,
+    .header__nav-mobile-user-control li
+    {
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .header__nav-mobile-user-control li:hover{
+        background-color: #999
+    }
+    .header__nav-mobile-user-profile i,
+    .header__nav-mobile-user-control li i
+    {
+        font-size:22px;
+        min-width:35px;
+    }
+    .header__nav-mobile-user-profile a,
+    .header__nav-mobile-user-control li a
+    {
+        color: var(--black-color);
+        font-size: 18px;
+        margin-left: 10px;
+        padding: 17px 0;
+    }
+    /* KHÚC DƯỚI USER */
+    .header__nav-mobile-btn-page
+    {
+        flex: 1;
+    } 
+    .header__nav-mobile-btn-page li
+    {
+        display:flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+    .header__nav-mobile-btn-page li:hover{
+        background-color: #999
+    }
+    .header__nav-mobile-btn-page li i
+    {
+        min-width:35px;
+        font-size:22px;
+    }
+    .header__nav-mobile-btn-page li a
+    {
+        color: var(--black-color);
+        margin-left: 10px;
+        font-size:18px;
+        display:inline-block;
+        padding: 17px 0;
+        flex: 1;
+
+    }
+    .header__nav-mobile-btn-logout
+    {
+        /* border-top: 1px solid #ccc; */
+        padding-top: 15px;
+        justify-self:flex-end;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+    .header__nav-mobile-btn-logout::after
+    {
+        position:absolute;
+        content:"";
+        border-top: 1px solid #ccc;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .header__nav-mobile-btn-logout a
+    {
+        font-size:20px;
+        color: var(--black-color);
+        margin-left: 10px;
+        display:inline-block
+    }
+    .header__nav-mobile-btn-logout-icon
+    {
+        font-size:25px;
+        min-width:30px;
+    }
+
+    /* SECTION */
     .section-heading--yellow,
     .section-heading--green
     {
@@ -44,7 +230,7 @@
     /* SLIDER */
     .slide-item
     {
-        padding-top: 60%;
+        padding-top: 55%;
         filter: brightness(80%);
     }
     .navigation-auto,
@@ -70,7 +256,7 @@
     /* INFO */
     .info
     {
-        padding: 20px
+        padding: 20px 0;
     }
     .info__item
     {
@@ -103,6 +289,10 @@
     .content__introduce
     {
         padding-top: 20px;
+    }
+    .introduce-title
+    {
+        text-align: center;
     }
     /* TICKET */
     .ticket

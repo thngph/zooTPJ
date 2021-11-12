@@ -194,8 +194,16 @@ userOptionItems.forEach(function (userOptionItem, index) {
   };
 });
 // Đóng form user
-closeUserFormBtn.addEventListener("click", closeModal);
+if(closeUserFormBtn)
+{
+  closeUserFormBtn.addEventListener("click", closeModal);
+}
+
 // Chống nổi bọt
-userForm.addEventListener("click", function (event) {
-  event.stopPropagation();
-});
+if(userForm)
+{
+  userForm.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+}
+
