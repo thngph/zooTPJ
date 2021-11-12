@@ -1,5 +1,7 @@
+import stripe
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from rest_framework.status import HTTP_200_OK
 from .serializers import TicketSerializer
 from .models import Ticket
@@ -18,8 +20,34 @@ def index(request):
     return render(request, 'ticket/ticket.html')
 
 
-def redirect_donate(request):
-    return redirect('/donate/')
+def charge(request):
+    if request.method == 'POST':
+        print('Data:', request.POST)
+
+        amount = int(request.POST['amount'])
+
+        customer = stripe.Customer.create(
+            email=request.POST['email'],
+            name=request.user.username,
+            source=request.POST['stripeToken']
+        )
+
+        charge = stripe.Charge.create(
+            customer=customer,
+            amount=amount * 100,
+            currency='usd',
+            description="Ticket Payment"
+        )
+        user = User.objects.get(id=request.user.id)
+        donation = Ticket(amount=amount, user_ID=user)
+        donation.save()
+
+    return redirect(reverse('success', args=[amount]))
+
+
+def successMsg(request, args):
+    amount = args
+    return render(request, 'donate/success.html', {'amount': amount})
 
 
 # Ticket API

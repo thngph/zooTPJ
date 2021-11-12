@@ -7,6 +7,6 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.index),
-    path('donate/', views.redirect_donate, name='donate'),
+    path('success/', views.successMsg, name="success"),
     path('api/ticket/', TicketAPI.as_view(), name='ticket_api_view')
 ]
