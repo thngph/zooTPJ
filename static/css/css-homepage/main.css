@@ -845,6 +845,7 @@ html
 .footer__item
 {
     text-align: left;
+    overflow: hidden;
 }
 .footer__item-heading
 {
