@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.conf import settings
 from django.db import models
 from home.models import Profile
@@ -5,16 +7,15 @@ from home.models import Profile
 
 # Create your models here.
 
+# More like Ticket Manager/Ticket Payment Model but its too late to re-name
+
 class Ticket(models.Model):
     ticketID = models.AutoField(unique=True, primary_key=True)
     date_purchased = models.DateTimeField(auto_now_add=True)
-    TICKET_CHOICES = (
-        ('A', 'Adult'),
-        ('C', 'Children'),
-    )
-    ticket_type = models.CharField(max_length=1, choices=TICKET_CHOICES, default='A')
-    # need modify here
-    price = models.IntegerField(blank=False)
+    expired = models.DateTimeField(blank=True)
+    adult_type_quantity = models.IntegerField(default=0)
+    children_type_quantity = models.IntegerField(default=0)
+    amount = models.IntegerField(default=0)
     user_ID = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -22,4 +23,6 @@ class Ticket(models.Model):
     )
 
     def __str__(self):
-        return self.ticketID
+        return str(self.ticketID)
+
+

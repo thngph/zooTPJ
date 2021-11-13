@@ -14,6 +14,9 @@ from rest_framework.parsers import JSONParser
 
 # Create your views here.
 from home.forms import RegistrationForm
+import stripe
+
+stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0iDTNpjBF1PeCUxbMkGQaxt8djtqOmjxfuTzG00yk4bAExN"
 
 
 def index(request):
@@ -24,23 +27,31 @@ def charge(request):
     if request.method == 'POST':
         print('Data:', request.POST)
 
-        amount = int(request.POST['amount'])
+        amount = int(request.POST['adult_type_quantity'])*10 + int(request.POST['children_type_quantity'])*5
 
         customer = stripe.Customer.create(
-            email=request.POST['email'],
+            email=None or request.user.email,
             name=request.user.username,
             source=request.POST['stripeToken']
         )
-
+        #
         charge = stripe.Charge.create(
             customer=customer,
             amount=amount * 100,
             currency='usd',
             description="Ticket Payment"
         )
-        user = User.objects.get(id=request.user.id)
-        donation = Ticket(amount=amount, user_ID=user)
-        donation.save()
+        user = None
+        if request.user:
+            user = User.objects.get(id=request.user.id)
+        payment = Ticket(
+            amount=amount,
+            adult_type_quantity=request.POST['adult_type_quantity'],
+            children_type_quantity=request.POST['children_type_quantity'],
+            expired=request.POST['expired_in'],
+            user_ID=user,
+            )
+        payment.save()
 
     return redirect(reverse('success', args=[amount]))
 

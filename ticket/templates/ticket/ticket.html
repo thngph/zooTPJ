@@ -7,7 +7,7 @@
     <div class="slider">
         <div class="slider-img"></div>
         <div class="slider-text">
-            ĐẶT VÉ TỚI 
+            ĐẶT VÉ TỚI
             <br>ZOOZALABIM
         </div>
     </div>
@@ -16,46 +16,68 @@
         <div class="grid wide">
             <div class="row">
                 <div class="col c-o-1 l-5">
-                    <div class="ticket__form">
-                        <div class="ticket__form-heading">
-                            ĐIỀN THÔNG TIN VÉ
-                        </div>
-                        <div class="ticket__form-date">
-                            <div class="ticket__form-date-heading">
-                                Chọn ngày bạn sẽ tới tham quan Zoozalabim
+                    <script src="https://js.stripe.com/v3/"></script>
+                    <form action="{% url 'charge' %}" method="post" id="payment-form">
+                        {% csrf_token %}
+                        <div class="ticket__form">
+                            <div class="ticket__form-heading">
+                                ĐIỀN THÔNG TIN VÉ
                             </div>
-                            <input type="date" required class="ticket__form-date-input">
-                        </div>
-                        <div class="ticket__form-quantity-heading">Số lượng vé</div>
-                        <table class="ticket__form-quantity">
-                            <tr>
-                                <th></th>
-                                <th class="ticket__form-quantity-label">Giá vé</th>
-                                <th class="ticket__form-quantity-label">Số lượng</th>
-                            </tr>
-                            <tr>
-                                <td class="ticket__form-quantity-type">Người lớn</td>
-                                <td class="ticket__form-quantity-type-price">10$</td>
-                                <td ><input min="0" class="ticket__form-quantity-input-adult" style="width: 70px" type="number"></td>
-                            </tr>
-                            <tr>
-                                <td class="ticket__form-quantity-type">Trẻ em</td>
-                                <td class="ticket__form-quantity-type-price">5$</td>
-                                <td ><input min="0" class="ticket__form-quantity-input-kid" style="width: 70px" type="number"></td>
-                            </tr>
-                        </table>
-                        <!-- <div class="ticket__form-info-customer">
-                            <div class="ticket__form-info-customer-heading">
-                                Thông tin khách hàng
+                            <div class="ticket__form-date">
+                                <div class="ticket__form-date-heading">
+                                    Chọn ngày bạn sẽ tới tham quan Zoozalabim
+                                </div>
+                                <input type="date" name="expired_in" required class="ticket__form-date-input">
                             </div>
-                            <input required placeholder="Họ và tên" type="text" class="ticket__form-info-customer-input">
-                            <input required type="number"  placeholder="Số điện thoại" class="ticket__form-info-customer-input"> 
-                        </div> -->
-                        <a href="" class="ticket__form-buy-btn">
-                            <p>THANH TOÁN VỚI</p>
-                            <img src="{%static './image/image-ticket/paypal-logo.png' %}" alt="" class="ticket__form-buy-btn-logo-paypal">
-                        </a>
-                    </div>
+                            <div class="ticket__form-quantity-heading">Số lượng vé</div>
+                            <table class="ticket__form-quantity">
+                                <tr>
+                                    <th></th>
+                                    <th class="ticket__form-quantity-label">Giá vé</th>
+                                    <th class="ticket__form-quantity-label">Số lượng</th>
+                                </tr>
+                                <tr>
+                                    <td class="ticket__form-quantity-type">Người lớn</td>
+                                    <td class="ticket__form-quantity-type-price">10$</td>
+                                    <td><input min="0" name="adult_type_quantity" class="ticket__form-quantity-input-adult" style="width: 70px"
+                                            type="number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="ticket__form-quantity-type">Trẻ em</td>
+                                    <td class="ticket__form-quantity-type-price">5$</td>
+                                    <td><input min="0" name="children_type_quantity" class="ticket__form-quantity-input-kid" style="width: 70px"
+                                            type="number"></td>
+                                </tr>
+                            </table>
+
+                            <div class="form-row">
+                                <label for="card-element">
+                                  <h2 class="title-content">Nhập thẻ tín dụng hoặc thẻ ghi nợ:</h2>
+                                </label>
+                                <div id="card-element">
+                                  <!-- A Stripe Element will be inserted here. -->
+                                </div>
+
+                                <!-- Used to display form errors. -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+
+                              <div style="clear:left"></div>
+                              <hr>
+                              <div class="donate__btn-wrap">
+                                <input class="donate__btn" type="submit" value="Thanh toán" name="">
+                              </div>
+
+                            <!-- <div class="ticket__form-info-customer">
+                                <div class="ticket__form-info-customer-heading">
+                                    Thông tin khách hàng
+                                </div>
+                                <input required placeholder="Họ và tên" type="text" class="ticket__form-info-customer-input">
+                                <input required type="number"  placeholder="Số điện thoại" class="ticket__form-info-customer-input">
+                            </div> -->
+
+                        </div>
+                    </form>
                 </div>
                 <div class="col ml-0-5 l-4">
                     <div class="ticket-total">
@@ -79,4 +101,77 @@
         </div>
     </div>
 </div>
+
+<script>
+  // Create a Stripe client.
+  var stripe = Stripe('pk_test_51Jtlh9EiJAngkF1RtoIaT1pVGFioMwAj0LOMGcLGPkPrfUcmVMpCwnBTM8oQRUzAXjk5MsYGTjQC8vTR3b0ESvm700Vmg3OT0w');
+
+  // Create an instance of Elements.
+  var elements = stripe.elements();
+
+  // Custom styling can be passed to options when creating an Element.
+  // (Note that this demo uses a wider set of styles than the guide below.)
+  var style = {
+    base: {
+      color: '#32325d',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '20px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+  // Create an instance of the card Element.
+  var card = elements.create('card', { style: style });
+
+  // Add an instance of the card Element into the `card-element` <div>.
+  card.mount('#card-element');
+
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener('change', function (event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
+
+  // Handle form submission.
+  var form = document.getElementById('payment-form');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function (result) {
+      if (result.error) {
+        // Inform the user if there was an error.
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server.
+        stripeTokenHandler(result.token);
+      }
+    });
+  });
+
+  // Submit the form with the token ID.
+  function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+  }
+</script>
 {%endblock%}

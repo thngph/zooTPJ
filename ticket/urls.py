@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.index),
+    path('charge/', views.charge, name="charge"),
     path('success/', views.successMsg, name="success"),
     path('api/ticket/', TicketAPI.as_view(), name='ticket_api_view')
 ]
