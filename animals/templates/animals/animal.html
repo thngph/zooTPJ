@@ -4,17 +4,6 @@
 {% block content %}
 <div class="content">
     <div class="grid">
-        <!-- <div class="animal-main">
-            <div class="animal-main__img"></div>
-            <div class="animal-main__wrap-text">
-                <div class="animal-main__name">
-                    VOI
-                </div>
-                <div class="animal-main__desc">
-                    Họ Voi là một họ động vật có vú lớn, ăn thực vật được gọi chung là voi và voi ma mút. Chúng là những động vật có vú lớn trên cạn với mõm biến đổi thành vòi, và răng biến đổi thành ngà. Đa số các chi và loài trong họ này đã tuyệt chủng. Chỉ có hai chi, Loxodonta và Elephas, là còn tồn tại
-                </div>
-            </div>
-        </div> -->
         <div class="content__category">
             <div class="category__heading">
                 DANH MỤC CÁC LOÀI ĐỘNG VẬT CỦA SỞ THÚ
@@ -23,7 +12,7 @@
                 <div class="row category__wrap" >
                     {% for item in Animals %}
                     {%if item%}
-                    <div class="col l-4 m-6 category__item">
+                    <div class="col l-3 m-6 c-6 category__item">
                         <div href="" class="category__item-wrap">
                             <div class="category__item-img" style="background-image: url({{item.img.url}});"></div>
                             <div class="category__item-name">
@@ -48,15 +37,23 @@
     {%if item%}
     <div class="animal-main">
         <i class="fas fa-times close-modal-btn"></i>
-        <div class="animal-main__img-wrap">
-            <div class="animal-main__img" style="background-image: url({{item.img.url}});"> </div>
-        </div>
-        <div class="animal-main__wrap-text">
-            <div class="animal-main__name">
-                {{item.animal_name}}
-            </div>
-            <div class="animal-main__desc">
-                {{item.description}}
+        <div class="grid">
+            <div class="row">
+                <div class="col l-7 c-12 m-6">
+                    <div class="animal-main__img-wrap">
+                        <div class="animal-main__img" style="background-image: url({{item.img.url}});"> </div>
+                    </div>
+                </div>
+                <div class="col l-5 c-12 m-6">
+                    <div class="animal-main__wrap-text">
+                        <div class="animal-main__name">
+                            {{item.animal_name}}
+                        </div>
+                        <div class="animal-main__desc">
+                            {{item.description}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -189,6 +189,27 @@ html
     font-weight:600px;
     font-size: 30px;
 }
+.payment__btn-wrap{
+    display: flex;
+    justify-content: center;
+}
+.payment__btn
+{
+    background-color: var(--white-color);
+    margin-top: 25px;
+    font-size:25px;
+    color: var(--yellow-color);
+    outline: none;
+    border: 2px solid var(--yellow-color);
+    padding: 8px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.payment__btn:hover
+{
+    background-color: var(--yellow-color);
+    color: var(--white-color)
+}
 /* footer */
 /* .footer
 {

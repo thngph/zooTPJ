@@ -15,6 +15,8 @@ closeModalBtns.forEach(function(closeModalBtn)
     closeModalBtn.onclick=function()
     {
         modal.classList.remove('active')
+        document.body.style.overflowY = 'hidden';
+        document.body.style.height = 'auto';
     }
 })
 
@@ -33,7 +35,10 @@ animalList.forEach(function(animalItem,index)
         this.classList.add('active');
 
         modal.classList.add('active');
-        console.log('hihi')
+
+        document.body.style.overflowY = 'hidden';
+        document.body.style.height = '100vh';
+
     }
 })
 

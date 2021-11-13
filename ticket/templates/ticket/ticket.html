@@ -15,7 +15,7 @@
     <div class="content">
         <div class="grid wide">
             <div class="row">
-                <div class="col c-o-1 l-5">
+                <div class="col l-o-1 l-5">
                     <script src="https://js.stripe.com/v3/"></script>
                     <form action="{% url 'charge' %}" method="post" id="payment-form">
                         {% csrf_token %}
@@ -64,17 +64,9 @@
 
                               <div style="clear:left"></div>
                               <hr>
-                              <div class="donate__btn-wrap">
-                                <input class="donate__btn" type="submit" value="Thanh toán" name="">
+                              <div class="payment__btn-wrap">
+                                <input class="payment__btn" type="submit" value="Thanh toán" name="">
                               </div>
-
-                            <!-- <div class="ticket__form-info-customer">
-                                <div class="ticket__form-info-customer-heading">
-                                    Thông tin khách hàng
-                                </div>
-                                <input required placeholder="Họ và tên" type="text" class="ticket__form-info-customer-input">
-                                <input required type="number"  placeholder="Số điện thoại" class="ticket__form-info-customer-input">
-                            </div> -->
 
                         </div>
                     </form>
