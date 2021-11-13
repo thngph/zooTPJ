@@ -1,0 +1,37 @@
+@media (max-width:739px)
+{
+    .content__category
+    {
+        padding:0 8px;
+        margin-top: 70px;
+    }
+    .category__more
+    {
+        margin-top: 30px;
+    }
+    .category__heading
+    {
+        min-width: unset;
+        font-size:25px;
+        margin-bottom: 10px;
+        border-width: 2px ;
+    }
+    .category__item-name
+    {
+        transform: translateX(0);
+        padding: 5px 10px;
+        font-size:15px
+    }
+    .close-modal-btn
+    {
+        right:4px;
+        padding: 20px;
+        color: var(--white-color);
+        background-color:var(--black-color);
+    }
+    .animal-main__name
+    {
+        font-size:20px;
+        margin-top:20px;
+    }
+}

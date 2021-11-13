@@ -1,0 +1,61 @@
+@media (max-width:739px)
+{
+    .slider-img
+    {
+        padding-top: 55%;
+    }
+    .slider-text
+    {
+        left: 10px;
+        bottom:-10px;
+        top:unset;
+        font-size:18px;
+    }
+    .content {
+        padding:0 8px;
+        margin-top: 25px;
+    }
+    .ticket__form-heading
+    {
+        font-size: 25px;
+        font-weight: 700
+    }
+    .ticket__form-quantity-heading,
+    .ticket__form-date-heading,
+    .title-content
+    {
+        font-size:20px;
+        color: var(--green-color)
+    }
+    .ticket__form-date-input
+    {
+        margin-top:10px;
+        font-size:18px
+    }
+    .ticket__form-date,
+    .title-content,
+    .ticket__form-quantity-heading
+    {
+        margin-top: 15px;
+    }
+    .ticket__form-quantity-label,
+    .ticket__form-quantity-type,
+    .ticket__form-quantity-type-price,
+    .ticket__form-quantity-input-adult,
+    .ticket__form-quantity-input-kid
+    {
+        font-size: 18px
+    }
+    .ticket-total
+    {
+        margin-top:20px;
+    }
+    .ml-0-5
+    {
+        margin: 0;
+    }
+    .donate-btn
+    {
+        margin-top:20px;
+    }
+}

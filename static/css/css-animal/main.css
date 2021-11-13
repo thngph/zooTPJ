@@ -124,10 +124,11 @@ html
 {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
     padding: 10px;
     font-size: 40px;
     cursor: pointer;
+    z-index: 111111111111111;
 }   
 .close-modal-btn:hover
 {
@@ -149,11 +150,11 @@ html
 }
 .animal-main__img-wrap
 {
-    width: 70%;
+
 }
 .animal-main__img 
 {
-    padding-top: 90%;
+    padding-top: 100%;
     background-size: cover;
     background-position:center center ;
     background-repeat: no-repeat;
@@ -163,11 +164,6 @@ html
 .animal-main__wrap-text
 {
     margin: 0 30px 0;
-    max-width: 40%;
-    /* display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content:center; */
 }
 .animal-main__name
 {
