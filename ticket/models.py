@@ -12,7 +12,7 @@ from home.models import Profile
 class Ticket(models.Model):
     ticketID = models.AutoField(unique=True, primary_key=True)
     date_purchased = models.DateTimeField(auto_now_add=True)
-    expired = models.DateTimeField(blank=True)
+    expired = models.DateField(blank=True)
     adult_type_quantity = models.IntegerField(default=0)
     children_type_quantity = models.IntegerField(default=0)
     amount = models.IntegerField(default=0)

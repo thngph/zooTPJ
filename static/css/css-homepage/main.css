@@ -1062,7 +1062,7 @@ html
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    display:none;
+
 }
 .user.open{
     display:block;
