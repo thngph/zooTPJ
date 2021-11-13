@@ -136,7 +136,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STRIPE_PUBLIC_KEY = "pk_test_51Jtlh9EiJAngkF1RtoIaT1pVGFioMwAj0LOMGcLGPkPrfUcmVMpCwnBTM8oQRUzAXjk5MsYGTjQC8vTR3b0ESvm700Vmg3OT0w"
 STRIPE_SECRET_KEY = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0iDTNpjBF1PeCUxbMkGQaxt8djtqOmjxfuTzG00yk4bAExN"

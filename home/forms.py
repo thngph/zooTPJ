@@ -2,6 +2,8 @@ from django import forms
 import re
 from django.contrib.auth.models import User
 
+from home.models import Profile
+
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label='Tài khoản', max_length=30)
@@ -30,3 +32,9 @@ class RegistrationForm(forms.Form):
     def save(self):
         User.objects.create_user(username=self.cleaned_data['username'], email=self.cleaned_data['email'],
                                  password=self.cleaned_data['password1'])
+
+
+class UploadFileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['img']

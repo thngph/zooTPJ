@@ -7,10 +7,21 @@
         <div class="row no-gutters">
             <div class="col c-4">
                 <div class="user__nav">
+
                     <div class="user__avatar-wrap">
-                        <div style="background-image: url(/static/image/image-homepage/bird-ticket.jpg.png);" class="user__avatar-img"></div>
-                        <a href="" class="user__avatar-change-btn">Đổi ảnh</a>
+                        {%if Profile.img%}
+                        <div style="background-image: url({{Profile.img.url}});" class="user__avatar-img"></div>
+
+                        {%else%}
+                            <div style="background-image: url(/static/image/image-homepage/bird-ticket.jpg.png);" class="user__avatar-img"></div>
+                        {%endif%}
+                        <form action="{% url 'upload' %}" method="post" class="user__tab-info" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <input type="file" name="img" accept="image/*">
+                            <input type="submit" class="user__avatar-change-btn" value="Đổi ảnh">
+                        </form>
                     </div>
+
                     <div class="user__option-list">
                         <div class="user__option-info user__option-item active">Thông tin cá nhân</div>
                         <div class="user__option-ticket user__option-item">Vé đã mua</div>
@@ -26,22 +37,23 @@
             <div class="col c-8">
                 <div class="user__tab-info-wrap user__tab-wrap-item active">
 
-                    <form class="user__tab-info">
+                    <form action="{% url 'edit_info' %}" method="post" class="user__tab-info">
+                        {% csrf_token %}
                         <div class="user__info-item">
                             <div class="user__info-item-label">Tài khoản</div>
                             <input type="text" disabled value="{{user.username}}" class="user__info-change-input">
                         </div>
                         <div class="user__info-item">
                             <div class="user__info-item-label">Họ và tên</div>
-                            <input required type="text" value="{{Profile.name}}" class="user__info-change-input">
+                            <input required type="text" name="name" value="{{Profile.name}}" class="user__info-change-input">
                         </div>
                         <div class="user__info-item">
                             <div class="user__info-item-label">Số điện thoại</div>
-                            <input required type="tel" value="{{profile.contact}}" class="user__info-change-input">
+                            <input required type="tel" name="contact" value="{{Profile.contact}}" class="user__info-change-input">
                         </div>
                         <div class="user__info-item">
                             <div class="user__info-item-label">Email</div>
-                            <input required type="gmail" value="{{profile.email}}" class="user__info-change-input">
+                            <input required type="email" name="email" value="{{Profile.email}}" class="user__info-change-input">
                         </div>
                         <input type="submit" class="user__info-save" value="Lưu">
                     </form>

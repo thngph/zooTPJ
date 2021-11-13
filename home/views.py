@@ -1,15 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 # API- Rest Framework
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
 
-from .forms import RegistrationForm
+from .forms import RegistrationForm, UploadFileForm
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
 
@@ -29,13 +30,36 @@ def user_info(request):
     return render(request, 'home/infoUser.html', profile)
 
 
+@login_required
+def edit_user(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user_ID=request.user.id)
+        profile.name = request.POST['name']
+        profile.contact = request.POST['contact']
+        profile.email = request.POST['email']
+        profile.save()
+    return redirect('/', {'Profile': profile})
+
+
+@login_required
+def upload(request):
+    if request.method == 'POST':
+        # profile.img = request.FILES['img']
+        # profile.save()
+        profile = Profile.objects.get(user_ID=request.user.id)
+        form = UploadFileForm(request.POST, request.FILES, instance=Profile.objects.get(user_ID=request.user.id))
+        form.save()
+    profile = Profile.objects.get(user_ID=request.user.id)
+    return redirect('/', {'Profile': profile})
+
+
 def register(request):
     form = RegistrationForm()
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
+
     return render(request, 'home/register.html', {'form': form})
 
 

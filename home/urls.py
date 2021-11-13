@@ -7,6 +7,8 @@ urlpatterns = [
     path('', views.index),
     path('register/', views.register, name="register"),
     path('user/', views.user_info, name="user"),
+    path('user/edit', views.edit_user, name="edit_info"),
+    path('user/upload', views.upload, name="upload"),
     path('login/', auth_views.LoginView.as_view(template_name="home/login.html"), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
     path('api/profile/', ProfileAPI.as_view(), name='profile_api_view'),
