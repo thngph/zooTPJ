@@ -19,7 +19,11 @@ from animals.models import Animal
 
 # Create your views here.
 def index(request):
-    data = {'Animals': Animal.objects.all()[:4]}
+    if request.user.is_authenticated:
+        data = {'Animals': Animal.objects.all()[:4],
+                'Profile': Profile.objects.get(user_ID=request.user.id)}
+    else:
+        data = {'Animals': Animal.objects.all()[:4]}
     return render(request, 'home/index.html', data)
 
 

@@ -20,8 +20,9 @@ stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0i
 
 
 def index(request):
-    if request.user.id:
-        return render(request, 'donate/donate.html')
+    if request.user.is_authenticated:
+        data = {'Profile': Profile.objects.get(user_ID=request.user.id)}
+        return render(request, 'donate/donate.html', data)
     else:
         return redirect('/login/')
 

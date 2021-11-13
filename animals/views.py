@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseRedirect
 from rest_framework.status import HTTP_200_OK
+
+from home.models import Profile
 from .serializers import AnimalSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -12,7 +14,11 @@ from home.forms import RegistrationForm
 
 
 def index(request):
-    data = {'Animals': Animal.objects.all()}
+    if request.user.is_authenticated:
+        data = {'Animals': Animal.objects.all(),
+                'Profile': Profile.objects.get(user_ID=request.user.id)}
+    else:
+        data = {'Animals': Animal.objects.all()[:4]}
     return render(request, 'animals/animal.html', data)
 
 

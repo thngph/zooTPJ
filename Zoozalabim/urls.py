@@ -26,6 +26,7 @@ urlpatterns = [
     path('donate/', include('donate.urls')),
     path('ticket/', include('ticket.urls')),
     path('animals/', include('animals.urls')),
+    path('news/', include('event.urls')),
     path('api/', include('rest_framework.urls')),
     path('api/donate/', DonateAPI.as_view(), name='donate_api_view')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
