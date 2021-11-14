@@ -1055,6 +1055,14 @@ html
 
 
 /* USER-INFO-FORM */
+.user-wrap
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 154px 0 100px;
+    background-color: #ecffea;
+}
 .user
 {
     width: 900px;
@@ -1062,20 +1070,10 @@ html
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-
+    border: 4px solid var(--green-color);
 }
 .user.open{
     display:block;
-}
-.user-close-btn
-{
-    position: absolute;
-    top:0;
-    right: 0;
-    font-size: 35px;
-    padding: 10px 20px;
-    cursor: pointer;
-    color: var(--black-color);
 }
 .user__nav
 {
@@ -1093,6 +1091,14 @@ html
     background-position: center center;
     margin: 0 auto;
 }
+.user__avatar-choose-file-btn
+{
+    max-width:100%;
+    font-size:18px;
+    color: var(--white-color);
+    margin-left: 25px;
+    margin-top: 10px;
+}
 .user__avatar-change-btn
 {
     padding: 12px 30px;
@@ -1103,6 +1109,8 @@ html
     margin-top:20px;
     display: inline-block;
     font-size:20px;
+    border: none;
+    font-weight: 500;
 }
 .user__option-list
 {
