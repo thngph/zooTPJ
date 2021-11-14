@@ -929,14 +929,21 @@ html
 }
 .auth-form
 {
-    z-index: 111;
-    width: 600px;
-    background-color: var(--white-color);
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    display: none;
+    position:relative; 
+    padding: 154px 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #ecffea;
     animation: authFormFadeIn ease 0.5s;
+}
+.auth-form__container
+{
+    border: 3px solid var(--green-color);
+    background-color: var(--white-color);
+    width: 600px;
+    border-radius: 8px;
 }
 @keyframes authFormFadeIn
 {
