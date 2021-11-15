@@ -13,12 +13,24 @@
     <link rel="stylesheet" href="{% static './css/css-homepage/base.css' %}" />
     <link rel="stylesheet" href="{% static './css/css-homepage/main.css' %}" />
     <link rel="stylesheet" href="{% static './css/css-homepage/responsive.css' %}" />
+
+    <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static './css/css-news/grid.css' %}">
+    <link rel="stylesheet" href="{% static './css/css-news/main.css' %}">
+    <link rel="stylesheet" href="{% static './css/css-news/base.css' %}">
+    <link rel="stylesheet" href="{% static './css/css-news/responsive.css' %}">
+
+
     <link rel="stylesheet" href="{% static './font-icon/fontawesome-free-5.15.3-web/css/all.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="{% static './js/homepage-js/package.json' %}" />
+
+
+
+
     <title>{%block title%}{%endblock%}</title>
 </head>
 
@@ -32,9 +44,14 @@
         {%block footer%} {%endblock%}
     </div>
     {%block modal%} {%endblock%}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{% static './js/homepage-js/main.js' %}"></script>
     <script src="{% static './js/homepage-js/swipper.js' %}"></script>
+    <script src="{% static './js/news-js.js' %}"></script>
+
 </body>
 
 </html>

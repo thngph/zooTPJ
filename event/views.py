@@ -11,3 +11,8 @@ def index(request):
     if request.user.is_authenticated:
         data = {'Profile': Profile.objects.get(user_ID=request.user.id)}
     return render(request, 'event/news.html', data)
+
+
+def post_main(request):
+    data = {}
+    return render(request, 'event/post.html', data)
