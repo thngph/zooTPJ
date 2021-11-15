@@ -1,0 +1,72 @@
+@media (max-width:739px)
+{
+    .row
+    {
+        margin: 0;
+    }
+    .slider-img
+    {
+        padding-top: 55%;
+    }
+    .content
+    {
+        padding: 0 8px;
+        margin-top: 20px;
+    }
+    .news__price-item
+    {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .news__img
+    {
+        margin: 10px 0 0;
+    }
+    .slider-text
+    {
+        left: 10px;
+        bottom:-10px;
+        top:unset;
+        font-size:18px;
+    }
+    .news-heading
+    {
+        font-size:20px;
+    }
+    .news__btn
+    {
+        padding: 10px 30px;
+    }
+    .news-other
+    {
+        margin-top:30px
+    }
+    .news-other-heading
+    {
+        font-size:20px;
+    }
+    .title-content
+    {
+        font-size:18px;
+        margin-top: 15px;
+    }
+    .news__price-list
+    {
+        margin-top:0;
+    }
+    .news__input-fill
+    {
+        font-size:18px;
+    }
+    .news__fill input,
+    .news__input
+    {
+        margin-top: 8px;
+        font-size:18px;
+    }
+    #card-element
+    {
+        margin-top: 10px;
+    }
+}
+
