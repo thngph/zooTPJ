@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: #f6f6f6;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+ {
+  font-family: 'Open Sans', sans-serif;
+  color:var(--yellow-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* POST SLIDER
+
+.post-slider {
+  position: relative;
+}
+
+.post-slider .slider-title {
+    text-align: center;
+    color: var(--green-color);
+    font-size: 30px;
+    font-weight: 500;
+    min-width:100px;
+    margin-bottom: 30px;
+}
+
+.post-slider .next {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+.post-slider .prev {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+.post-slider .post-wrapper {
+  width: 50%;
+  height: 500px;
+  margin: 0px auto;
+  display: block;
+  overflow: hidden;
+  padding: 10px 0px 100px 0px;
+  border-bottom: 3px solid var(--green-color);
+}
+
+.post-slider .post-wrapper .post {
+  width: 80%;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper .post .post-content{
+    text-align: left;
+    margin: 20px
+}
+
+.post-slider .post-wrapper .post .slider-image {
+    padding:  30%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.8s ease;
+}
+.post-slider .post-wrapper .post:hover .slider-image {
+    transform: scale(1.025);
+}
+.post-slider .post-wrapper .post .post-title {
+    font-size: 18px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.post-slider .post-wrapper .post:hover .post-title {
+  color: var(--green-color);
+}
+*/
+.post-information{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4d4d4f;
+    margin-top: 20px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 934px) {
+  .content {
+    width: 100%;
+  }
+
+  .auth-content {
+    width: 50%;
+  }
+
+  .content .main-content .post {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  header {
+    position: relative;
+  }
+
+  .auth-content {
+    width: 60%;
+
+  }
+
+  .main-content-wrapper {
+    padding: 10px;
+  }
+
+  header .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.9em;
+  }
+
+  header .logo {
+    margin-left: .5em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content .main-content .post {
+    height: auto;
+  }
+
+  .auth-content {
+    width: 90%;
+
+  }
+
+  .content .main-content .post .post-image {
+    width: 100%;
+  }
+  .post-slider .next {
+    right: 10px;
+  }
+
+  .post-slider .prev {
+    left: 10px;
+  }
+}
+
+/*POST CATEGORY*/
+.content__category
+{
+    margin-top: 50px;
+    text-align: center;
+}
+.category__wrap{
+    transition: all 0.5s ease;
+}
+.category__heading
+{
+    text-align: center;
+    color: var(--green-color);
+    margin: 40px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    min-width:100px;
+}
+.category__post
+{
+    text-decoration: none;
+    display: block;
+     padding: 25px;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+    cursor: pointer;
+}
+.post-wrap
+{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 5px;
+
+}
+.post-image
+{
+    padding-top: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.8s ease;
+}
+.post-content{
+    text-align: left;
+}
+.post-content .post-title
+{
+    margin: 10px, 0px, 10px, 0px;
+    color: var(--yellow-color);
+    font-size: 18px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.post-content .post-excerpt{
+    width: 100%;
+    height: auto;
+    margin: 20px, 0px, 20px, 0px;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+}
+
+.category__post:hover .post-image
+{
+    transform: scale(1.05);
+}
+
+.category__post:hover .post-title
+{
+    color: var(--green-color)
+}
+
+/*MAIN POST*/
+.content {
+   display: flex;
+    align-items: center;
+    justify-self: center;
+  margin 0, auto;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  background: white;
+}
+.content .post-main-content{
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+  .post-main-title {
+      text-align: center;
+    color: var(--green-color);
+    margin: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    min-width:100px;;
+}
+.post-main-info{
+    text-align: center;
+}
+.post-main-image{
+    padding-top: 30%;
+    margin-left:20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+}
+
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/*COMMENT*/
+.container{
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+.box-container{
+    height: 200px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0, 5px, 5px #111;
+    border-radius: 15px;
+    display: none;
+}
+.box-container .box{
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10%;
+    background:cornsilk;
+    overflow-y: auto;
+    text-align: left;
+}
+#input{
+    height: 40px;
+    width: 100%;
+    padding: 10%;
+    background: none;
+    font-size: 15px;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+#input:focus{
+    border-bottom: 2px solid #000;
+}
+
+button{
+    height: 30px;
+    width: 160px;
+    color: var(--green-color);
+    margin: 10px 0;
+    font-size: 15px;
+    border-radius : 5px;
+    border: 1px solid var(--green-color);
+}
+
+button:hover{
+    color: white;
+    background: var(--green-color);
+}
+
+
+
