@@ -3,68 +3,24 @@
 
 {%block content%}
 <div class="content">
+
   <div class="post-main">
-    <div class="post-main-title">This is the title of the Post</div>
+    <div class="post-main-title">{{post.title}}</div>
     <div class="post-main-info">
       <i class="far fa-user"> Admin</i>
       &nbsp;
       <i class="far fa-calendar"> Mar 11, 2019</i>
     </div>
-    <div class="post-main-image" style="background-image: url(/static/image/image-news/news01.png);"></div>
+    <div class="post-main-image" style="background-image: url({post.img.url}});"></div>
     <div class="post-main-content">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-        expedita voluptas officiis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-        expedita voluptas officiis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-        expedita voluptas officiis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-        expedita voluptas officiis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-        expedita voluptas officiis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
+      {{post.description}}
     </div>
+    <br>
+    <br>
+    <hr>
+    <br>
   </div>
-  <br>
-  <br>
-  <hr>
-  <br>
-
-    <!-- // Form binh luan -->
+  <!-- // Form binh luan -->
   <div class="container" id="container">
     <h2 class="comment-title"> Comments</h2>
     <form action="#" method="post">
@@ -72,14 +28,14 @@
       <button name="cancel" id="cancel">Hủy</button>
       <button name="comment" id="comment">Bình luận</button>
     </form>
-        <!-- // Phan hien thi binh luan -->
+    <!-- // Phan hien thi binh luan -->
     <div class="box">
       <div class="comment-detail">
         <img class="user-image" src="{% static './image/image-homepage/meo.jpeg' %}" alt="" />
         <div class="user-name">keo lì tái châu châu</div>
       </div>
       <div class="user-comment">
-        Buổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đó
+        Buổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đó Buổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đóBuổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đóBuổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đóBuổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đóBuổi tối quế lầu sơri mộng tuyền đít chua trầm đoán đồ đó
       </div>
     </div>
   </div>
