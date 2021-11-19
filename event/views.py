@@ -21,12 +21,12 @@ def index(request):
 def post_main(request, event_id):
     try:
         #     post = {}
-        #     if request.user.is_authenticated:
-        #         data = {'Event': Event.objects.get(condition="event_ID"),
-        #                 'Profile': Profile.objects.get(user_ID=request.user.id)}
-        #     else:
-        #         data = {'Event': Event.objects.all()}
-        post = Event.objects.get(event_ID=event_id)
+        if request.user.is_authenticated:
+            data = {'post':  Event.objects.get(event_ID=event_id),
+                    'Profile': Profile.objects.get(user_ID=request.user.id)}
+        else:
+            data = { 'post': Event.objects.get(event_ID=event_id)}
+        # post = Event.objects.get(event_ID=event_id)
     except Event.DoesNotExit:
         raise Http404("This Post does not exist")
-    return render(request, 'event/post.html', {'post': post})
+    return render(request, 'event/post.html', data)

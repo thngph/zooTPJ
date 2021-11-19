@@ -13,6 +13,7 @@ class Ticket(models.Model):
     ticketID = models.AutoField(unique=True, primary_key=True)
     date_purchased = models.DateTimeField(auto_now_add=True)
     expired = models.DateField(blank=True)
+    is_expired = models.BooleanField(default=False)
     adult_type_quantity = models.IntegerField(default=0)
     children_type_quantity = models.IntegerField(default=0)
     amount = models.IntegerField(default=0)

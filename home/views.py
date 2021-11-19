@@ -13,7 +13,8 @@ from rest_framework.views import APIView
 from .forms import RegistrationForm, UploadFileForm
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
-
+from donate.models import Donate
+from ticket.models import Ticket
 from animals.models import Animal
 
 
@@ -30,8 +31,15 @@ def index(request):
 def user_info(request):
     profile = None
     if request.user.id:
-        profile = {'Profile': Profile.objects.get(user_ID=request.user.id)}
-    return render(request, 'home/infoUser.html', profile)
+        profile = Profile.objects.get(user_ID=request.user.id)
+    ticket = Ticket.objects.filter(user_ID=request.user.id)
+    donate = Donate.objects.filter(user_ID=request.user.id)
+    data = {
+        'Profile': profile,
+        'Ticket': ticket,
+        'Donate': donate,
+    }
+    return render(request, 'home/infoUser.html', data)
 
 
 @login_required

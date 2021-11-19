@@ -16,4 +16,4 @@ class Donate(models.Model):
     )
 
     def __str__(self):
-        return self.date_donated
+        return str(self.date_donated)

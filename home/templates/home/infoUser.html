@@ -62,52 +62,23 @@
                                 <table class="user__tab-table">
                                     <tr>
                                     <th>ID</th>
-                                    <th>Ngày vé</th>
-                                    <th>Loại vé</th>
-                                    <th>Giá vé</th>
+                                    <th>Ngày hết hạn</th>
+                                    <th>Người lớn</th>
+                                    <th>Trẻ em</th>
+                                    <th>Tổng tiền</th>
                                     </tr>
+                                    {% for item in Ticket%}
                                     <tr>
-                                    <td>244</td>
-                                    <td>22/11/2021</td>
-                                    <td>Người lớn</td>
+                                    <td>{{item.ticketID}}</td>
+                                    <td>{{item.expired}}</td>
+                                    <td>{{item.adult_type_quantity}}</td>
+                                    <td>{{item.children_type_quantity}}</td>
                                     <td>10$</td>
                                     </tr>
-                                    <tr>
-                                        <td>245</td>
-                                        <td>22/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>246</td>
-                                        <td>22/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>247</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>248</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>249</td>
-                                        <td>22/11/2021</td>
-                                        <td>Trẻ em</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>250</td>
-                                        <td>23/11/2021</td>
-                                        <td>Người lớn</td>
-                                        <td>10$</td>
-                                    </tr>
+                                    {%endfor%}
+
+
+
     
                                 </table>
                             </div>
@@ -120,41 +91,14 @@
                                     <th>Ngày donate</th>
                                     <th>Số tiền</th>
                                     </tr>
+                                    {%for item in Donate%}
                                     <tr>
-                                    <td>244</td>
-                                    <td>22/11/2021</td>
-                                    <td>10$</td>
+                                    <td>{{item.donation_ID}}</td>
+                                    <td>{{item.date_donated}}</td>
+                                    <td>${{item.amount}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>245</td>
-                                        <td>22/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>246</td>
-                                        <td>22/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>247</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>248</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>249</td>
-                                        <td>22/11/2021</td>
-                                        <td>5$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>250</td>
-                                        <td>23/11/2021</td>
-                                        <td>10$</td>
-                                    </tr>
+                                    {%endfor%}
+
     
                                 </table>
                             </div>
