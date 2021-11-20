@@ -18,7 +18,7 @@ def index(request):
         data = {'Animals': Animal.objects.all(),
                 'Profile': Profile.objects.get(user_ID=request.user.id)}
     else:
-        data = {'Animals': Animal.objects.all()[:4]}
+        data = {'Animals': Animal.objects.all()}
     return render(request, 'animals/animal.html', data)
 
 

@@ -41,9 +41,17 @@ def post_main(request, event_id):
 @login_required
 def post_comment(request):
     if request.method == 'POST':
-        user = User.objects.get(id=request.user.id)
+        user = Profile.objects.get(user_ID=request.user.id)
         post = Event.objects.get(event_ID=request.POST['post'])
         text = request.POST['text']
         comment = Comment(author=user, post=post, text=text)
         comment.save()
+    return HttpResponseRedirect(request.POST['post'])
+
+
+@login_required
+def delete_comment(request):
+    comment = Comment.objects.get(comment_ID=request.POST['comment_id'])
+    comment.delete()
+    post = Event.objects.get(event_ID=request.POST['post'])
     return HttpResponseRedirect(request.POST['post'])
