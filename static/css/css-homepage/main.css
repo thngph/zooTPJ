@@ -1158,7 +1158,10 @@ html
     font-size:18px;
     cursor: pointer;
 }
-
+.mobile-back-btn
+{
+    display: none;
+}
 /* USER INFO TAB */
 .user__tab-info-wrap
 {
@@ -1198,6 +1201,7 @@ html
     font-size:20px;
     cursor: pointer;
 }
+
 /* TICKET HISTORY */
 /* DONATE HISTORY */
 .user__tab-ticket-wrap,

@@ -24,8 +24,8 @@
     }
     .close-modal-btn
     {
-        right:4px;
-        padding: 20px;
+        right:0px;
+        padding: 10px;
         color: var(--white-color);
         background-color:var(--black-color);
     }
@@ -33,5 +33,20 @@
     {
         font-size:20px;
         margin-top:20px;
+    }
+    .animal-main
+    {
+        overflow: unset;
+
+    }
+    .animal-main__desc
+    {
+        overflow: unset;
+        max-height: unset;
+        padding:0 0 50px;
+    }
+    .modal
+    {
+        overflow-y: auto;
     }
 }

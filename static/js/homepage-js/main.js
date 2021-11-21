@@ -117,25 +117,45 @@ if(userForm==null)
 }
 else
 {
-  const userOptionItems = $$(".user__option-item");
-const userTabWrapItems = $$(".user__tab-wrap-item");
+  // Gỡ hết active nếu đang ở width điện thoại
+    const mediaQuery = window.matchMedia('(max-width: 739px)')
+    if (mediaQuery.matches) {
+      var userTabWrapItemActive = $(".user__tab-wrap-item.active");
+      var userOptionItemActive = $(".user__option-item.active");
+      userTabWrapItemActive.classList.remove("active");
+      userOptionItemActive.classList.remove("active");
+    }
+    // Tiền hành cài active
+    const userOptionItems = $$(".user__option-item");
+    const userTabWrapItems = $$(".user__tab-wrap-item");
+    const userTabMobile=$(".user__tab-mobile")
+    const backBtn=$(".mobile-back-btn")
 
-userOptionItems.forEach(function (userOptionItem, index) {
-  const userTabWrapItem = userTabWrapItems[index];
-  userOptionItem.onclick = function () {
-    var userTabWrapItemActive = document.querySelector(
-      ".user__tab-wrap-item.active"
-    );
-    var userOptionItemActive = document.querySelector(
-      ".user__option-item.active"
-    );
+    userOptionItems.forEach(function (userOptionItem, index) {
+    const userTabWrapItem = userTabWrapItems[index];
+    userOptionItem.onclick = function () 
+    {
+      var userTabWrapItemActive = $(".user__tab-wrap-item.active");
+      var userOptionItemActive = $(".user__option-item.active");
+      if(userTabWrapItemActive && userOptionItemActive)
+      {
+        userTabWrapItemActive.classList.remove("active");
+        userOptionItemActive.classList.remove("active");
+      }
+      userTabWrapItem.classList.add("active");
+      this.classList.add("active");
 
-    userTabWrapItemActive.classList.remove("active");
-    userOptionItemActive.classList.remove("active");
+      userTabMobile.classList.add("active");
+    };
+    backBtn.onclick=function()
+    {
+      userTabMobile.classList.remove("active");
+      var userTabWrapItemActive = $(".user__tab-wrap-item.active");
+      var userOptionItemActive = $(".user__option-item.active");
+      userTabWrapItemActive.classList.remove("active");
+      userOptionItemActive.classList.remove("active");
+    }
 
-    userTabWrapItem.classList.add("active");
-    this.classList.add("active");
-  };
 });
 
 
