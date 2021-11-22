@@ -9,6 +9,7 @@ from rest_framework.views import APIView
 
 from animals.models import Animal
 from donate.models import Donate
+from event.models import Event
 from ticket.models import Ticket
 from .forms import RegistrationForm, UploadFileForm
 from .models import Profile
@@ -19,6 +20,7 @@ from .serializers import ProfileSerializer, RegisterSerializer
 def index(request):
     if request.user.is_authenticated:
         data = {'Animals': Animal.objects.all()[:4],
+                'Event': Event.objects.all().order_by('-date_uploaded')[:4],
                 'Profile': Profile.objects.get(user_ID=request.user.id)}
     else:
         data = {'Animals': Animal.objects.all()[:4]}

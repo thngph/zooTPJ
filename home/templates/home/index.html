@@ -244,68 +244,29 @@
                             Khi con người ta đã quá quen thuộc với bộn bề cao ốc, khói bụi xe cộ... thì trong sâu thẳm trong thâm tâm đều mong muốn được về với thiên nhiên. Hãy cùng nhau giúp đỡ muôn loài, góp phần bảo vệ thiên nhiên tươi đẹp
                         </div>   -->
                     </div>
+
+
                     <div class="grid wide">
                         <div class="row news__list">
+
+                            {%for item in Event%}
                             <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img">
-                                        <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
+                                        <img src="{{item.img.url}}" alt="">
                                     </div>
                                     <div class="news__item-content">
-                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
-                                        <div class="news__item-content-date">20:00 20/10/2021</div>
-                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
+                                        <div class="news__item-content-title">{{item.title}}</div>
+                                        <div class="news__item-content-date">{{item.date_uploaded}}</div>
+                                        <div class="news__item-content-desc">{{item.description}}</div>
                                     </div>
-                                    <a href="" class="news__item-see-more">
+                                    <a href="/news/" class="news__item-see-more">
                                         Xem thêm...
                                     </a>
                                 </div>
                             </div>
-                            <div class="col l-3 c-6 m-6">
-                                <div class="news__item">
-                                    <div class="news__item-img">
-                                        <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
-                                    </div>
-                                    <div class="news__item-content">
-                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
-                                        <div class="news__item-content-date">20:00 20/10/2021</div>
-                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
-                                    </div>
-                                    <a href="" class="news__item-see-more">
-                                        Xem thêm...
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-3 c-6 m-6">
-                                <div class="news__item">
-                                    <div class="news__item-img">
-                                        <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
-                                    </div>
-                                     <div class="news__item-content">
-                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
-                                        <div class="news__item-content-date">20:00 20/10/2021</div>
-                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
-                                    </div>
-                                    <a href="" class="news__item-see-more">
-                                        Xem thêm...
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-3 c-6 m-6">
-                                <div class="news__item">
-                                    <div class="news__item-img">
-                                        <img src="{% static './image/image-homepage/116203402_156286772758587_1828794733514680117_n.jpg'%}" alt="">
-                                    </div>
-                                     <div class="news__item-content">
-                                        <div class="news__item-content-title">Tình người lúc khó khăn</div>
-                                        <div class="news__item-content-date">20:00 20/10/2021</div>
-                                        <div class="news__item-content-desc">Các nhân viên sở thú chấp nhận giảm 30% lương</div>
-                                    </div>
-                                    <a href="" class="news__item-see-more">
-                                        Xem thêm...
-                                    </a>
-                                </div>
-                            </div>
+                            {%endfor%}
+
                         </div>
                         
                         

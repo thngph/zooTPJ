@@ -13,7 +13,7 @@ from django.views.generic import DetailView
 def index(request):
     data = {}
     if request.user.is_authenticated:
-        data = {'Event': Event.objects.all(),
+        data = {'Event': Event.objects.all().order_by('-date_uploaded'),
                 'Profile': Profile.objects.get(user_ID=request.user.id)}
     else:
         data = {'Event': Event.objects.all()}
