@@ -100,19 +100,19 @@
                             </div>
                         </div>
                         <div class="user__tab-info-wrap user__tab-wrap-item">
-                            <form action="{% url 'edit_info' %}" method="post" class="user__tab-info">
+                            <form action="{% url 'pwd' %}" method="post" class="user__tab-info">
                                 {% csrf_token %}
                                 <div class="user__info-item">
                                     <div class="user__info-item-label">Mật khẩu hiện tại</div>
-                                    <input type="password" class="user__info-change-input">
+                                    <input type="password" name="old-password" class="user__info-change-input">
                                 </div>
                                 <div class="user__info-item">
                                     <div class="user__info-item-label">Nhập mật khẩu mới</div>
-                                    <input type="password" class="user__info-change-input">
+                                    <input type="password" name="password1" class="user__info-change-input">
                                 </div>
                                 <div class="user__info-item">
                                     <div class="user__info-item-label">Nhập lại mật khẩu</div>
-                                    <input type="password" class="user__info-change-input">
+                                    <input type="password" name="password2" class="user__info-change-input">
                                 </div>
                                 <input type="submit" class="user__info-save" value="Lưu">
                             </form>

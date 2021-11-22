@@ -1,21 +1,18 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 # API- Rest Framework
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
 
+from animals.models import Animal
+from donate.models import Donate
+from ticket.models import Ticket
 from .forms import RegistrationForm, UploadFileForm
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
-from donate.models import Donate
-from ticket.models import Ticket
-from animals.models import Animal
 
 
 # Create your views here.
@@ -61,6 +58,20 @@ def upload(request):
         profile = Profile.objects.get(user_ID=request.user.id)
         form = UploadFileForm(request.POST, request.FILES, instance=Profile.objects.get(user_ID=request.user.id))
         form.save()
+    profile = Profile.objects.get(user_ID=request.user.id)
+    return redirect('/', {'Profile': profile})
+
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        user = User.objects.get(id=request.user.id)
+        old_pwd = request.POST['old-password']
+        pwd_1 = request.POST['password1']
+        pwd_2 = request.POST['password2']
+        if user.check_password(old_pwd) and pwd_2 == pwd_1:
+            user.set_password(pwd_1)
+            user.save()
     profile = Profile.objects.get(user_ID=request.user.id)
     return redirect('/', {'Profile': profile})
 
