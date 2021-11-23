@@ -56,14 +56,6 @@ a {
     padding: 10px;
   }
 
-  header .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 1.9em;
-  }
-
   header .logo {
     margin-left: 0.5em;
   }
@@ -78,17 +70,6 @@ a {
     width: 90%;
   }
 
-  .content .main-content .post .post-image {
-    width: 100%;
-  }
-  .post-slider .next {
-    right: 10px;
-  }
-
-  .post-slider .prev {
-    left: 10px;
-  }
-}
 
 /*POST CATEGORY*/
 .content__category {
@@ -170,6 +151,7 @@ a {
 .category__post:hover .post-title {
   color: var(--green-color);
 }
+
 
 /*MAIN POST*/
 .content {
@@ -306,3 +288,4 @@ button:hover {
   border-radius: 15px;
   text-align: left;
 }
+

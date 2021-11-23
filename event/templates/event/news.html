@@ -33,11 +33,30 @@
           </div>
           {%endif%}
           {%endfor%}
-
         </div>
       </div>
-
     </div>
   </div>
+              <div class="pagination page_number">
+            <span class="step-links">
+              {% if Event.has_previous %}
+              <a href="?page=1">&laquo; first</a>
+              <a href="?page={{ data.previous_page_number }}">previous</a>
+              {% endif %}
+
+              <span class="current">
+                Page {{ Event.number }} of {{ Event.paginator.num_pages }}.
+              </span>
+
+              {% if Event.has_next %}
+              <a href="?page={{ Event.next_page_number }}">
+<!--                <div class="next_button" style="background-image: url(https://i.imgur.com/QbA3ss3.png);"></div>-->
+                Next
+              </a>
+              <a href="?page={{ Event.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+            </span>
+
+          </div>
 </div>
 {%endblock%}
