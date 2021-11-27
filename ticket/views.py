@@ -13,7 +13,6 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 
 # Create your views here.
-from home.forms import RegistrationForm
 import stripe
 
 stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0iDTNpjBF1PeCUxbMkGQaxt8djtqOmjxfuTzG00yk4bAExN"

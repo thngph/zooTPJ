@@ -11,7 +11,7 @@ from animals.models import Animal
 from donate.models import Donate
 from event.models import Event
 from ticket.models import Ticket
-from .forms import RegistrationForm, UploadFileForm
+from .forms import UploadFileForm
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
 
@@ -79,13 +79,21 @@ def change_password(request):
 
 
 def register(request):
-    form = RegistrationForm()
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
+    return render(request, 'home/register.html')
 
-    return render(request, 'home/register.html', {'form': form})
+def registration_submit(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        pwd_1 = request.POST['password1']
+        pwd_2 = request.POST['password2']
+        email = request.POST['email']
+        if pwd_1 == pwd_2 and pwd_2:
+            user = User.objects.create_user(username, email, pwd_2)
+            profile = Profile.objects.create(user_ID = user, email = email)
+            print(profile)
+            profile.save()
+        return redirect('home')
+    return render(request, 'home/register.html')
 
 
 # Register API

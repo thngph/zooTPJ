@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
@@ -11,7 +13,7 @@ from rest_framework.views import APIView
 
 from django.contrib.auth.models import User
 # Create your views here.
-from home.forms import RegistrationForm
+
 from django.http import JsonResponse
 
 import stripe
@@ -21,7 +23,10 @@ stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0i
 
 def index(request):
     if request.user.is_authenticated:
-        data = {'Profile': Profile.objects.get(user_ID=request.user.id)}
+        today = datetime.datetime.now()
+        data = {'Profile': Profile.objects.get(user_ID=request.user.id),
+                'Donations': Donate.objects.filter(date_donated__year=today.year, date_donated__month=today.month)
+                }
         return render(request, 'donate/donate.html', data)
     else:
         return redirect('/login/')

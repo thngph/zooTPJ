@@ -12,7 +12,7 @@
                                 <div style="background-image: url({{Profile.img.url}});" class="user__avatar-img"></div>
     
                                 {%else%}
-                                    <div style="background-image: url(/static/image/image-homepage/bird-ticket.jpg.png);" class="user__avatar-img"></div>
+                                    <div style="background-image: url({% static './image/image-homepage/meo.jpeg' %});" class="user__avatar-img"></div>
                                 {%endif%}
                                 <form action="{% url 'upload' %}" method="post" class="user__tab-info" enctype="multipart/form-data">
                                 {% csrf_token %}
