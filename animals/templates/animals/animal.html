@@ -6,13 +6,13 @@
     <div class="grid">
         <div class="content__category">
             <div class="category__heading">
-                DANH MỤC CÁC LOÀI ĐỘNG VẬT CỦA SỞ THÚ
+                CÁC LOÀI CỦA SỞ THÚ
             </div>
             <div class="grid wide">
-                <div class="row category__wrap" >
+                <div class="row category__wrap" style="height: 0px;">
                     {% for item in Animals %}
                     {%if item%}
-                    <div class="col l-4 m-6 c-6 category__item">
+                    <div class="col l-3 m-4 c-6 category__item">
                         <div href="" class="category__item-wrap">
                             <div class="category__item-img" style="background-image: url({{item.img.url}});"></div>
                             <div class="category__item-name">

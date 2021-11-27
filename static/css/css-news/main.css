@@ -61,7 +61,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) { */
   .content .main-content .post {
     height: auto;
   }
@@ -289,3 +289,4 @@ button:hover {
   text-align: left;
 }
 
+/* } */

@@ -42,8 +42,19 @@ animalList.forEach(function(animalItem,index)
     }
 })
 
+var categoryWrap=$('.category__wrap')
+var categoryMore=$('.category__more')
+setTimeout(function()
+{ 
+    var itemHeight=animalList[0].clientHeight;
+    console.log(itemHeight)
+    categoryWrap.style.height =itemHeight + 20+'px'
 
-
+    categoryMore.onclick=function()
+    {
+        categoryWrap.style.height='auto'
+    }
+}, 1200);
 
 
 
