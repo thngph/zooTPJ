@@ -1,14 +1,12 @@
+import unidecode
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.db.models import Q
 from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render
+
 from home.models import Profile
 from .models import Event, Comment
-
-from django.views.generic import DetailView
-from django.db.models import Q
-import unidecode
 
 
 def remove_accent(text):
@@ -77,7 +75,7 @@ def post_main(request, event_id):
         #     post = {}
         if request.user.is_authenticated:
             event = Event.objects.get(event_ID=event_id)
-            comments = Comment.objects.filter(author_id=request.user.id).filter(post_id=event_id)
+            comments = Comment.objects.filter(post_id=event_id)
             data = {'post': event,
                     'Profile': Profile.objects.get(user_ID=request.user.id),
                     'Comments': comments
@@ -90,18 +88,19 @@ def post_main(request, event_id):
     return render(request, 'event/post.html', data)
 
 
-@login_required
+@login_required(login_url='login')
 def post_comment(request):
     if request.method == 'POST':
         user = Profile.objects.get(user_ID=request.user.id)
         post = Event.objects.get(event_ID=request.POST['post'])
         text = request.POST['text']
+        print('Text: ', text)
         comment = Comment(author=user, post=post, text=text)
         comment.save()
     return HttpResponseRedirect(request.POST['post'])
 
 
-@login_required
+@login_required(login_url='login')
 def delete_comment(request):
     comment = Comment.objects.get(comment_ID=request.POST['comment_id'])
     comment.delete()
