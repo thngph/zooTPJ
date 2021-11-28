@@ -2,8 +2,23 @@
 {%load static%}
 
 {%block content%}
+
 <div class="content">
   <div class="grid">
+
+
+
+    <form action="{% url 'search' %}" method="post">
+      {% csrf_token %}
+      <div class="input-rounded">
+        <input type="search" class="form-control rounded" name="search" placeholder="Search" />
+        <span>
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+    </form>
+
+
     <div class="content__category">
       <div class="category__heading">
         TIN TỨC TẠI ZOOZALABIM
