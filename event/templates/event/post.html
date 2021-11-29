@@ -42,7 +42,7 @@
         {{comment.text}}
       </div>
 
-      {%if user.userid == comment.author.id%}
+      {%if user.id == comment.author.user_ID.id%}
       <form action="{% url 'delete' %}" method="post">
       {% csrf_token %}
         <input type="hidden" id="post" name="post" value="{{post.event_ID}}">

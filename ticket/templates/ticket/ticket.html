@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col l-o-1 l-5">
                     <script src="https://js.stripe.com/v3/"></script>
-                    <form action="{% url 'charge' %}" method="post" id="payment-form">
+                    <form action="{% url 'ticket_charge' %}" method="post" id="payment-form">
                         {% csrf_token %}
                         <div class="ticket__form">
                             <div class="ticket__form-heading">

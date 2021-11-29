@@ -11,9 +11,6 @@ from .models import Profile
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-
-# Create your views here.
-from home.forms import RegistrationForm
 import stripe
 
 stripe.api_key = "sk_test_51Jtlh9EiJAngkF1R6wywckuD1gOYyieoOBqg4EaP2STpe8GYoMp0iDTNpjBF1PeCUxbMkGQaxt8djtqOmjxfuTzG00yk4bAExN"
@@ -28,6 +25,7 @@ def index(request):
 
 
 def charge(request):
+    amount = 0
     if request.method == 'POST':
         print('Data:', request.POST)
 
@@ -57,7 +55,7 @@ def charge(request):
             )
         payment.save()
 
-    return redirect(reverse('success', args=[amount]))
+    return redirect(reverse('ticket_success', args=[amount]))
 
 
 def successMsg(request, args):
