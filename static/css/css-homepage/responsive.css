@@ -436,8 +436,7 @@
     }
     .user__info-change-input
     {
-        width: 100%;
-        border: 1px solid #ccc;
+        width: unset;
     }
     .user__avatar-img
     {
@@ -482,28 +481,12 @@
         font-size:25px;
         padding:20px
     }
-    .user__tab-info
-    {
-        width: 80%;
-    }
-    .user__tab-table
-    {
-        font-size:16px;
-    }
 }
 
 
 /* TABLET */
 @media (min-width: 740px) and (max-width:1025px)
 {
-    .header__user
-    {
-        margin-right:20px;
-    }
-    .header__logo-link
-    {
-        margin-left: 20px;
-    }
     .header__logo-img
     {
         max-width: 150px
