@@ -6,7 +6,6 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('search/', views.search, name='search'),
     path('post/<int:event_id>', views.post_main, name='post'),
     path('post/comment', views.post_comment, name="comment"),
     path('post/delete', views.delete_comment, name="delete"),

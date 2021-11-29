@@ -5,14 +5,7 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
 from home.models import Profile
 from .models import Event, Comment
-
 from django.views.generic import DetailView
-from django.db.models import Q
-import unidecode
-
-
-def remove_accent(text):
-    return unidecode.unidecode(text)
 
 
 # Create your views here.
@@ -37,7 +30,6 @@ def index(request):
     # Phantrang
     return render(request, 'event/news.html', data)
 
-
 # def index(request):
 #     event = Event.objects.all()
 #     page_number = int(request.GET.get('page', 1))
@@ -58,18 +50,6 @@ def index(request):
 #         data = {'Event': Event.objects.all()}
 #     # Phantrang
 #     return render(request, 'event/news.html', {'data': data})
-
-def search(request):
-    search_str = request.POST['search']
-    result = Event.objects.filter(
-        Q(title_normalized__icontains=search_str) | Q(description_normalized__icontains=search_str))
-    print(result)
-    if request.user.is_authenticated:
-        data = {'Event': result,
-                'Profile': Profile.objects.get(user_ID=request.user.id)}
-    else:
-        data = {'Event': result}
-    return render(request, 'event/news.html', data)
 
 
 def post_main(request, event_id):
