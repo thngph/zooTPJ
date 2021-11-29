@@ -61,7 +61,8 @@ a {
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) 
+{ */
   .content .main-content .post {
     height: auto;
   }
@@ -69,7 +70,6 @@ a {
   .auth-content {
     width: 90%;
   }
-
 
 /*POST CATEGORY*/
 .content__category {
@@ -82,13 +82,12 @@ a {
 .category__heading {
   text-align: center;
   color: var(--green-color);
-  margin: 40px;
   display: inline-block;
   font-size: 30px;
   font-weight: 500;
-  min-width: 500px;
   border-bottom: 5px solid var(--green-color);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  padding: 0 20px;
 }
 
 .category__post {
@@ -159,11 +158,11 @@ a {
   margin-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 54px;
   text-align: center;
   width: 100%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 .content .post-main {
   width: 80%;
@@ -178,15 +177,16 @@ a {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  font-size: 15px;
+  font-size: 20px;
   text-align: justify;
 }
 .post-main-title {
   text-align: center;
   color: var(--green-color);
-  margin: 40px;
+  margin: 0 0 30px;
+  padding-top:20px;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 100px;
 }
 .post-main-info {
@@ -194,7 +194,7 @@ a {
 }
 .post-main-image {
   padding-top: 50%;
-  margin: 10%;
+  margin: 35px 0;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
@@ -270,7 +270,8 @@ button:hover {
   background: var(--yellow-color);
 }
 .box .comment-detail .user-image {
-  max-width: 35px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
 }
 .box .comment-detail .user-name {
@@ -289,3 +290,30 @@ button:hover {
   text-align: left;
 }
 
+/* SEARCH */
+.input-rounded
+{
+  width: 100%;
+}
+.form-control.rounded {
+  padding: 10px;
+  width: 80%;
+}
+.searh-form
+{
+  width: 100%;
+}
+.search-icon
+{
+  font-size:20px
+}
+/* Pagination */
+.pagination
+{
+  margin-top: 30px;
+}
+.last-page
+{
+  margin-left: 10px;
+  font-weight: 600;
+}

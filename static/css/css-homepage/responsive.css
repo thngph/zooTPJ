@@ -507,6 +507,10 @@
         font-size: 15px;
         padding: 10px 10px;
     }
+    .header__user 
+    {
+        margin-right: 10px;
+    }
     .introduce-title
     {
         text-align: center;

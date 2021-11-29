@@ -1,39 +1,45 @@
-{%extends "event/header.html"%}
-{%load static%}
-
-{%block content%}
-<div class="content" style="padding-top: 80px">
+{%extends "event/header.html"%} {%load static%} {%block content%}
+<div class="content">
   <div class="grid">
-
-    <form action="{% url 'search' %}" method="post">
-      {% csrf_token %}
-      <div class="input-rounded">
-        <input type="search" class="form-control rounded" name="search" placeholder="Search" />
-        <span>
-          <i class="fas fa-search"></i>
-        </span>
-      </div>
-    </form>
-
     <div class="content__category">
-      <div class="category__heading">
-        TIN TỨC TẠI ZOOZALABIM
+      <div class="grid wide">
+        <div class="row">
+          <div class="col l-8 m-12 c-12">
+            <div class="category__heading">TIN TỨC TẠI ZOOZALABIM</div>
+          </div>
+          <div
+            class="col l-4 m-12 c-12"
+            style="display: flex; align-items: center"
+          >
+            <form action="{% url 'search' %}" method="post" class="searh-form">
+              {% csrf_token %}
+              <div class="input-rounded">
+                <input
+                  type="search"
+                  class="form-control rounded"
+                  name="search"
+                  placeholder="Search"
+                />
+                <span>
+                  <i class="search-icon fas fa-search"></i>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="grid wide">
         <div class="row category__wrap">
-          {% for item in Event %}
-          {%if item%}
+          {% for item in Event %} {%if item%}
           <div class="col l-3 m-6 c-6 category__post">
             <a href="{% url 'post' item.event_ID %}" class="post-wrap">
-              <div class="post-image" style="background-image: url({{item.img.url}});">
-              </div>
+              <div
+                class="post-image"
+                style="background-image: url({{item.img.url}});"
+              ></div>
               <div class="post-content">
-                <div class="post-title">
-                  {{item.title}}
-                </div>
-                <div class="post-excerpt">
-                  {{item.description}}
-                </div>
+                <div class="post-title">{{item.title}}</div>
+                <div class="post-excerpt">{{item.description}}</div>
                 <div class="post-information">
                   <i class="far fa-user"> Admin</i>
                   &nbsp;
@@ -42,32 +48,30 @@
               </div>
             </a>
           </div>
-          {%endif%}
-          {%endfor%}
+          {%endif%} {%endfor%}
         </div>
       </div>
     </div>
   </div>
-              <div class="pagination page_number">
-            <span class="step-links">
-              {% if Event.has_previous %}
-              <a href="?page=1">&laquo; first</a>
-              <a href="?page={{ data.previous_page_number }}">previous</a>
-              {% endif %}
+  <div class="pagination page_number">
+    <span class="step-links">
+      {% if Event.has_previous %}
+      <a href="?page=1">&laquo; first</a>
+      <a href="?page={{ data.previous_page_number }}">previous</a>
+      {% endif %}
 
-              <span class="current">
-                Page {{ Event.number }} of {{ Event.paginator.num_pages }}.
-              </span>
+      <span class="current">
+        Page <span style="font-weight: 600;">{{ Event.number }}</span> of {{ Event.paginator.num_pages }}.
+      </span>
 
-              {% if Event.has_next %}
-              <a href="?page={{ Event.next_page_number }}">
-<!--                <div class="next_button" style="background-image: url(https://i.imgur.com/QbA3ss3.png);"></div>-->
-                Next
-              </a>
-              <a href="?page={{ Event.paginator.num_pages }}">last &raquo;</a>
-              {% endif %}
-            </span>
-
-          </div>
+      {% if Event.has_next %}
+      <a href="?page={{ Event.next_page_number }}">
+        <!--                <div class="next_button" style="background-image: url(https://i.imgur.com/QbA3ss3.png);"></div>-->
+        Next
+      </a>
+      <a class="last-page" href="?page={{ Event.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
 </div>
 {%endblock%}

@@ -11,7 +11,6 @@
     .content
     {
         padding: 0 8px;
-        margin-top: 20px;
     }
     .news__price-item
     {
@@ -67,6 +66,27 @@
     #card-element
     {
         margin-top: 10px;
+    }
+    .content .post-main
+    {
+        width: 90%;
+    }
+    .post-main-image
+    {
+        margin: 20px 0;
+        padding-top: 70%;
+    }
+    .container
+    {
+        width: 90%;
+    }
+    .content .post-main .post-main-content
+    {
+        font-size:16px;
+    }
+    .category__heading
+    {
+        font-size:22px
     }
 }
 
