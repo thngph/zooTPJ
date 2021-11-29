@@ -59,3 +59,10 @@
         margin-top:20px;
     }
 }
+@media (min-width: 740px) and (max-width:1025px)
+{
+    .ticket-total
+    {
+        margin-top:20px;
+    }
+}

@@ -320,7 +320,7 @@
     }
     /* DONATE */
     .donate{
-        padding-top: 30px;
+        margin-top: 55px;
     }
     .donate__btn
     {
@@ -331,7 +331,7 @@
     /* IMAGE ANIMAL */
     .image-animal
     {
-        padding: 30px 0 40px;
+        padding-top: 50px;
     }
     .image-animal__item-name
     {
@@ -353,7 +353,7 @@
     /* TIN TỨC */
     .content__news
     {
-        padding-top: 30px;
+        padding-top: 60px;
     }
     .news__item-content
     {
@@ -378,11 +378,11 @@
     /* CONTACT */
     .content__contact
     {
-        padding: 0;
+        padding-top: 55px;
     }
     .contact__content
     {
-        margin: 50px auto 20px;
+        margin: 0 auto 20px;
     }
     .contact-list
     {
@@ -487,6 +487,10 @@
 /* TABLET */
 @media (min-width: 740px) and (max-width:1025px)
 {
+    .header__logo-link
+    {
+        margin-left: 10px;
+    }
     .header__logo-img
     {
         max-width: 150px
@@ -496,7 +500,7 @@
         margin:0;
     }
     .header__btn{
-        margin: 0 20px 0;
+        margin: 0 10px 0;
     }
     .header__nav>li>a
     {
@@ -538,9 +542,41 @@
 
     .btn--green,.btn--white
     {
-        padding: 10px 15px;
+        padding: 10px 10px;
         font-size: 15px;
     }
+    .slider__content-desc
+    {
+        font-size:15px;
+    }
+    .slider__content
+    {
+        max-width: 400px;
+    }
+    .slide-item
+    {
+        padding-top: 55%
+    }
+    /* Info */
+    .info
+    {
+        padding-top:80px
+    }
+    /* Introduce */
+    .content__introduce
+    {
+        padding-top:80px;
+    }
+    .introduce__content
+    {
+        margin-top: 30px;
+    }
+    /* Donate */
+    .donate
+    {
+        margin-top:60px
+    }
+    /* Video */
     .video__category-place
     {
         padding: 5px 5px;
@@ -552,6 +588,16 @@
     .image-animal
     {
         padding-top:20px;
+    }
+    /* Contact */
+    .content__contact
+    {
+        padding-top: 55px;
+    }
+    /* USER INFO */
+    .user__info-change-input
+    {
+        width: 450px;
     }
 }
 /* PC low */

@@ -23,7 +23,8 @@ def index(request):
                 'Event': Event.objects.all().order_by('-date_uploaded')[:4],
                 'Profile': Profile.objects.get(user_ID=request.user.id)}
     else:
-        data = {'Animals': Animal.objects.all()[:4]}
+        data = {'Animals': Animal.objects.all()[:4],
+        'Event': Event.objects.all().order_by('-date_uploaded')[:4]}
     return render(request, 'home/index.html', data)
 
 

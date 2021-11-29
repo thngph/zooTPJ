@@ -15,7 +15,7 @@
     <div class="content">
         <div class="grid wide">
             <div class="row">
-                <div class="col l-o-1 l-5">
+                <div class="col l-o-1 l-5 c-12 m-11">
                     <script src="https://js.stripe.com/v3/"></script>
                     <form action="{% url 'ticket_charge' %}" method="post" id="payment-form">
                         {% csrf_token %}
@@ -71,7 +71,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col ml-0-5 l-4">
+                <div class="col l-o-1 l-4 c-12 m-11">
                     <div class="ticket-total">
                         <div class="ticket-total__part-date">
                             <div class="ticket-total__part-date-desc">

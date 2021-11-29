@@ -53,7 +53,7 @@
         <!-- Content -->
         <div class="content">
             <!-- Thông tin -->
-            <div id="introduce" class="grid info">
+            <div id="introduce" class="grid info" style="overflow:hidden">
                 <div class="row">
                     <div class="col l-3 m-6 c-6 info__item">
                         <div class="info__item-icon">
@@ -134,9 +134,9 @@
                 </div>
             </div>
             <!-- Donate -->
-            <div id="donate" class="content__donate content-section">
+            <div id="donate" class="donate content__donate content-section">
                <div class="grid wide">
-                <div class="row donate">
+                <div class="row">
                     <div class="col l-6 c-12 m-12">
                         <div class="donate__wrap">
                             <h2 class="section-heading--yellow">LỜI KÊU GỌI</h2>
@@ -186,8 +186,8 @@
                                 {% if item %}
                                    <div class="col l-3 c-6 m-6 ">
                                 <a href="" class="image-animal__item">
-                                    <div class="image-animal__item-img">
-                                        <img src="{{item.img.url}}" alt="">
+                                    <div class="image-animal__item-img" style="background-image: url('{{item.img.url}}')">
+                                        <!-- <img src="{{item.img.url}}" alt=""> -->
                                     </div>
                                     <div class="image-animal__item-name">{{item.animal_name}}</div>
                                     <div class="image-animal__item-desc">{{item.description}}</div>
@@ -252,8 +252,8 @@
                             {%for item in Event%}
                             <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
-                                    <div class="news__item-img">
-                                        <img src="{{item.img.url}}" alt="">
+                                    <div class="news__item-img" style="background-image: url('{{item.img.url}}')">
+                                        <!-- <img src="{{item.img.url}}" alt=""> -->
                                     </div>
                                     <div class="news__item-content">
                                         <div class="news__item-content-title">{{item.title}}</div>

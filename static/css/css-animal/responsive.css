@@ -22,17 +22,34 @@
         padding: 5px 10px;
         font-size:15px
     }
+    .animal-main__name
+    {
+        font-size:20px;
+        margin-top:20px;
+    }
+    
+}
+@media (min-width: 740px) and (max-width:1025px)
+{
+    .category__heading
+    {
+        font-size:30px;
+        margin-bottom: 30px
+    }
+    .animal-main__img
+    {
+        padding-top: 80%;
+    }
+}
+/* TABLET & MOBILE */
+@media (max-width:1025px)
+{
     .close-modal-btn
     {
         right:0px;
         padding: 10px;
         color: var(--white-color);
         background-color:var(--black-color);
-    }
-    .animal-main__name
-    {
-        font-size:20px;
-        margin-top:20px;
     }
     .animal-main
     {

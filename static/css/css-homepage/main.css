@@ -81,7 +81,8 @@ html
 }
 .header__user-img
 {
-     max-width: 50px;
+    height: 50px;
+    width: 50px;
     border-radius:50%;
     display: inline-block;
     margin-right: 10px;
@@ -524,13 +525,12 @@ html
 }
 .image-animal__item-img
 {
+    padding-top: 85%;
     overflow: hidden;
-    background-color: var(--black-color);
-}
-.image-animal__item-img img {
-    width: 100%;
-    display:block;
-    transition: all 0.7s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.8s;
 }
 .image-animal__item-name{
     color: var(--yellow-color);
@@ -543,17 +543,18 @@ html
 {
     color: var(--black-color);
     font-size: 18px;
-    margin: 0 20px 30px;
+    margin: 0 15px 30px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+    line-height:1.3
 }
 .image-animal__item:hover
 {
     background-color:var(--green-color);
 }
-.image-animal__item:hover .image-animal__item-img img
+.image-animal__item:hover .image-animal__item-img
 {
     transform: scale(1.05);
     opacity:0.85
@@ -722,18 +723,16 @@ html
     box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
     transform: translateY(-1px)
 }
-.news__item:hover .news__item-img img
+.news__item:hover .news__item-img
 {
     transform: scale(1.05);
 }
 .news__item-img{
-    width: 100%;
+    padding-top: 80%;
     overflow: hidden;
-}
-.news__item-img img
-{
-    width: 100%;
-    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     transition: all 0.8s;
 }
 .news__item-content{
@@ -764,6 +763,7 @@ html
     -webkit-line-clamp: 2;
     overflow: hidden;
     margin: 10px 0;
+    line-height: 1.3
 }
 .news__item-see-more
 {

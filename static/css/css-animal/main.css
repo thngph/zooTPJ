@@ -90,8 +90,25 @@ html
     color: var(--white-color);
     margin-top: 50px;
     cursor: pointer;
+    display: none;
 }
-
+.category__less
+{
+    background-color: var(--yellow-color);
+    border-radius: 30px;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white-color);
+    margin-top: 50px;
+    cursor: pointer;
+    display: none;
+}
+.category__less.active,
+.category__more.active
+{
+    display: block;
+}
 /* MODAL */
 .modal
 {
@@ -147,10 +164,6 @@ html
 }
 .animal-main.active{
     display:flex;
-}
-.animal-main__img-wrap
-{
-
 }
 .animal-main__img 
 {

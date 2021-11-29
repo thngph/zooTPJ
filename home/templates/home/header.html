@@ -71,7 +71,7 @@
                         {% if user.username %}
                         <li><i class="fas fa-user-alt"></i><a href="/user/">Thông tin tài khoản</a></li>
                         {%endif%}
-                        <li><i class="fas fa-home"></i><a href="">Trang chủ</a></li>
+                        <li><i class="fas fa-home"></i><a href="/">Trang chủ</a></li>
                         <li><i class="fas fa-paw"></i><a href="/animals/">Phân loài</a></li>
                         <li><i class="fas fa-newspaper"></i><a href="/news/">Tin tức</a></li>
                         <li><i class="fas fa-donate"></i><a href="/donate/">Hỗ trợ</a></li>
@@ -92,7 +92,7 @@
         {%block content%} {%endblock%}
 
 {%block footer%}
-        <div class="footer">
+        <div class="footer" style="overflow: hidden;">
             <div class="grid">
                 <div class="row footer__list">
                     <div class="col l-2-4 m-4 c-6">

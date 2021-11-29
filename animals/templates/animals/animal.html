@@ -12,7 +12,7 @@
                 <div class="row category__wrap" >
                     {% for item in Animals %}
                     {%if item%}
-                    <div class="col l-4 m-6 c-6 category__item">
+                    <div class="col l-3 m-4 c-6 category__item">
                         <div href="" class="category__item-wrap">
                             <div class="category__item-img" style="background-image: url({{item.img.url}});"></div>
                             <div class="category__item-name">
@@ -22,9 +22,6 @@
                     </div>
                     {%endif%}
                     {%endfor%}
-                </div>
-                <div class="category__more">
-                    XEM THÊM
                 </div>
             </div>
         </div>
@@ -39,12 +36,12 @@
         <i class="fas fa-times close-modal-btn"></i>
         <div class="grid">
             <div class="row no-gutters">
-                <div class="col l-7 c-12 m-6">
+                <div class="col l-7 c-12 m-12">
                     <div class="animal-main__img-wrap">
                         <div class="animal-main__img" style="background-image: url({{item.img.url}});"> </div>
                     </div>
                 </div>
-                <div class="col l-5 c-12 m-6">
+                <div class="col l-5 c-12 m-12">
                     <div class="animal-main__wrap-text">
                         <div class="animal-main__name">
                             {{item.animal_name}}

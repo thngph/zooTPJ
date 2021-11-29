@@ -37,13 +37,22 @@
     {
         padding: 10px 30px;
     }
-    .donate-other
+    .donate__top
     {
         margin-top:30px
     }
-    .donate-other-heading
+    .donate__top-heading
     {
-        font-size:20px;
+        font-size:22px;
+    }
+    .donate__top-table th
+    {
+        font-size:18px
+    }
+    .donate__top-table td
+    {
+        font-size:16px;
+        padding: 0 10px
     }
     .title-content
     {

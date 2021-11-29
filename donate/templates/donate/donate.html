@@ -90,30 +90,26 @@
       </div>
     </div>
   </div>
-  <div class="donate-other">
+  <div class="donate__top">
     <div class="grid">
-      <h3 class="donate-other-heading">Danh sách đóng góp trong tháng</h3>
-      <div class="row">
-        <div class="col c-12">
-          <table class="user__tab-table">
-          <tr>
-            <th>ID</th>
-            <th>Thời gian</th>
-            <th>Tài khoản</th>
-            <th>Số tiền</th>
-          </tr>
-            {%for donation in Donations%}
-          <tr>
-            <td>{{donation.donation_ID}}</td>
-            <td>{{donation.date_donated}}</td>
-            <td>{{donation.user_ID}}</td>
-            <td>{{donation.amount}}</td>
-          </tr>
-            {%endfor%}
+      <h3 class="donate__top-heading">Danh sách đóng góp trong tháng</h3>
+          <table class="donate__top-table">
+            <tr>
+              <th>ID</th>
+              <th>Thời gian</th>
+              <th>Tài khoản</th>
+              <th>Số tiền</th>
+            </tr>
+              {%for donation in Donations%}
+            <tr>
+              <td>{{donation.donation_ID}}</td>
+              <td>{{donation.date_donated}}</td>
+              <td>{{donation.user_ID}}</td>
+              <td>{{donation.amount}}</td>
+            </tr>
+              {%endfor%}
 
         </table>
-      </div>
-    </div>
   </div>
 </div>
 </div>
