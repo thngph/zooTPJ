@@ -9,7 +9,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Animal
 from rest_framework.parsers import JSONParser
-
+# Create your views here.
+from home.forms import RegistrationForm
 
 
 def index(request):

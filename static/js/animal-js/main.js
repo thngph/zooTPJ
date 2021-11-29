@@ -48,13 +48,13 @@ setTimeout(function()
 { 
     var itemHeight=animalList[0].clientHeight;
     console.log(itemHeight)
-    categoryWrap.style.height =itemHeight*2 + 20+'px'
+    categoryWrap.style.height =itemHeight + 20+'px'
 
     categoryMore.onclick=function()
     {
         categoryWrap.style.height='auto'
     }
-}, 50);
+}, 1200);
 
 
 

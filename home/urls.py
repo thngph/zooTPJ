@@ -4,9 +4,8 @@ from django.contrib.auth import views as auth_views
 from .views import ProfileAPI, RegisterAPI
 
 urlpatterns = [
-    path('', views.index, name="home"),
+    path('', views.index),
     path('register/', views.register, name="register"),
-    path('register/submit', views.registration_submit, name="registration_submit"),
     path('user/', views.user_info, name="user"),
     path('user/edit', views.edit_user, name="edit_info"),
     path('user/change-pwd', views.change_password, name="pwd"),

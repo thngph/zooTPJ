@@ -91,51 +91,55 @@
     </div>
   </div>
   <div class="donate-other">
-    <div class="grid">
-      <h3 class="donate-other-heading">Danh sách đóng góp trong tháng</h3>
-      <div class="row">
-        <div class="col c-12">
-          <table class="user__tab-table">
-          <tr>
-            <th>ID</th>
-            <th>Thời gian</th>
-            <th>Tài khoản</th>
-            <th>Số tiền</th>
-          </tr>
-            {%for donation in Donations%}
-          <tr>
-            <td>{{donation.donation_ID}}</td>
-            <td>{{donation.date_donated}}</td>
-            <td>{{donation.user_ID}}</td>
-            <td>{{donation.amount}}</td>
-          </tr>
-            {%endfor%}
-
-        </table>
-
+    <div class="grid wide">
+      <h2 class="donate-other-heading">CÁC HÌNH THỨC HỖ TRỢ KHÁC</h2>
+      <div class="row donate-other__list">
+        <div class="col l-4 m-6 c-6">
+          <div class="donate-other__item">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
+              <div class="donate-other__item-title">Hỗ trợ theo tháng</div>
+              <div class="donate-other__item-desc">Trở thành thanh viên của ZOOZALABIM với số tiền mỗi tháng</div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
         </div>
+        <div class="col l-4 m-6 c-6">
+          <div class="donate-other__item">
+                          <a style="text-decoration: none;" href="/ticket/">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
 
+                <div class="donate-other__item-title">Mua vé đến ZOOZALABIM</div>
+              <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú
+              </a>
+
+              </div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
+        </div>
+        <div class="col l-4  m-6 c-6">
+          <div class="donate-other__item">
+            <div class="donate-other__item-img-wrap">
+              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">
+              </div>
+            </div>
+            <div class="donate-other__item-content">
+              <div class="donate-other__item-title">Chia sẻ website</div>
+              <div class="donate-other__item-desc">Với những chiếc vé, bạn đã góp 1 phần tiền nhỏ vào việc hỗ trợ sở thú
+              </div>
+            </div>
+            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>
+          </div>
+        </div>
       </div>
-
-
-
-
-<!--      <div class="row donate-other__list">-->
-<!--        <div class="col l-4 m-6 c-6">-->
-<!--          <div class="donate-other__item">-->
-<!--            <div class="donate-other__item-img-wrap">-->
-<!--              <div class="donate-other__item-img" style="background-image: url(/static/image/image-donate/bao.jpeg)">-->
-<!--              </div>-->
-
-<!--            </div>-->
-<!--            <div class="donate-other__item-content">-->
-<!--              <div class="donate-other__item-title">Hỗ trợ theo tháng</div>-->
-<!--              <div class="donate-other__item-desc">Trở thành thanh viên của ZOOZALABIM với số tiền mỗi tháng</div>-->
-<!--            </div>-->
-<!--            <i class="donate-other__item-hover-logo far fa-hand-pointer"></i>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        </div>-->
     </div>
   </div>
 </div>
