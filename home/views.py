@@ -41,7 +41,7 @@ def user_info(request):
     return render(request, 'home/infoUser.html', data)
 
 
-@login_required
+@login_required(login_url='login')
 def edit_user(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user_ID=request.user.id)
@@ -52,7 +52,7 @@ def edit_user(request):
     return redirect('/', {'Profile': profile})
 
 
-@login_required
+@login_required(login_url='login')
 def upload(request):
     if request.method == 'POST':
         # profile.img = request.FILES['img']
@@ -64,7 +64,7 @@ def upload(request):
     return redirect('/', {'Profile': profile})
 
 
-@login_required
+@login_required(login_url='login')
 def change_password(request):
     if request.method == 'POST':
         user = User.objects.get(id=request.user.id)

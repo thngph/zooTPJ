@@ -3,7 +3,13 @@ from django.db import models
 
 
 # Create your models here.
+from unidecode import unidecode
+
 from home.models import Profile
+
+
+def remove_accent(text):
+    return unidecode(text)
 
 
 class Event(models.Model):
@@ -12,9 +18,16 @@ class Event(models.Model):
     description = models.CharField(max_length=1000)
     img = models.ImageField(default="", upload_to="photos/news")
     date_uploaded = models.DateTimeField(auto_now_add=True)
+    title_normalized = models.CharField(max_length=100, default='')
+    description_normalized = models.CharField(max_length=1000, default='')
 
     def __str__(self):
         return str(self.title)
+
+    def save(self, *args, **kwargs):
+        self.title_normalized = remove_accent(self.title)
+        self.description_normalized = remove_accent(self.description)
+        super(Event, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

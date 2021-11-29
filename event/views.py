@@ -6,6 +6,12 @@ from django.http import Http404, HttpResponseRedirect
 from home.models import Profile
 from .models import Event, Comment
 from django.views.generic import DetailView
+from django.db.models import Q
+import unidecode
+
+
+def remove_accent(text):
+    return unidecode.unidecode(text)
 
 
 # Create your views here.
@@ -30,6 +36,16 @@ def index(request):
     # Phantrang
     return render(request, 'event/news.html', data)
 
+
+def search(request):
+    search_str = request.POST['search']
+    result = Event.objects.filter(Q(title_normalized__icontains=search_str) | Q(description_normalized__icontains=search_str))
+    if request.user.is_authenticated:
+        data = {'Event': result,
+                'Profile': Profile.objects.get(user_ID=request.user.id)}
+    else:
+        data = {'Event': result}
+    return render(request, 'event/news.html', data)
 # def index(request):
 #     event = Event.objects.all()
 #     page_number = int(request.GET.get('page', 1))
@@ -72,7 +88,7 @@ def post_main(request, event_id):
     return render(request, 'event/post.html', data)
 
 
-@login_required
+@login_required(login_url='login')
 def post_comment(request):
     if request.method == 'POST':
         user = Profile.objects.get(user_ID=request.user.id)
@@ -83,7 +99,7 @@ def post_comment(request):
     return HttpResponseRedirect(request.POST['post'])
 
 
-@login_required
+@login_required(login_url='login')
 def delete_comment(request):
     comment = Comment.objects.get(comment_ID=request.POST['comment_id'])
     comment.delete()
