@@ -25,10 +25,10 @@
     <h2 class="comment-title"> Comments</h2>
     <form action="{% url 'comment' %}" method="post">
       {% csrf_token %}
-      <input required type="text" name="text" class="input" id="input" placeholder="Chia sẻ cảm nghĩ của bạn...">
+      <textarea name="text" class="input" id="input" row="20" placeholder="Chia sẻ cảm nghĩ của bạn..."></textarea>
       <input type="hidden" name="post" value="{{post.event_ID}}">
       <button name="cancel" id="cancel">Hủy</button>
-      <button type="submit" name="comment" id="comment">Bình luận</button>
+      <button name="comment" id="comment">Bình luận</button>
     </form>
     <!-- // Phan hien thi binh luan -->
           {%for comment in Comments%}
