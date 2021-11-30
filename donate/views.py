@@ -56,7 +56,11 @@ def charge(request):
 
 def successMsg(request, args):
     amount = args
-    return render(request, 'donate/success.html', {'amount': amount})
+    data = {
+        'Profile': Profile.objects.get(user_ID=request.user.id),
+        'amount': amount
+    }
+    return render(request, 'donate/success.html', data)
 
 
 # Donate API

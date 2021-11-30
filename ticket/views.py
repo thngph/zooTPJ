@@ -60,7 +60,7 @@ def charge(request):
 
 def successMsg(request, args):
     amount = args
-    return render(request, 'donate/success.html', {'amount': amount})
+    return render(request, 'ticket/success.html', {'amount': amount})
 
 
 # Ticket API
