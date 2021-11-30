@@ -8,7 +8,7 @@
                 ĐĂNG KÝ
             </div>
             <div class="auth-form__body">
-                <form class="login_form" action="{% url 'registration_submit' %}" method="POST">
+                <form class="login_form" action="{% url 'register' %}" method="POST">
                     {% csrf_token %}
                     <div class="auth-form__form">
                         <div class="auth-form__group">
@@ -29,16 +29,21 @@
                             <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
                         </div>
                         <!-- CẢNH BÁO -->
-                        <div class="alert success">
-                            Đăng kí thành công, mời đăng nhập
-                        </div>
+
+<!--                        <div class="alert success">-->
+<!--                            Đăng kí thành công, mời đăng nhập-->
+<!--                        </div>-->
+                        {%if warning == 'password'%}
                         <div class="alert warning">
                             Hai mật khẩu phải trùng nhau
                         </div>
+                        {%endif%}
+                        {%if warning == 'username'%}
                         <div class="alert warning">
                             Tài khoản đã tồn tại
                         </div>
-                        
+                        {%endif%}
+
                     </div>
                     <div class="auth-form__control">
                         <input type="submit" value="Đăng ký" class="auth-form__btn">

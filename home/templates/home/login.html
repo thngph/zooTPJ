@@ -17,9 +17,11 @@
                         <input type="password" class="auth-form__input" name="password" required="" id="id_password" placeholder="Mật khẩu">
                     </div>
                     <!-- CẢNH BÁO -->
+                    {%if warning%}
                     <div class="alert warning">
                         Mật khẩu không chính xác
                     </div>
+                    {%endif%}
                 </div>
                 <div class="auth-form__control">
 		            <input type="hidden" name="next" value="/">

@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 # API- Rest Framework
@@ -79,22 +80,40 @@ def change_password(request):
     return redirect('/', {'Profile': profile})
 
 
-def register(request):
-    return render(request, 'home/register.html')
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'home/login.html', {'warning': 'failed'})
+    return render(request, 'home/login.html')
 
-def registration_submit(request):
+
+def username_exists(username):
+    return User.objects.filter(username=username).exists()
+
+
+def register(request):
     if request.method == 'POST':
         username = request.POST['username']
         pwd_1 = request.POST['password1']
         pwd_2 = request.POST['password2']
         email = request.POST['email']
+        if username_exists(username):
+            return render(request, 'home/register.html', {'warning': 'username'})
         if pwd_1 == pwd_2 and pwd_2:
             user = User.objects.create_user(username, email, pwd_2)
-            profile = Profile.objects.create(user_ID = user, email = email)
-            print(profile)
+            profile = Profile.objects.create(user_ID=user, email=email)
             profile.save()
-        return redirect('home')
+            return redirect('home')
+        else:
+            return render(request, 'home/register.html', {'warning': 'password'})
     return render(request, 'home/register.html')
+
 
 # Register API
 class RegisterAPI(APIView):

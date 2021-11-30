@@ -15,7 +15,7 @@ class Profile(models.Model):
     name = models.CharField(default='new user', max_length=50)
     email = models.EmailField(max_length=50)
     contact = models.CharField(max_length=15)
-    img = models.ImageField(default='photos/animals/rabbit.jpeg', upload_to="photos/user")
+    img = models.ImageField(default='photos/user/default-avatar.png', upload_to="photos/user")
     objects = models.Manager()
 
     def __str__(self):
