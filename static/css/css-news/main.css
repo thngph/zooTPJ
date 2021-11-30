@@ -73,7 +73,6 @@ a {
 
 /*POST CATEGORY*/
 .content__category {
-  margin-top: 50px;
   text-align: center;
 }
 .category__wrap {
@@ -84,8 +83,8 @@ a {
   color: var(--green-color);
   display: inline-block;
   font-size: 30px;
-  font-weight: 500;
-  border-bottom: 5px solid var(--green-color);
+  font-weight: 600;
+  border-bottom: 4px solid var(--green-color);
   margin-bottom: 20px;
   padding: 0 20px;
 }
@@ -163,7 +162,7 @@ a {
   text-align: center;
   width: 100%;
   height: auto;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 .content .post-main {
   width: 80%;

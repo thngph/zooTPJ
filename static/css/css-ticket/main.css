@@ -247,3 +247,55 @@ html
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+/* SUCCESS */
+/* SUCCESS */
+#box
+{
+    min-height:800px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    text-align: center;
+}
+.success-icon {
+    font-size: 60px;
+    border: 5px solid var(--green-color);
+    border-radius:50%;
+    padding:40px;
+    color: var(--green-color);
+}
+.success-title{
+    margin-top: 20px ;
+    font-size:30px;
+    color: var(--green-color);
+}
+.success-content
+{
+    margin-top:30px;
+    font-size: 25px;
+    color: var(--black-color)
+}
+.success-btn-back
+{
+    margin-top: 40px;
+    text-decoration: none;
+    color: var(--green-color);
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 10px 24px;
+    border: 2px solid var(--green-color);
+    font-size: 25px;
+}
+.success-btn-back:hover
+{
+    opacity: 0.8;
+}

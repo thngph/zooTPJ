@@ -58,6 +58,34 @@
     {
         margin-top:20px;
     }
+    /* Success */
+    .success-icon
+    {
+        font-size:40px;
+        padding: 20px;
+    }
+    .success-title
+    {
+        font-size: 20px;
+    }
+    .success-content
+    {
+        font-size:16px;
+    }
+    #box
+    {
+        min-height: 500px;
+    }
+    .success
+    {
+        padding: 0 15px
+    }
+    .success-btn-back
+    {
+        margin-top: 25px;
+        font-size:18px;
+        padding: 10px 15px;
+    }
 }
 @media (min-width: 740px) and (max-width:1025px)
 {

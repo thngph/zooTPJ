@@ -934,7 +934,7 @@ html
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
     z-index: 11;
     display:block;
     align-items: center;
@@ -951,13 +951,13 @@ html
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 50%;
+    width: 600px;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: .3rem;
     outline: 0;
-    margin: 100px auto;
+    margin: 150px auto;
 }
 
 .modal-header {
@@ -988,12 +988,15 @@ html
     align-items: center;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: 1rem;
+    padding: 0.4rem;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: .3rem;
     border-bottom-left-radius: .3rem;
 }
-
+.modal-title
+{
+    font-size: 18px;
+}
 
 .btn {
     display: inline-block;
@@ -1008,7 +1011,8 @@ html
     line-height: 1.5;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    cursor: pointer
+    cursor: pointer;
+    min-width: 100px;
 }
 .btn-success {
     color: #fff;

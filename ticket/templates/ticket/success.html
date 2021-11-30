@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'ticket/header.html' %}
+{% load static %}
+{% block content %}
+	<div id="box" >
+		<div class="success">
+			<i class="success-icon fas fa-check"></i>
+			<h4 class="success-title">Thanh toán thành công ${{amount}} tiền vé!</h4>
+			<p class="success-content">Cám ơn sự đóng góp quý báu của bạn - Đã góp phần vào việc duy trì và phát triển Zoozalabim. Bạn có thể kiểm tra vé trong thông tin cá nhân. Hẹn gặp bạn tại Zoozalabim!</p>
+			<a class="success-btn-back myButton" href="{% url 'index' %}">Trở về trang mua vé</a>
+		</div>
+	</div>
 
-</body>
-</html>
+{% endblock content %}

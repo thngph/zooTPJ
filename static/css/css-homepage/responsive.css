@@ -251,7 +251,7 @@
     /* CONTENT */
     .content-section
     {
-        padding: 0 5px;
+        padding: 0 15px;
     }
     /* INFO */
     .info
@@ -430,10 +430,6 @@
     {
         padding: 104px 0 50px;
     }
-    .user 
-    {
-        border: 2px solid #000;
-    }
     .user__info-change-input
     {
         width: unset;
@@ -480,6 +476,11 @@
         position: absolute;
         font-size:25px;
         padding:20px
+    }
+    /* Modal */
+    .modal-content
+    {
+        width: 400px;
     }
 }
 

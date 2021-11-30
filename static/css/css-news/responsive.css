@@ -86,7 +86,8 @@
     }
     .category__heading
     {
-        font-size:22px
+        font-size:22px;
+        margin-top:30px
     }
 }
 

@@ -116,6 +116,15 @@ if(userForm==null && authForm==null)
       },
     };
     videos.start();
+    var modal=$('.modal')
+    if(modal)
+    {
+      var btnClose=$('.btn-close')
+      btnClose.onclick=function()
+      {
+        modal.style.display = 'none';
+      }
+    }
 }
 if(userForm)
 {
