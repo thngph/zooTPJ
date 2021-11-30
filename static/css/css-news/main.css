@@ -127,6 +127,7 @@ a {
   margin: 10px, 0px, 10px, 0px;
   color: var(--yellow-color);
   font-size: 18px;
+  font-weight: 500;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -136,7 +137,7 @@ a {
   width: 100%;
   height: auto;
   margin: 20px, 0px, 20px, 0px;
-  font-size: 12px;
+  font-size: 16px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

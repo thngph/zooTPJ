@@ -2,11 +2,59 @@
 {% load static %}
 {%block title%} Phân loài {%endblock%}
 {% block content %}
+
+
 <div class="content">
+    <div class="slider">
+            <div class="slides">
+                 <!-- Radio button  -->
+                <input type="radio" name="radio-btn" id="radio1" checked>
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+
+                <!-- img -->
+                <div class="slide slide-first">
+                    <div class="slide-item slide__img-first" style="background: url('/static/image/image-animal/huoucaoco.jpg') top center / cover no-repeat">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-item slide__img-second" style="background: url('/static/image/image-animal/buom.jpg') top center / cover no-repeat">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-item slide__img-third" style="background: url('/static/image/image-animal/gecko.jpg') top center / cover no-repeat">
+                    </div>
+                </div>
+                 <!-- automatic navigation -->
+                <div class="navigation-auto">
+                    <div class="auto-btn auto-btn1"></div>
+                    <div class="auto-btn auto-btn2"></div>
+                    <div class="auto-btn auto-btn3"></div>
+                </div>
+            </div>
+            <!-- Manual navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+           <div class="slider__content hide-on-mobile">
+               <h3 class="slider__content-title">
+                    ZOOZALABIM
+               </h3>
+               <div class="slider__content-desc">
+                nuôi dưỡng hơn 1.300 động vật thuộc 125 loài, trong đó có nhiều loại thuộc loại quý hiếm. Tại đây cũng có hơn 2.500 cây xanh với hơn 900 loài thực vật được bảo tồn.
+               </div>
+
+           </div>
+        </div>
+
+
     <div class="grid">
         <div class="content__category">
             <div class="category__heading">
-                DANH MỤC CÁC LOÀI ĐỘNG VẬT CỦA SỞ THÚ
+                Danh mục các loài động vật tại ZOOZALABIM
+
             </div>
             <div class="grid wide">
                 <div class="row category__wrap" >
