@@ -319,8 +319,22 @@
         {%endblock%}
 
         {%block modal%}
-        <div class="modal">
-            <!-- FORM HIỆN THÔNG TIN NGƯỜI DÙNG -->
-           
+        {%if modal == 'welcome'%}
+        <div class="modal fade show" style="display:block">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Bạn đã đăng kí thành công</h5>
+              </div>
+              <div class="modal-body">
+                Chào mừng các bạn đến với channel của mình đây là channel giúp bạn đi từ khá tiếng anh lên giỏi tiếng anh nhờ vào lời khuyên của một cựu chuyên anh năng khiếu đang sống và làm việc tại mỹ đó chính là mình
+              </div>
+              <div class="modal-footer">
+                <a href="/login/"><button type="button" class="btn btn-success">Đăng nhập</button></a>
+                <button type="button" class="btn">Đóng</button>
+              </div>
+            </div>
+          </div>
         </div>
+        {%endif%}
         {%endblock%}

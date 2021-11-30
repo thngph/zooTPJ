@@ -22,10 +22,12 @@ def index(request):
     if request.user.is_authenticated:
         data = {'Animals': Animal.objects.all()[:4],
                 'Event': Event.objects.all().order_by('-date_uploaded')[:4],
-                'Profile': Profile.objects.get(user_ID=request.user.id)}
+                'Profile': Profile.objects.get(user_ID=request.user.id),
+                'modal': request.GET.get('modal', '')}
     else:
         data = {'Animals': Animal.objects.all()[:4],
-        'Event': Event.objects.all().order_by('-date_uploaded')[:4]}
+                'Event': Event.objects.all().order_by('-date_uploaded')[:4],
+                'modal': request.GET.get('modal', '')}
     return render(request, 'home/index.html', data)
 
 
@@ -76,8 +78,10 @@ def change_password(request):
         if user.check_password(old_pwd) and pwd_2 == pwd_1:
             user.set_password(pwd_1)
             user.save()
-    profile = Profile.objects.get(user_ID=request.user.id)
-    return redirect('/', {'Profile': profile})
+            data = {'Animals': Animal.objects.all()[:4],
+                    'Event': Event.objects.all().order_by('-date_uploaded')[:4],
+                    'modal': 'welcome'}
+            return render(request, 'home/index.html', data)
 
 
 def login_view(request):
@@ -109,7 +113,8 @@ def register(request):
             user = User.objects.create_user(username, email, pwd_2)
             profile = Profile.objects.create(user_ID=user, email=email)
             profile.save()
-            return redirect('home')
+            return redirect('/?modal=welcome')
+
         else:
             return render(request, 'home/register.html', {'warning': 'password'})
     return render(request, 'home/register.html')
