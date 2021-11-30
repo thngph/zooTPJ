@@ -103,7 +103,7 @@
               {%for donation in Donations%}
             <tr>
               <td>{{donation.donation_ID}}</td>
-              <td>{{donation.date_donated}}</td>
+              <td>{{donation.date_donated | date:"F d Y"}}</td>
               <td>{{donation.user_ID}}</td>
               <td>{{donation.amount}}</td>
             </tr>
