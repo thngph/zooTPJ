@@ -5,7 +5,9 @@ const $$ = document.querySelectorAll.bind(document);
 
 
 const userForm = $(".user");
-if(userForm==null)
+const authForm=$('.auth-form')
+
+if(userForm==null && authForm==null)
 {
     var counter = 2;
     setInterval(function () {
@@ -115,7 +117,7 @@ if(userForm==null)
     };
     videos.start();
 }
-else
+if(userForm)
 {
   // Gỡ hết active nếu đang ở width điện thoại
     const mediaQuery = window.matchMedia('(max-width: 739px)')
@@ -157,6 +159,10 @@ else
     }
 
 });
+}
 
-
+if(authForm)
+{
+  var tabHeaderActive=$('.header__nav>li .active')
+  tabHeaderActive.classList.remove("active");
 }

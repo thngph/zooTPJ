@@ -20,9 +20,25 @@
                         <div class="auth-form__group">
                             <input type="password" class="auth-form__input" name="password2" required="" id="id_password2" placeholder="Nhập lại mật khẩu">
                         </div>
+                        <!-- Họ tên mới nè -->
+                        <!-- <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" name="name" required="" id="id_name" placeholder="Họ và tên">
+                        </div> -->
+
                         <div class="auth-form__group">
                             <input type="email" class="auth-form__input" name="email" required="" id="id_email" placeholder="E-mail">
                         </div>
+                        <!-- CẢNH BÁO -->
+                        <div class="alert success">
+                            Đăng kí thành công, mời đăng nhập
+                        </div>
+                        <div class="alert warning">
+                            Hai mật khẩu phải trùng nhau
+                        </div>
+                        <div class="alert warning">
+                            Tài khoản đã tồn tại
+                        </div>
+                        
                     </div>
                     <div class="auth-form__control">
                         <input type="submit" value="Đăng ký" class="auth-form__btn">
@@ -31,9 +47,9 @@
             </div>
             <div class="auth-form__footer">
                 <span>Đã có tài khoản ?</span>
-                <button class="auth-form__footer-btn-control btn__open-login-form">
+                <a href="/login/" class="auth-form__footer-btn-control btn__open-login-form">
                     Đăng nhập
-                </button>
+                </a>
             </div>
         </div>
     </div>

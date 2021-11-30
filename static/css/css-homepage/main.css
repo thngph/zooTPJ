@@ -1045,7 +1045,7 @@ html
     cursor: pointer;
     border-radius:30px;
     border: 1px solid var(--green-color);
-    margin: 30px 0 20px;
+    margin: 20px 0 20px;
 }
 .auth-form__btn:hover
 {
@@ -1078,7 +1078,19 @@ html
     color: var(--yellow-color)
 }
 
-
+.alert
+{
+    margin-top:20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.alert.success
+{
+    color: var(--green-color);
+}
+.alert.warning{
+    color: red
+}
 /* USER-INFO-FORM */
 .user-wrap
 {
