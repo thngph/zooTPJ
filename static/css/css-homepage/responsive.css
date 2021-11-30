@@ -511,6 +511,14 @@
     {
         margin-right: 10px;
     }
+    .header__btn-login
+    {
+        padding: 10px 4px;
+    }
+    .header__btn-register
+    {
+        padding: 10px 15px;
+    }
     .introduce-title
     {
         text-align: center;
@@ -546,7 +554,6 @@
 
     .btn--green,.btn--white
     {
-        padding: 10px 10px;
         font-size: 15px;
     }
     .slider__content-desc
@@ -560,6 +567,12 @@
     .slide-item
     {
         padding-top: 55%
+    }
+    .slider__btn-buy-ticket, .slider__btn-donate
+    {
+        padding: 10px 15px;
+        border: none;
+        border-radius:2px
     }
     /* Info */
     .info

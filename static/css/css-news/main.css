@@ -8,7 +8,7 @@ body {
   padding: 0px;
   margin: 0px;
   background: #f6f6f6;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 h1,
@@ -270,10 +270,20 @@ button:hover {
   border-radius: 50px;
   background: var(--yellow-color);
 }
-.box .comment-detail .user-image {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+.user-name-img-wrap
+{
+    width: 35px;
+    border-radius:50%;
+    display: inline-block;
+    overflow: hidden;
+}
+.user-name-img
+{
+    padding-top: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .box .comment-detail .user-name {
   margin: auto 10px;

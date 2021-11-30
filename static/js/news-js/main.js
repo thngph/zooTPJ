@@ -1,20 +1,20 @@
 // const $=document.querySelector.bind(document);
 // const $$=document.querySelectorAll.bind(document);
-$(document).ready(function(){
-   $('#comment').click(function(){
-      var input=$('#input').val();
-      $('.box').append(input + '<br>')
-      $('#input').val('');
-      $('.box-container').slideDown();
-   });
-   $('#cancel').click(function(){
-      $('#input').val('');
-   });
-   $('delete').click(function(){
-      $('.box').text('');
-      $('.box-container').slideUp();
-   });
-});
+// $(document).ready(function(){
+//    $('#comment').click(function(){
+//       var input=$('#input').val();
+//       $('.box').append(input + '<br>')
+//       $('#input').val('');
+//       $('.box-container').slideDown();
+//    });
+//    $('#cancel').click(function(){
+//       $('#input').val('');
+//    });
+//    $('delete').click(function(){
+//       $('.box').text('');
+//       $('.box-container').slideUp();
+//    });
+// });
 // var i = 1;
 //   $('textarea').keyup(function(e) {
 

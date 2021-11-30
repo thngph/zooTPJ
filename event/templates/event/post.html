@@ -35,7 +35,10 @@
     <div class="box">
 
       <div class="comment-detail">
-        <img class="user-image" src="{{comment.author.img.url}}" alt="" />
+        <div class="user-name-img-wrap">
+          <div class="user-name-img" style="background-image: url({{comment.author.img.url}})"></div>
+        </div>
+        <!-- <img class="user-image" src="{{comment.author.img.url}}" alt="" /> -->
         <div class="user-name">{{comment.author}}</div>
       </div>
       <div class="user-comment">

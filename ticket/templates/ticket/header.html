@@ -13,7 +13,7 @@
                     <li class=""><a href="/animals/">Phân loài</a></li>
                     <li class=""><a href="/news/">Tin tức</a></li>
                     <li class=""><a href="/donate/">Hỗ trợ</a></li>
-                    <li class=""><a href="/ticket/">Mua vé</a></li>
+                    <li class=""><a class="active"  href="/ticket/">Mua vé</a></li>
                 </ul>
                 {% if not user.username %}
                 <div class="header__btn hide-on-mobile">
@@ -27,11 +27,13 @@
                 {% else %}
                 <div class="header__user hide-on-mobile">
                     {%if Profile.img%}
-                    <img class="header__user-img" src="{{Profile.img.url}}" alt="" />
+                    <div class="header__user-img-wrap">
+                        <div class="header__user-img" style="background-image: url({{Profile.img.url}})"></div>
+                    </div>
                     {%else%}
-                    <img class="header__user-img" src="{% static './image/image-homepage/meo.jpeg' %}" alt="" />
+                    <!-- <img class="header__user-img" src="{% static './image/image-homepage/meo.jpeg' %}" alt="" /> -->
                     {%endif%}
-                    <div class="header__nav">Xin chào, {{user.username}}</div>
+                    <div class="header__nav-username">Xin chào, {{user.username}}</div>
                     <ul class="header__user-subnav">
                         <li>
                             <a href="/user/" class="header__user-subnav-info">Thông tin tài khoản</a>
