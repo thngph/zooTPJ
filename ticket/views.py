@@ -60,7 +60,11 @@ def charge(request):
 
 def successMsg(request, args):
     amount = args
-    return render(request, 'ticket/success.html', {'amount': amount})
+    data = {
+        'Profile': Profile.objects.get(user_ID=request.user.id),
+        'amount': amount
+    }
+    return render(request, 'ticket/success.html', data)
 
 
 # Ticket API

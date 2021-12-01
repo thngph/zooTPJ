@@ -6,7 +6,7 @@ from donate import urls
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='ticket'),
     path('charge/', views.charge, name="ticket_charge"),
     path('success/<str:args>/', views.successMsg, name="ticket_success"),
     path('api/ticket/', TicketAPI.as_view(), name='ticket_api_view')
