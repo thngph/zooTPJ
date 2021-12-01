@@ -228,6 +228,15 @@
         font-size: 15px;
     }
     /* SLIDER */
+    .slider__content
+    {
+        bottom: 20%;
+        left: 6%;
+    }
+    .slider__content-title
+    {
+        font-size:16px
+    }
     .slide-item
     {
         padding-top: 55%;
@@ -368,7 +377,12 @@
     {
         font-size: 15px;
         padding: 0;
-        margin: 8px 0;
+        margin: 8px 0;  
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+
     }
     .news__item-content-desc
     {
@@ -393,7 +407,7 @@
     .contact-item p
     {
         margin-left: 10px;
-        font-size:18px;
+        font-size:16px;
     }
     .contact-item i
     {
