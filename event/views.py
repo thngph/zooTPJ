@@ -38,7 +38,7 @@ def index(request):
 
 
 def search(request):
-    search_str = request.POST['search']
+    search_str = remove_accent(request.POST['search'])
     result = Event.objects.filter(Q(title_normalized__icontains=search_str) | Q(description_normalized__icontains=search_str))
     if request.user.is_authenticated:
         data = {'Event': result,
