@@ -105,17 +105,20 @@
         background-color:var(--white-color);
         padding: 50px 0 20px;
     }
+    .header__nav-mobile-user-image-wrap
+    {
+        width: 150px;
+        border-radius:50%;
+        margin-right: 10px;
+        overflow: hidden;
+    }
     .header__nav-mobile-user-image
     {
+        padding-top: 100%;
         overflow: hidden;
-        min-width: 110px;
-        min-height: 110px;
-        border-radius: 50%;
-    }
-    .header__nav-mobile-user-image img
-    {
-        max-width: 110px;
-        display:block
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .header__nav-mobile-user-name
     {

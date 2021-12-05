@@ -61,10 +61,10 @@
 
                         {% else %}
                         <div class="header__nav-mobile-user-info">
-                            <div class="header__nav-mobile-user-image">
-                                <img class="" src="{{Profile.img.url}}" alt="">
+                            <div class="header__nav-mobile-user-image-wrap">
+                                <div class="header__nav-mobile-user-image"style="background-image: url({{Profile.img.url}})"></div>
                             </div>
-                            <p class="header__nav-mobile-user-name">Xin chào, <span>{{user.username}}</span> !</p>
+                            <p class="header__nav-mobile-user-name">Xin chào, <span>{{user.username}}</span>!</p>
                         </div>
                         {%endif%}
                     </div>
