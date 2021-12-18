@@ -99,6 +99,7 @@
                             </div>
                         </div>
                         <div class="user__tab-info-wrap user__tab-wrap-item">
+                            {%if Profile.is_valid%}
                             <form action="{% url 'pwd' %}" method="post" class="user__tab-info">
                                 {% csrf_token %}
                                 <div class="user__info-item">
@@ -115,6 +116,9 @@
                                 </div>
                                 <input type="submit" class="user__info-save" value="Lưu">
                             </form>
+                            {%else%}
+                            <div class="user__info-item-label">Email cần được xác nhận trước khi đổi mật khẩu. <br>Xác nhận tại <a href="/?modal=verify">đây</a></div>
+                            {%endif%}
                         </div>
                     </div>
 

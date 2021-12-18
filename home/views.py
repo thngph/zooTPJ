@@ -1,3 +1,4 @@
+import smtplib
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -7,7 +8,6 @@ from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
-
 from animals.models import Animal
 from donate.models import Donate
 from event.models import Event
@@ -15,7 +15,7 @@ from ticket.models import Ticket
 from .forms import UploadFileForm
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
-
+from email.message import EmailMessage
 
 # Create your views here.
 def index(request):
@@ -53,14 +53,15 @@ def edit_user(request):
         profile.contact = request.POST['contact']
         profile.email = request.POST['email']
         profile.save()
+        user = User.objects.get(id=request.user.id)
+        user.email = request.POST['email']
+        user.save()
     return redirect('/', {'Profile': profile})
 
 
 @login_required(login_url='login')
 def upload(request):
     if request.method == 'POST':
-        # profile.img = request.FILES['img']
-        # profile.save()
         profile = Profile.objects.get(user_ID=request.user.id)
         form = UploadFileForm(request.POST, request.FILES, instance=Profile.objects.get(user_ID=request.user.id))
         form.save()
@@ -113,11 +114,53 @@ def register(request):
             user = User.objects.create_user(username, email, pwd_2)
             profile = Profile.objects.create(user_ID=user, email=email)
             profile.save()
-            return redirect('/?modal=welcome')
-
+            send_mail(profile.email, profile.key)
+            user = authenticate(request, username=username, password=pwd_2)
+            if user is not None:
+                login(request, user)
+                return redirect('/?modal=welcome')
         else:
             return render(request, 'home/register.html', {'warning': 'password'})
     return render(request, 'home/register.html')
+
+
+def send_mail(mail, validator):
+    EMAIL_ADDRESS = 'zoozalabim123@gmail.com'
+    EMAIL_PASSWORD = '1101213409'
+    msg = EmailMessage()
+    msg['Subject'] = '[Zoozalabim] - Email xác nhận'
+    msg['From'] = EMAIL_ADDRESS
+    msg['To'] = mail
+    msg.set_content(
+        f''''
+        <!DOCTYPE html>
+            <html lang="en">
+                <body>
+                    <h1>Chào mừng bạn đến với Zoozalabim!</h1>
+                    <p>Đây là mã xác thực của bạn: {validator}</p>
+                </body>
+            </html>
+        ''', subtype='html'
+    )
+    with smtplib.SMTP_SSL('smtp.gmail.com') as smtp:
+        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        smtp.send_message(msg)
+
+
+@login_required(login_url='login')
+def verify(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user_ID_id=request.user.id)
+        if request.POST['resend']:
+            send_mail(profile.email, profile.key)
+            return redirect('/?modal=verify')
+        validator = request.POST['validator']
+        if validator == profile.key:
+            profile.is_valid = True
+            profile.save()
+            return redirect('/')
+        else:
+            return redirect('/?modal=verify')
 
 
 # Register API
@@ -154,25 +197,3 @@ class ProfileAPI(APIView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
-    # @csrf_exempt
-    # def Profile_detail(self, request, pk):
-    #     try:
-    #         snippet = Profile.objects.get(pk=pk)
-    #     except Profile.DoesNotExist():
-    #         return HttpResponse(status=404)
-    #     Pofile_Detail = Profile.objects.get(pk=pk)
-    #     if request.method == 'GET':
-    #         serializer = ProfileSerializer(Pofile_Detail)
-    #         return Response(serializer.data)
-    #
-    #     elif request.method == 'PUT':
-    #         data = JSONParser().parse(request)
-    #         serializer = ProfileSerializer(Pofile_Detail, data=data)
-    #         if serializer.is_valid():
-    #             serializer.save()
-    #             return Response(serializer.data)
-    #         return Response(serializer.errors, status=400)
-    #
-    #     elif request.method == 'DELETE':
-    #         Profile.delete()
-    #         return HttpResponse(status=204)

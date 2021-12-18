@@ -6,6 +6,7 @@ from .views import ProfileAPI, RegisterAPI
 urlpatterns = [
     path('', views.index, name='home'),
     path('register/', views.register, name="register"),
+path('verify/', views.verify, name="verify"),
     path('user/', views.user_info, name="user"),
     path('user/edit', views.edit_user, name="edit_info"),
     path('user/change-pwd', views.change_password, name="pwd"),

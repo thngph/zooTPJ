@@ -196,41 +196,6 @@
                                 {% endif %}
                             {% endfor %}
 
-<!--                            <div class="col l-3 m-6">-->
-<!--                                <a href="" class="image-animal__item">-->
-<!--                                    <div class="image-animal__item-img">-->
-<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
-<!--                                    </div>-->
-<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
-<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                            <div class="col l-3 m-6">-->
-<!--                                <a href="" class="image-animal__item">-->
-<!--                                    <div class="image-animal__item-img">-->
-<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
-<!--                                    </div>-->
-<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
-<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha </div>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                            <div class="col l-3 m-6">-->
-<!--                                <a href="" class="image-animal__item">-->
-<!--                                    <div class="image-animal__item-img">-->
-<!--                                        <img src="{% static './image/image-homepage/rabbit.jpeg'%}" alt="">-->
-<!--                                    </div>-->
-<!--                                    <div class="image-animal__item-name">Thỏ</div>-->
-<!--                                    <div class="image-animal__item-desc">Thỏ là động vật có vú nhỏ được xếp vào  bộ Langomorpha</div>-->
-<!--                                </a>-->
-<!--                            </div>-->
-                            <a  href="animals/" class="image-animal__more-text">
-                                Xem thêm...
-                            </a>
-                        </div>
-                    </div>
-                </div>     
-            </div>
-            
             <!-- Tin tức -->
             <div  id="news"  class="content__news content-section">
                 <div class="news">
@@ -240,9 +205,6 @@
                                 TIN TỨC MỚI NHẤT
                             </h2>
                         </div>
-                        <!-- <div class="section-desc">
-                            Khi con người ta đã quá quen thuộc với bộn bề cao ốc, khói bụi xe cộ... thì trong sâu thẳm trong thâm tâm đều mong muốn được về với thiên nhiên. Hãy cùng nhau giúp đỡ muôn loài, góp phần bảo vệ thiên nhiên tươi đẹp
-                        </div>   -->
                     </div>
 
 
@@ -253,7 +215,6 @@
                             <div class="col l-3 c-6 m-6">
                                 <div class="news__item">
                                     <div class="news__item-img" style="background-image: url('{{item.img.url}}')">
-                                        <!-- <img src="{{item.img.url}}" alt=""> -->
                                     </div>
                                     <div class="news__item-content">
                                         <div class="news__item-content-title">{{item.title}}</div>
@@ -319,6 +280,29 @@
         {%endblock%}
 
         {%block modal%}
+        {%if modal == 'verify'%}
+        <div class="modal fade show" style="display:block">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Nhập mã xác nhận</h5>
+              </div>
+              <div class="modal-body">
+                 Nhập mã xác nhận hoặc yêu cầu gửi lại mã xác nhận (Gửi lại mã xác nhận có thể tốn nhiều thời gian).
+              </div>
+              <div class="modal-footer">
+                  <form action={% url 'verify' %} method="POST">
+                     {% csrf_token %}
+                    <input type="text" class="auth-form__input" name="validator" placeholder="Mã xác thực">
+                    <input type="submit" class="btn btn-success" value="Xác nhận">
+                    <input type="submit" name="resend" class="btn btn-success" value="Gửi lại">
+                    <input type="button" class="btn btn-close" value="Đóng">
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endif%}
         {%if modal == 'welcome'%}
         <div class="modal fade show" style="display:block">
           <div class="modal-dialog">
@@ -327,11 +311,18 @@
                 <h5 class="modal-title" >Bạn đã đăng kí thành công</h5>
               </div>
               <div class="modal-body">
-                 Chào mừng bạn đã đến với Zoozalabim. Bạn có thể đăng nhập với tài khoản vừa tạo
+                 Chào mừng bạn đã đến với Zoozalabim. <br>
+                  Hãy nhập mã xác thực để xác nhận email.<br>
+                  Nếu chưa nhận được mã, xin vui lòng chọn gửi lại mã xác nhận.
               </div>
               <div class="modal-footer">
-                <a href="/login/"><button type="button" class="btn btn-success">Đăng nhập</button></a>
-                <button type="button" class="btn btn-close">Đóng</button>
+                  <form action={% url 'verify' %} method="POST">
+                     {% csrf_token %}
+                    <input type="text" class="auth-form__input" name="validator" required="" placeholder="Mã xác thực">
+                    <input type="submit" class="btn btn-success" value="Xác nhận">
+                    <input type="submit" name="resend" class="btn btn-success" value="Gửi lại">
+                    <input type="button" class="btn btn-close" value="Đóng">
+                  </form>
               </div>
             </div>
           </div>
