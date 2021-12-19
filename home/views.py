@@ -126,7 +126,7 @@ def register(request):
 
 def send_mail(mail, validator):
     EMAIL_ADDRESS = 'zoozalabim123@gmail.com'
-    EMAIL_PASSWORD = '1101213409'
+    EMAIL_PASSWORD = 'zoozalabim00970981'
     msg = EmailMessage()
     msg['Subject'] = '[Zoozalabim] - Email xác nhận'
     msg['From'] = EMAIL_ADDRESS

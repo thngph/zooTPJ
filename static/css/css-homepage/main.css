@@ -987,11 +987,11 @@ html
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: end;
-    justify-content: flex-end;
-    padding: 0.4rem;
+    /* justify-content: flex-end; */
+    padding: 1rem;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: .3rem;
-    border-bottom-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;1
 }
 .modal-title
 {
@@ -1346,4 +1346,24 @@ html
 .user__tab-table tr
 {
     height: 30px;
+}
+
+
+/* Authform */
+.validate-code-input
+{
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
+}
+.validate-resend-btn
+{
+    margin-left: 10px;
+}
+.validate-close-btn
+{
+    border: 1px solid var(--black-color);
+    float:right;
 }

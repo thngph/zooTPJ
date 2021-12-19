@@ -293,10 +293,10 @@
               <div class="modal-footer">
                   <form action={% url 'verify' %} method="POST">
                      {% csrf_token %}
-                    <input type="text" class="auth-form__input" name="validator" placeholder="Mã xác thực">
+                    <input type="text" class="validate-code-input" name="validator" placeholder="Mã xác thực">
                     <input type="submit" class="btn btn-success" value="Xác nhận">
-                    <input type="submit" name="resend" class="btn btn-success" value="Gửi lại">
-                    <input type="button" class="btn btn-close" value="Đóng">
+                    <input type="submit" name="resend" class="btn btn-success validate-resend-btn" value="Gửi lại">
+                    <input type="button" class="btn validate-close-btn" value="Đóng">
                   </form>
               </div>
             </div>
@@ -316,12 +316,12 @@
                   Nếu chưa nhận được mã, xin vui lòng chọn gửi lại mã xác nhận.
               </div>
               <div class="modal-footer">
-                  <form action={% url 'verify' %} method="POST">
+                  <form action={% url 'verify' %} method="POST" style="width:100%">
                      {% csrf_token %}
-                    <input type="text" class="auth-form__input" name="validator" required="" placeholder="Mã xác thực">
+                    <input type="text" class="validate-code-input" name="validator" required="" placeholder="Mã xác thực">
                     <input type="submit" class="btn btn-success" value="Xác nhận">
-                    <input type="submit" name="resend" class="btn btn-success" value="Gửi lại">
-                    <input type="button" class="btn btn-close" value="Đóng">
+                    <input type="submit" name="resend" class="btn btn-success validate-resend-btn" value="Gửi lại">
+                    <input type="button" class="btn validate-close-btn" value="Đóng">
                   </form>
               </div>
             </div>
